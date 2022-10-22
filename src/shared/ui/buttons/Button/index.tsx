@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import arrowPath from '../../../assets/img/arrow.svg';
+import arrowPath from '../../../../assets/img/arrow.svg';
 import styles from './Button.module.scss';
 
 type ButtonProps = {
