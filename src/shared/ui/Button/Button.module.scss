@@ -1,0 +1,28 @@
+.button {
+  @apply flex;
+
+  .container {
+    @apply flex py-3.5 px-6 bg-accents rounded-lg cursor-pointer;
+  }
+
+  .title {
+    @apply text-white font-semibold text-base;
+  }
+
+  .image {
+    @apply ml-5;
+  }
+
+  .largeButton {
+    @apply justify-center px-0 w-full;
+
+    .image {
+      @apply ml-4;
+    }
+  }
+  &:active {
+    .container {
+      @apply transition ease-in-out duration-75 delay-75 bg-darkAccents;
+    }
+  }
+}
