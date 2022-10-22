@@ -21,6 +21,9 @@ module.exports = {
       red: '#F05C52',
     },
     extend: {
+      padding: {
+        3.5: '0.875rem',
+      },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
       },
