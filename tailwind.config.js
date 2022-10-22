@@ -20,7 +20,14 @@ module.exports = {
       orange: '#F5813F',
       red: '#F05C52',
     },
-    extend: {},
+    extend: {
+      transitionTimingFunction: {
+        DEFAULT: 'ease-in-out',
+      },
+      transitionDuration: {
+        DEFAULT: '300ms',
+      },
+    },
   },
   plugins: [],
 };
