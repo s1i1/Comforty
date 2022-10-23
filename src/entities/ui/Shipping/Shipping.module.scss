@@ -1,0 +1,9 @@
+.container {
+  @apply flex items-center;
+  img {
+    @apply w-4 h-4;
+  }
+  p {
+    @apply pl-2 font-normal text-[0.8125rem] text-white;
+  }
+}
