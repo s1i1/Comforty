@@ -1,0 +1,39 @@
+div {
+  @apply flex items-center;
+
+  .menu {
+    @apply flex-row px-6 py-4  cursor-pointer border-solid rounded-md border-[1px] border-offWhiteE;
+
+    div {
+      @apply text-sm font-medium  pl-4;
+    }
+  }
+
+  .not__active {
+    @apply transition ease-in-out duration-1000 bg-white;
+
+    svg {
+      path {
+        @apply transition ease-in-out duration-1000 fill-black;
+      }
+    }
+
+    div {
+      @apply transition ease-in-out duration-1000 text-black;
+    }
+  }
+
+  .active {
+    @apply transition ease-in-out duration-75 bg-accents;
+
+    svg {
+      path {
+        @apply transition ease-in-out duration-75 fill-white;
+      }
+    }
+
+    div {
+      @apply transition ease-in-out duration-75 text-white;
+    }
+  }
+}
