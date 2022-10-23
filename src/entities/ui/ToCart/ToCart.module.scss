@@ -1,0 +1,33 @@
+div {
+  @apply flex;
+
+  .container {
+    @apply items-center py-3 px-4 rounded-lg bg-white font-medium cursor-pointer transition duration-1000;
+
+    path {
+      @apply transition duration-1000;
+    }
+    .title {
+      @apply pl-2 pr-3 text-xs text-black transition duration-1000;
+    }
+    .count {
+      @apply text-[10px] text-white font-dmSans py-0.5 px-[0.4375rem] bg-darkAccents rounded-3xl transition duration-1000;
+    }
+
+    &:active {
+      @apply transition duration-75 bg-accents;
+      path {
+        @apply transition duration-75 stroke-white;
+      }
+      .basket__bottom {
+        @apply transition duration-75 fill-white;
+      }
+      .title {
+        @apply transition duration-75 text-white;
+      }
+      .count {
+        @apply transition duration-75 bg-white  text-black;
+      }
+    }
+  }
+}
