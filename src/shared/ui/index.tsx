@@ -1,2 +1,2 @@
 export * from './Logo';
-export * from './NewIcon';
+export * from './ProductTag';
