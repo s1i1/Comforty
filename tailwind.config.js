@@ -38,5 +38,15 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const extendUnderline = {
+        '.underlineAccents': {
+          textDecoration: 'underline',
+          'text-decoration-color': '#029FAE', //accents color
+        },
+      };
+      addUtilities(extendUnderline);
+    },
+  ],
 };
