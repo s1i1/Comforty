@@ -1,0 +1,23 @@
+.button {
+  svg {
+    @apply cursor-pointer;
+  }
+}
+
+.notActive {
+  rect {
+    @apply transition ease-in-out duration-1000 fill-white;
+  }
+  path {
+    @apply transition ease-in-out duration-1000 stroke-black;
+  }
+}
+
+.active {
+  rect {
+    @apply transition ease-in-out duration-1000 fill-accents;
+  }
+  path {
+    @apply transition ease-in-out duration-1000 stroke-white;
+  }
+}
