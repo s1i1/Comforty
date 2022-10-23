@@ -21,6 +21,9 @@ module.exports = {
       red: '#F05C52',
     },
     extend: {
+      spacing: {
+        4.5: '1,125rem',
+      },
       padding: {
         3.5: '0.875rem',
       },
