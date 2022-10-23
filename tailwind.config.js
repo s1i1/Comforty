@@ -24,6 +24,9 @@ module.exports = {
       padding: {
         3.5: '0.875rem',
       },
+      dropShadow: {
+        '1md': '0 4px 4px rgba(0, 0, 0, 0.25)',
+      },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
       },
