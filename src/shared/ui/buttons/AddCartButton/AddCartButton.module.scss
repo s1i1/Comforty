@@ -1,0 +1,30 @@
+.button {
+  svg {
+    @apply cursor-pointer;
+  }
+}
+
+.notActive {
+  rect {
+    @apply transition ease-in-out duration-1000 fill-offWhiteF;
+  }
+  path {
+    @apply transition ease-in-out duration-1000 stroke-black;
+  }
+  .basket__bottom {
+    @apply transition ease-in-out duration-1000 fill-black;
+  }
+}
+
+.active {
+  rect {
+    @apply transition ease-in-out duration-1000 fill-accents;
+  }
+
+  path {
+    @apply transition ease-in-out duration-1000 stroke-white;
+  }
+  .basket__bottom {
+    @apply transition ease-in-out duration-1000 fill-white;
+  }
+}
