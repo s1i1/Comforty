@@ -1,0 +1,10 @@
+.container {
+  @apply flex items-center;
+
+  p {
+    @apply pl-1.5 font-normal text-[0.8125rem] text-white;
+  }
+  img {
+    @apply w-4 h-4;
+  }
+}
