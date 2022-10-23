@@ -7,7 +7,7 @@ type CategoriesButtonProps = {
 };
 
 export const CategoriesButton: React.FC<CategoriesButtonProps> = ({ isActive }) => {
-  const checkIsActive = isActive ? styles.active : styles.notActive;
+  const checkIsActive = isActive ? styles.active : styles.not__active;
 
   return (
     <div>
