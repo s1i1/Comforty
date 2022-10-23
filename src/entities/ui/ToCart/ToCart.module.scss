@@ -11,7 +11,7 @@ div {
       @apply pl-2 pr-3 text-xs text-black transition duration-1000;
     }
     .count {
-      @apply text-[10px] text-white font-dmSans py-0.5 px-[0.4375rem] bg-darkAccents rounded-3xl transition duration-1000;
+      @apply text-[0.625rem] text-white font-dmSans py-0.5 px-[0.4375rem] bg-darkAccents rounded-3xl transition duration-1000;
     }
 
     &:active {
