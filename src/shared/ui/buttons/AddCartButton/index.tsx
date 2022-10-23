@@ -7,8 +7,10 @@ type AddCartProps = {
 };
 
 export const AddCartButton: React.FC<AddCartProps> = ({ isActive }) => {
+  const checkIsActive = isActive ? styles.active : styles.not__active;
+
   return (
-    <div className={cn(styles.button, isActive ? styles.active : styles.notActive)}>
+    <div className={cn(styles.button, checkIsActive)}>
       <svg
         width="44"
         height="45"

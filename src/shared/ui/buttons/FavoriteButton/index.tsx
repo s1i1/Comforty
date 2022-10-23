@@ -9,7 +9,7 @@ type FavoriteProps = {
 
 export const FavoriteButton: React.FC<FavoriteProps> = ({ isActive, inHeader }) => {
   const checkIsHeader = inHeader && styles.reactive;
-  const checkIsActive = isActive ? styles.active : styles.notActive;
+  const checkIsActive = isActive ? styles.active : styles.not__active;
 
   return (
     <div className={cn(styles.button, checkIsHeader, checkIsActive)}>
