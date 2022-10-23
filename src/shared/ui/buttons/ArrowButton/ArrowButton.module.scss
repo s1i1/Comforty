@@ -13,7 +13,7 @@
     }
     &:active {
       rect {
-        @apply transition ease-in-out duration-75 fill-accents;
+        @apply transition duration-75 fill-accents;
       }
     }
   }

@@ -10,30 +10,30 @@ div {
   }
 
   .not__active {
-    @apply transition ease-in-out duration-1000 bg-white;
+    @apply transition duration-1000 bg-white;
 
     svg {
       path {
-        @apply transition ease-in-out duration-1000 fill-black;
+        @apply transition duration-1000 fill-black;
       }
     }
 
     div {
-      @apply transition ease-in-out duration-1000 text-black;
+      @apply transition duration-1000 text-black;
     }
   }
 
   .active {
-    @apply transition ease-in-out duration-75 bg-accents;
+    @apply transition duration-75 bg-accents;
 
     svg {
       path {
-        @apply transition ease-in-out duration-75 fill-white;
+        @apply transition duration-75 fill-white;
       }
     }
 
     div {
-      @apply transition ease-in-out duration-75 text-white;
+      @apply transition duration-75 text-white;
     }
   }
 }

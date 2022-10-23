@@ -9,7 +9,7 @@
     }
 
     &:active {
-      @apply transition ease-in-out duration-75 bg-accents;
+      @apply transition duration-75 bg-accents;
     }
   }
 
