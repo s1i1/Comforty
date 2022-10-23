@@ -4,11 +4,15 @@ import styles from './FavoriteButton.module.scss';
 
 type FavoriteProps = {
   isActive?: boolean;
+  inHeader?: boolean;
 };
 
-export const FavoriteButton: React.FC<FavoriteProps> = ({ isActive }) => {
+export const FavoriteButton: React.FC<FavoriteProps> = ({ isActive, inHeader }) => {
+  const checkIsHeader = inHeader && styles.reactive;
+  const checkIsActive = isActive ? styles.active : styles.notActive;
+
   return (
-    <div className={cn(styles.button, isActive ? styles.active : styles.notActive)}>
+    <div className={cn(styles.button, checkIsHeader, checkIsActive)}>
       <svg
         width="44"
         height="44"

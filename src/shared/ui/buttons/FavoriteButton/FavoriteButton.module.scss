@@ -21,3 +21,23 @@
     @apply transition ease-in-out duration-1000 stroke-white;
   }
 }
+
+.reactive {
+  svg {
+    rect {
+      @apply transition ease-in-out duration-1000 fill-white;
+    }
+    path {
+      @apply transition ease-in-out duration-1000 stroke-black;
+    }
+
+    &:active {
+      rect {
+        @apply transition ease-in-out duration-75 fill-accents;
+      }
+      path {
+        @apply transition ease-in-out duration-75 stroke-white;
+      }
+    }
+  }
+}
