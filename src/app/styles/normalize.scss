@@ -37,3 +37,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+._container {
+  @apply max-w-[82.5rem] m-auto;
+}

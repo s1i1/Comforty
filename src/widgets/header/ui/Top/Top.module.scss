@@ -1,8 +1,8 @@
 .header__top {
-  @apply w-full bg-black justify-center items-center;
+  @apply bg-black;
 
   .container {
-    @apply max-w-[82.5rem] py-3.5 m-auto flex justify-between opacity-70;
+    @apply flex justify-between opacity-70 py-3.5;
   }
 
   ul {
