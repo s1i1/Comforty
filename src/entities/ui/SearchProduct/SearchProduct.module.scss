@@ -1,0 +1,24 @@
+.container {
+  .search {
+    @apply w-[25.8125rem] px-4 justify-between items-center bg-white rounded-[0.3125rem];
+
+    input {
+      @apply w-full py-3 pr-2 outline-none;
+    }
+
+    .image {
+      @apply w-[1.375rem] h-[1.375rem];
+    }
+
+    .clear {
+      @apply cursor-pointer opacity-80 bg-gray rounded-md transition-colors duration-300;
+
+      &:hover {
+        @apply bg-accents transition-colors duration-300;
+      }
+      &:active {
+        @apply bg-darkAccents transition-colors duration-75;
+      }
+    }
+  }
+}
