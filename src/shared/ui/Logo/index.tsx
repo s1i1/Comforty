@@ -4,7 +4,7 @@ import styles from './Logo.module.scss';
 
 export const Logo = () => {
   return (
-    <div>
+    <div className={styles.logo}>
       <div className={styles.container}>
         <img className={styles.image} src={logoIcon} alt="logoIcon" />
         <div className={styles.title}>Comforty</div>

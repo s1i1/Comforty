@@ -1,18 +1,20 @@
-div {
+.logo {
   .container {
     @apply flex items-center cursor-pointer;
 
     .image {
-      @apply w-10 h-10;
+      @apply w-10 h-10 absolute;
     }
 
     .title {
-      @apply pl-2  font-medium text-[26px]  text-black;
-    }
+      @apply pl-12 font-medium text-[1.625rem]  text-black relative;
 
-    &:hover {
-      .title {
-        @apply underline-offset-8 underlineAccents  transition-colors ease-in-out duration-300;
+      &::after {
+        @apply content-[''] absolute left-[3.125rem] block h-0.5 w-0 bg-black transition-all;
+      }
+
+      &:hover::after {
+        @apply w-full left-0;
       }
     }
   }
