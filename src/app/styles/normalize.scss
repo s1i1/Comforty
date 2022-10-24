@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html,
+body,
+#root {
+  position: relative;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'DM Sans', 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
