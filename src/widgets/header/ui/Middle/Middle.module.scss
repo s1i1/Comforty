@@ -1,0 +1,14 @@
+.header__middle {
+  @apply bg-offWhiteF;
+  .container {
+    @apply py-5 flex justify-between items-center;
+
+    ul {
+      @apply flex items-center justify-center;
+
+      li {
+        @apply pl-3;
+      }
+    }
+  }
+}
