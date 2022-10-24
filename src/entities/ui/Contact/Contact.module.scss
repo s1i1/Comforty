@@ -1,6 +1,6 @@
 .contact {
   div {
-    @apply cursor-pointer;
+    @apply flex cursor-pointer;
 
     .title {
       @apply pr-2 text-darkGray transition-colors delay-75;
