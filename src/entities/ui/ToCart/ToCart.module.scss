@@ -1,8 +1,6 @@
 .to__cart {
-  @apply flex;
-
   .container {
-    @apply items-center py-3 px-4 rounded-lg bg-white font-medium cursor-pointer transition duration-1000;
+    @apply items-center flex py-3 px-4 rounded-lg bg-white font-medium cursor-pointer transition duration-1000;
 
     path {
       @apply transition duration-1000;
