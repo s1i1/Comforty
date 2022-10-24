@@ -3,7 +3,7 @@ import styles from './ToCart.module.scss';
 
 export const ToCart = () => {
   return (
-    <div>
+    <div className={styles.to__cart}>
       <div className={styles.container}>
         <svg
           width="22"
