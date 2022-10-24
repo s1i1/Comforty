@@ -1,10 +1,15 @@
 .title {
-  @apply pr-8 font-medium text-darkGray transition-colors delay-75;
+  @apply mr-8 font-medium text-darkGray cursor-pointer;
 
   &:hover {
-    @apply text-darkAccents transition-colors delay-75;
+    @apply text-black;
   }
-  &:focus {
-    @apply text-darkAccents  transition-colors delay-75;
+}
+
+.active {
+  @apply text-darkAccents  transition-colors delay-75;
+
+  &:hover {
+    @apply text-darkAccents;
   }
 }
