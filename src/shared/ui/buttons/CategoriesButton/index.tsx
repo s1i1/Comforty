@@ -10,7 +10,7 @@ export const CategoriesButton: React.FC<CategoriesButtonProps> = ({ isActive }) 
   const checkIsActive = isActive ? styles.active : styles.not__active;
 
   return (
-    <div>
+    <div className={styles.categories__button}>
       <div className={cn(styles.menu, checkIsActive)}>
         <svg
           width="18"
