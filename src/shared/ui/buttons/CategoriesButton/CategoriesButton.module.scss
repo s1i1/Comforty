@@ -1,8 +1,6 @@
 .categories__button {
-  @apply flex items-center;
-
   .menu {
-    @apply flex-row px-6 py-4  cursor-pointer border-solid rounded-md border-[1px] border-offWhiteE;
+    @apply flex items-center px-6 py-4  cursor-pointer border-solid rounded-md border-[1px] border-offWhiteE;
 
     div {
       @apply text-sm font-medium  pl-4;
