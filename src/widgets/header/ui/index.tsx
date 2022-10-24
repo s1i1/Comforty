@@ -1,6 +1,7 @@
 import React from 'react';
 import { Top } from './Top';
 import { Middle } from './Middle';
+import { Bottom } from './Bottom';
 import styles from './header.module.scss';
 
 export const Header = () => {
@@ -8,6 +9,7 @@ export const Header = () => {
     <header className={styles.header}>
       <Top />
       <Middle />
+      <Bottom />
     </header>
   );
 };

@@ -1,0 +1,14 @@
+.header__bottom {
+  @apply bg-white drop-shadow-1md;
+  .container {
+    @apply flex justify-between py-3.5 items-center;
+
+    .categories {
+      @apply flex items-center;
+
+      nav {
+        @apply flex ml-8;
+      }
+    }
+  }
+}
