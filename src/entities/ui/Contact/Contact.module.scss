@@ -1,0 +1,21 @@
+div {
+  div {
+    @apply cursor-pointer;
+
+    .title {
+      @apply pr-2 text-darkGray transition-colors delay-75;
+    }
+    .phone {
+      @apply font-medium text-black transition-colors delay-75;
+    }
+
+    &:hover {
+      .title {
+        @apply text-black transition-colors delay-75;
+      }
+      .phone {
+        @apply text-darkAccents  transition-colors delay-75;
+      }
+    }
+  }
+}
