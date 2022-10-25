@@ -7,11 +7,11 @@
     }
 
     .percent {
-      @apply absolute pt-[2.0625rem] font-bold text-3xl text-red;
+      @apply absolute top-0 pt-[2.0625rem] pl-[2.5rem] font-bold text-3xl text-red;
     }
 
     .discount {
-      @apply absolute pt-[4.6875rem] font-medium text-[0.875rem];
+      @apply absolute top-0 left-0 pt-[4.3875rem] pl-[2.5rem] font-semibold text-[0.875rem];
     }
   }
 }
