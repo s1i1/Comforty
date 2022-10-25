@@ -1,8 +1,8 @@
 import React from 'react';
 import circleIcon from './assets/circle-icon.svg';
-import styles from './Discount.module.scss';
+import styles from './ProductDiscount.module.scss';
 
-export const Discount = () => {
+export const ProductDiscount = () => {
   return (
     <div className={styles.container}>
       <div>
