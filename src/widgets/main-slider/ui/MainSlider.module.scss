@@ -1,0 +1,35 @@
+.main {
+  @apply relative w-[108.75rem] h-[53.125rem] m-auto justify-center items-center;
+
+  .background {
+    @apply absolute top-0 left-0 bg-[url('./assets/main-slider-background.svg')] bg-no-repeat bg-center w-[108.75rem] h-[53.125rem] drop-shadow-1md;
+  }
+
+  .container {
+    @apply flex items-center relative;
+
+    .header {
+      @apply z-10 relative w-[39.4375rem] mr-[8.3125rem];
+
+      p {
+        @apply text-black tracking-[0.12rem];
+      }
+
+      h1 {
+        @apply text-black font-bold text-[4.25rem] leading-[4.6875rem] mb-6;
+      }
+    }
+
+    .product {
+      @apply pt-[4.125rem];
+    }
+  }
+
+  .left__arrow {
+    @apply absolute -ml-[7.125rem];
+  }
+
+  .right__arrow {
+    @apply absolute right-0 -mr-[7.125rem];
+  }
+}
