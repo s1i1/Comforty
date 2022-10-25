@@ -1,0 +1,11 @@
+.container {
+  @apply w-[29.6875rem] h-[40.5625rem] relative;
+
+  img {
+    @apply w-[29.6875rem] h-[40.5625rem];
+  }
+
+  .discount {
+    @apply absolute top-0 -right-12;
+  }
+}
