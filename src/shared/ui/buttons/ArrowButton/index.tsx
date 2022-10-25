@@ -4,13 +4,14 @@ import styles from './ArrowButton.module.scss';
 
 type ArrowProps = {
   rotate?: boolean;
+  green?: boolean;
 };
 
-export const ArrowButton: React.FC<ArrowProps> = ({ rotate }) => {
+export const ArrowButton: React.FC<ArrowProps> = ({ rotate, green }) => {
   return (
     <div className={styles.arrow}>
       <svg
-        className={cn(rotate && styles.rotate__arrow)}
+        className={cn(green && styles.green, rotate && styles.rotate__arrow)}
         width="44"
         height="44"
         viewBox="0 0 44 44"

@@ -19,6 +19,16 @@
   }
 }
 
+.green {
+  rect {
+    @apply fill-white;
+  }
+
+  path {
+    @apply stroke-darkAccents;
+  }
+}
+
 .rotate__arrow {
   @apply rotate-180;
 }
