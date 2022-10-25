@@ -1,6 +1,6 @@
 import React from 'react';
-import { MainSlider } from 'widgets/main-slider';
-import { Header } from '../../widgets/header';
+import { MainSlider } from 'widgets/MainSlider';
+import { Header } from 'widgets/Header';
 import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
