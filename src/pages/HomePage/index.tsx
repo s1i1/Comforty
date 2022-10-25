@@ -1,7 +1,7 @@
 import React from 'react';
 import { MainSlider } from 'widgets/main-slider';
 import { Header } from '../../widgets/header';
-import styles from './home.module.scss';
+import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
   return (
