@@ -3,12 +3,20 @@
   .container {
     @apply flex justify-between py-3.5 items-center;
 
+    @media (max-width: 866px) {
+      @apply flex-col;
+    }
+
     .categories {
-      @apply flex items-center;
+      @apply flex items-center max-[636px]:flex-col;
 
       nav {
-        @apply flex ml-8;
+        @apply flex ml-8 flex-wrap justify-center max-[866px]:mt-5;
       }
+    }
+
+    .contact {
+      @apply max-[866px]:hidden;
     }
   }
 }

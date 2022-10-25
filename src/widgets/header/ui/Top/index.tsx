@@ -7,7 +7,9 @@ export const Top = () => {
   return (
     <div className={styles.header__top}>
       <div className={cn('_container', styles.container)}>
-        <Shipping />
+        <div className={styles.shipping}>
+          <Shipping />
+        </div>
         <ul>
           <li>
             <Language />

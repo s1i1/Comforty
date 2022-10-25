@@ -9,7 +9,9 @@ export const Middle = () => {
   return (
     <div className={styles.header__middle}>
       <div className={cn('_container', styles.container)}>
-        <Logo />
+        <div className={styles.logo}>
+          <Logo />
+        </div>
         <SearchProduct />
         <ul>
           <li>

@@ -7,7 +7,7 @@
     }
 
     .title {
-      @apply pl-12 font-medium text-[1.625rem]  text-black relative;
+      @apply pl-12 font-medium text-[1.625rem]  text-black relative max-[866px]:text-[3rem];
 
       &::after {
         @apply content-[''] absolute left-[3.125rem] block h-0.5 w-0 bg-black transition-all;

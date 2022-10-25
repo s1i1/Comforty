@@ -1,6 +1,6 @@
 .container {
   .search {
-    @apply w-[25.8125rem] flex px-4 justify-between items-center bg-white rounded-[0.3125rem];
+    @apply w-[25.8125rem] flex px-4 justify-between items-center bg-white rounded-[0.3125rem] max-[428px]:w-[313px];
 
     input {
       @apply w-full py-3 pr-2 outline-none;

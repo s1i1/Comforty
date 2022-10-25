@@ -22,7 +22,9 @@ export const Bottom = () => {
             })}
           </nav>
         </div>
-        <Contact />
+        <div className={styles.contact}>
+          <Contact />
+        </div>
       </div>
     </div>
   );

@@ -2,18 +2,22 @@
   @apply bg-black;
 
   .container {
-    @apply flex justify-between opacity-70 py-3.5;
-  }
+    @apply flex justify-between opacity-70 py-3.5 max-[558px]:justify-center;
 
-  ul {
-    @apply flex;
-
-    li {
-      @apply cursor-pointer;
+    .shipping {
+      @apply max-[558px]:hidden;
     }
 
-    .faq {
-      @apply mx-6 font-normal text-[0.8125rem] text-white;
+    ul {
+      @apply flex;
+
+      li {
+        @apply cursor-pointer;
+      }
+
+      .faq {
+        @apply mx-6 font-normal text-[0.8125rem] text-white;
+      }
     }
   }
 }
