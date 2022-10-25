@@ -1,5 +1,5 @@
 .main {
-  @apply relative max-w-[108.75rem] m-auto justify-center items-center;
+  @apply relative max-w-[108.75rem] h-[53.125rem] m-auto justify-center items-center max-[1214px]:h-auto;
 
   .background {
     @apply absolute top-0 left-0 bg-[url('./assets/main-slider-background.svg')] bg-no-repeat w-[108.75rem] h-full bg-cover drop-shadow-1md;
@@ -31,7 +31,7 @@
         }
 
         @media (max-width: 382px) {
-          @apply text-[2rem] leading-10 px-[30%];
+          @apply text-[2rem] leading-10 px-[20%];
         }
       }
     }
