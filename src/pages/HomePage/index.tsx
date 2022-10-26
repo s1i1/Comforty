@@ -1,6 +1,7 @@
 import React from 'react';
 import { MainSlider } from 'widgets/MainSlider';
 import { Header } from 'widgets/Header';
+import { FeaturesBlock } from 'widgets/FeaturesBlock';
 import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
@@ -10,6 +11,7 @@ export const HomePage = () => {
         <Header />
       </div>
       <MainSlider />
+      <FeaturesBlock />
     </div>
   );
 };
