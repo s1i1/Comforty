@@ -1,0 +1,11 @@
+.container {
+  @apply mt-[1.625rem] #{!important};
+
+  .list {
+    @apply flex flex-wrap justify-between items-center select-none max-[838px]:justify-center;
+
+    li {
+      @apply max-[838px]:px-3;
+    }
+  }
+}
