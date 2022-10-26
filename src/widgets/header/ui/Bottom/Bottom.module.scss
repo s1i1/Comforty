@@ -16,7 +16,7 @@
     }
 
     .contact {
-      @apply max-[866px]:hidden;
+      @apply max-[866px]:hidden select-text p-10 -m-10;
     }
   }
 }
