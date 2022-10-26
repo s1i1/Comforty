@@ -1,3 +1,11 @@
 .container {
-  @apply relative flex justify-between items-center bg-white py-[3.125rem] px-[4.375rem] -mt-[4.5625rem] rounded-xl shadow-1md #{!important};
+  @apply relative bg-white px-[4.375rem] -mt-[4.5625rem] rounded-xl shadow-1md max-[630px]:mt-0 max-[705px]:px-1 #{!important};
+
+  .list {
+    @apply flex flex-wrap justify-between items-center max-[1271px]:justify-center;
+
+    li {
+      @apply py-[3.125rem] max-[1271px]:py-[1.125rem];
+    }
+  }
 }

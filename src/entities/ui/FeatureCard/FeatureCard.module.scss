@@ -1,10 +1,5 @@
 .container {
-  @apply flex items-center h-[43px];
-
-  img {
-    /* @apply w-[2.875rem] h-[2.875rem]; */
-    /* @apply w-full h-[43px]; */
-  }
+  @apply flex items-center h-[2.6875rem] w-[17.6875rem] max-[988px]:text-center max-[988px]:text-start;
 
   .text__block {
     @apply pl-4;

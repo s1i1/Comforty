@@ -33,14 +33,13 @@ export const FeaturesBlock = () => {
 
   return (
     <div className={cn(styles.container, '_container')}>
-      {cardItems.map((item, index) => (
-        <FeatureCard
-          key={index}
-          imagePath={item.imagePath}
-          title={item.title}
-          subtitle={item.subtitle}
-        />
-      ))}
+      <ul className={styles.list}>
+        {cardItems.map((item, index) => (
+          <li key={index}>
+            <FeatureCard imagePath={item.imagePath} title={item.title} subtitle={item.subtitle} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
