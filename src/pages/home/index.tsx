@@ -4,6 +4,7 @@ import { Header } from 'widgets/header';
 import { FeaturesBlock } from 'widgets/features-block';
 import styles from './styles.module.scss';
 import { CompaniesLogo } from 'widgets/companies-logo';
+import { ProductCard } from 'entities/product-card';
 
 export const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
       <MainSlider />
       <FeaturesBlock />
       <CompaniesLogo />
+      <ProductCard title="Featured Products" />
     </div>
   );
 };
