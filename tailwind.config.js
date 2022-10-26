@@ -30,6 +30,9 @@ module.exports = {
       dropShadow: {
         '1md': '0 4px 4px rgba(0, 0, 0, 0.25)',
       },
+      boxShadow: {
+        '1md': '0 4px 4px rgba(0, 0, 0, 0.25)',
+      },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
       },
