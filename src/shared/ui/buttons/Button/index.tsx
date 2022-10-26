@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import arrowPath from './assets/arrow.svg';
-import styles from './Button.module.scss';
+import styles from './styles.module.scss';
 
 type ButtonProps = {
   title: string;
@@ -9,7 +9,7 @@ type ButtonProps = {
   isLarge?: boolean;
 };
 
-export const Button: React.FC<ButtonProps> = ({ title, isArrow, isLarge }) => {
+const Button: React.FC<ButtonProps> = ({ title, isArrow, isLarge }) => {
   return (
     <div className={styles.button}>
       <div className={cn(styles.container, isLarge && styles.largeButton)}>
@@ -19,3 +19,5 @@ export const Button: React.FC<ButtonProps> = ({ title, isArrow, isLarge }) => {
     </div>
   );
 };
+
+export default Button;

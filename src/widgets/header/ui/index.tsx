@@ -1,10 +1,10 @@
 import React from 'react';
-import { Top } from './Top';
-import { Middle } from './Middle';
-import { Bottom } from './Bottom';
-import styles from './Header.module.scss';
+import Top from './top';
+import Middle from './middle';
+import Bottom from './bottom';
+import styles from './styles.module.scss';
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <Top />
@@ -13,3 +13,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

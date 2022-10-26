@@ -1,3 +1,3 @@
-export * from './Logo';
-export * from './ProductTag';
-export * from './ProductDiscount';
+export { default as Logo } from './logo';
+export { default as ProductTag } from './product-discount';
+export { default as ProductDiscount } from './product-discount';

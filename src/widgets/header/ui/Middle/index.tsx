@@ -1,11 +1,12 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './Middle.module.scss';
 import { Logo } from 'shared/ui';
-import { SearchProduct, ToCart } from 'entities/ui';
+import { SearchProduct } from 'entities/search-product';
+import { ToCart } from 'entities/to-cart';
 import { FavoriteButton, ProfileButton } from 'shared/ui/buttons';
+import styles from './styles.module.scss';
 
-export const Middle = () => {
+const Middle = () => {
   return (
     <div className={styles.header__middle}>
       <div className={cn('_container', styles.container)}>
@@ -28,3 +29,5 @@ export const Middle = () => {
     </div>
   );
 };
+
+export default Middle;

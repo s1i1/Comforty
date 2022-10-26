@@ -1,10 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 import { CategoriesButton } from 'shared/ui/buttons';
-import { Contact, Navigation } from 'entities/ui';
-import styles from './Bottom.module.scss';
+import { Contact } from 'entities/contact';
+import { Navigation } from 'entities/navigation';
+import styles from './styles.module.scss';
 
-export const Bottom = () => {
+const Bottom = () => {
   const navTitles: string[] = ['Home', 'Shop', 'Product', 'Pages', 'About'];
 
   return (
@@ -29,3 +30,5 @@ export const Bottom = () => {
     </div>
   );
 };
+
+export default Bottom;

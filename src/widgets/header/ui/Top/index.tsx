@@ -1,9 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
-import { Shipping, Language, Help } from 'entities/ui';
-import styles from './Top.module.scss';
+import { Shipping } from 'entities/shipping';
+import { Language } from 'entities/language';
+import { Help } from 'entities/help';
+import styles from './styles.module.scss';
 
-export const Top = () => {
+const Top = () => {
   return (
     <div className={styles.header__top}>
       <div className={cn('_container', styles.container)}>
@@ -23,3 +25,5 @@ export const Top = () => {
     </div>
   );
 };
+
+export default Top;

@@ -1,8 +1,8 @@
 import React from 'react';
 import logoIcon from './assets/logo-icon.svg';
-import styles from './Logo.module.scss';
+import styles from './styles.module.scss';
 
-export const Logo = () => {
+const Logo = () => {
   return (
     <div className={styles.logo}>
       <div className={styles.container}>
@@ -12,3 +12,5 @@ export const Logo = () => {
     </div>
   );
 };
+
+export default Logo;
