@@ -23,11 +23,11 @@
         @apply text-black font-bold text-[4.25rem] leading-[4.6875rem] mb-6;
 
         @media (max-width: 630px) {
-          @apply text-[3.25rem] px-3;
+          @apply text-[3.25rem] px-3 leading-tight;
         }
 
         @media (max-width: 494px) {
-          @apply text-[2.5rem] px-32 leading-normal;
+          @apply text-[2.5rem] px-32;
         }
 
         @media (max-width: 382px) {
