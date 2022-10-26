@@ -1,16 +1,14 @@
-div {
-  .container {
-    @apply px-2.5 py-1.5 rounded;
+.container {
+  @apply px-2.5 py-1.5 rounded;
 
-    .text {
-      @apply font-medium text-[0.812rem] text-white;
-    }
+  .text {
+    @apply font-medium text-[0.812rem] text-white;
   }
+}
 
-  .new {
-    @apply bg-green;
-  }
-  .sales {
-    @apply bg-orange;
-  }
+.new {
+  @apply bg-green;
+}
+.sales {
+  @apply bg-orange;
 }

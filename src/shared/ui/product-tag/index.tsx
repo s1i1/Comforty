@@ -11,10 +11,8 @@ const ProductTag: React.FC<ProductTagProps> = ({ isSales }) => {
   const title = isSales ? 'Sales' : 'New';
 
   return (
-    <div>
-      <div className={cn(styles.container, checkIsSales)}>
-        <div className={styles.text}>{title}</div>
-      </div>
+    <div className={cn(styles.container, checkIsSales)}>
+      <div className={styles.text}>{title}</div>
     </div>
   );
 };
