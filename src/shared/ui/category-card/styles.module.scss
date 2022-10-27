@@ -1,5 +1,5 @@
 .container {
-  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem];
+  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem] drop-shadow-1md;
 
   .image {
     @apply absolute;
