@@ -1,0 +1,17 @@
+.container {
+  @apply mt-[5rem] text-center;
+
+  .header {
+    @apply text-black font-semibold text-[2rem] leading-[110%] mb-4;
+  }
+  .categories__list {
+    @apply flex flex-wrap justify-center mb-10;
+  }
+  .products__list {
+    @apply flex flex-wrap justify-between max-[1323px]:justify-center;
+
+    li {
+      @apply mb-10 mr-3  max-[400px]:mr-0;
+    }
+  }
+}

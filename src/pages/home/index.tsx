@@ -6,6 +6,7 @@ import styles from './styles.module.scss';
 import { CompaniesLogo } from 'widgets/companies-logo';
 import { ProductCard } from 'entities/product-card';
 import { TopCategories } from 'entities/top-categories';
+import { OurProducts } from 'entities/our-products';
 
 export const HomePage = () => {
   return (
@@ -22,6 +23,8 @@ export const HomePage = () => {
       <ProductCard />
 
       <TopCategories />
+
+      <OurProducts />
     </div>
   );
 };
