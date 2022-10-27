@@ -5,12 +5,16 @@ import { Card } from 'shared/ui';
 import { Heading } from 'entities/heading';
 import styles from './styles.module.scss';
 
-const ProductCard = () => {
+type ProductCardProps = {
+  headerTitle: string;
+};
+
+const ProductCard: React.FC<ProductCardProps> = ({ headerTitle }) => {
   const testArr = [...Array(4).fill(null)];
 
   return (
     <div className={cn('_container', styles.container)}>
-      <Heading title="Featured Products" />
+      <Heading title={headerTitle} />
       <ul className={styles.list}>
         {testArr.map((item, index) => (
           <li key={index}>
