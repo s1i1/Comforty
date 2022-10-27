@@ -32,6 +32,7 @@ module.exports = {
       },
       boxShadow: {
         '1md': '0 4px 4px rgba(0, 0, 0, 0.25)',
+        '2green': '0 2px 0px #038053',
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
