@@ -25,7 +25,8 @@
     @apply flex justify-between items-center mt-3.5;
 
     .product__info {
-      @apply text-black;
+      @apply text-black text-start;
+
       .text {
         @apply font-medium text-base leading-[130%] mb-2.5 transition-colors delay-75;
       }
