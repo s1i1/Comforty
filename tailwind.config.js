@@ -34,6 +34,7 @@ module.exports = {
         '1md': '0 4px 4px rgba(0, 0, 0, 0.25)',
         '2green': '0 2px 0px #038053',
         '2md': '0px 8px 40px rgba(39, 35, 67, 0.08)',
+        '3green': 'inset 2px 0px 0px #029FAE',
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
