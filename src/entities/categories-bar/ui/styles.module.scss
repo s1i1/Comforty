@@ -1,0 +1,17 @@
+.container {
+  @apply flex cursor-pointer p-2;
+
+  .title {
+    @apply text-gray font-medium text-base leading-[110%] tracking-wider uppercase transition-all delay-75 p-2;
+  }
+
+  &:hover {
+    .title {
+      @apply text-black transition-colors delay-75;
+    }
+  }
+
+  .active {
+    @apply shadow-2green text-black transition-all delay-75;
+  }
+}
