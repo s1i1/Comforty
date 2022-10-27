@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { CategoriesButton } from 'shared/ui/buttons';
 import { Contact } from 'entities/contact';
-import { Navigation } from 'entities/navigation';
+import { Navbar } from 'entities/navbar';
 import styles from './styles.module.scss';
 
 const Bottom = () => {
@@ -17,7 +17,7 @@ const Bottom = () => {
             {navTitles.map((item, index) => {
               return (
                 <ul key={index}>
-                  <Navigation title={item} isActive={index === 0 && true} />
+                  <Navbar title={item} isActive={index === 0 && true} />
                 </ul>
               );
             })}
