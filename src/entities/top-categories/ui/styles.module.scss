@@ -1,5 +1,5 @@
 .container {
-  @apply mt-[3.25rem];
+  @apply mt-[3.25rem] #{!important};
 
   .list {
     @apply flex flex-wrap justify-between max-[1331px]:justify-center max-[415px]:-mt-10 max-[356px]:-mt-16 max-[320px]:-mt-28;
