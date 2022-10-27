@@ -1,5 +1,4 @@
 import React from 'react';
-import cn from 'classnames';
 import { ArrowButton } from 'shared/ui/buttons';
 import styles from './styles.module.scss';
 
@@ -9,7 +8,7 @@ type HeadingProps = {
 
 const Heading: React.FC<HeadingProps> = ({ title }) => {
   return (
-    <div className={cn('_container', styles.container)}>
+    <div className={styles.container}>
       <div className={styles.title}>
         <h2>{title}</h2>
         <div className={styles.base__arrows}>
