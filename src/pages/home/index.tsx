@@ -5,6 +5,7 @@ import { FeaturesBlock } from 'widgets/features-block';
 import styles from './styles.module.scss';
 import { CompaniesLogo } from 'widgets/companies-logo';
 import { ProductCard } from 'entities/product-card';
+import { Heading } from 'entities/heading';
 
 export const HomePage = () => {
   return (
@@ -13,9 +14,13 @@ export const HomePage = () => {
         <Header />
       </div>
       <MainSlider />
+
       <FeaturesBlock />
+
       <CompaniesLogo />
-      <ProductCard title="Featured Products" />
+
+      <Heading title="Featured Products" />
+      <ProductCard />
     </div>
   );
 };
