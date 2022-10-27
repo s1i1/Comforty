@@ -21,13 +21,15 @@ export const HomePage = () => {
 
       <CompaniesLogo />
 
-      <ProductCard />
+      <ProductCard headerTitle="Featured Products" />
 
       <TopCategories />
 
       <OurProducts />
 
       <AboutUs />
+
+      <ProductCard headerTitle="Recently Added" />
     </div>
   );
 };
