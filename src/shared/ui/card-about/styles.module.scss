@@ -1,0 +1,33 @@
+.container {
+  @apply relative max-w-[40.5rem] bg-white rounded-xl p-10 shadow-2md;
+
+  .text {
+    @apply font-normal text-xl leading-[150%] text-darkGray shadow-3green pl-6;
+  }
+
+  .user {
+    @apply flex items-center mt-[1.5625rem] relative z-10;
+
+    .image {
+      @apply relative w-[3.75rem] h-[3.75rem];
+
+      img {
+        @apply absolute top-0 left-0 w-full h-full;
+      }
+    }
+
+    .user__info {
+      @apply ml-3;
+      .name {
+        @apply font-medium text-xl leading-[140%] text-black mb-0.5;
+      }
+      .profession {
+        @apply font-normal text-base leading-[140%] text-gray;
+      }
+    }
+  }
+
+  .quotes__image {
+    @apply absolute right-10 bottom-10;
+  }
+}
