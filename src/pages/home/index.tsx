@@ -5,7 +5,7 @@ import { FeaturesBlock } from 'widgets/features-block';
 import styles from './styles.module.scss';
 import { CompaniesLogo } from 'widgets/companies-logo';
 import { ProductCard } from 'entities/product-card';
-import { Heading } from 'entities/heading';
+import { TopCategories } from 'entities/top-categories';
 
 export const HomePage = () => {
   return (
@@ -19,8 +19,9 @@ export const HomePage = () => {
 
       <CompaniesLogo />
 
-      <Heading title="Featured Products" />
       <ProductCard />
+
+      <TopCategories />
     </div>
   );
 };
