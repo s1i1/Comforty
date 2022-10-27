@@ -1,0 +1,18 @@
+.container {
+  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem];
+
+  .image {
+    @apply absolute;
+  }
+
+  .info {
+    @apply bottom-0 bg-[#000] opacity-70 rounded-b-[0.625rem] p-5 text-white;
+
+    .category__name {
+      @apply font-semibold leading-[110%] mb-2;
+    }
+    .products__count {
+      @apply font-normal text-sm leading-[110%] opacity-70;
+    }
+  }
+}
