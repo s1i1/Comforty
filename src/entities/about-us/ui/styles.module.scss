@@ -1,0 +1,23 @@
+.about {
+  @apply mt-10 pb-20 mb-10 shadow-1md bg-offWhiteF;
+
+  .container {
+    @apply pt-[2.3125rem];
+
+    .list {
+      @apply flex justify-between;
+
+      @media (max-width: 912px) {
+        @apply flex-wrap justify-center;
+      }
+
+      li {
+        @apply max-[912px]:mt-3;
+      }
+
+      li:not(:last-child) {
+        @apply pr-3 max-[912px]:pr-0;
+      }
+    }
+  }
+}
