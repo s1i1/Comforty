@@ -11,7 +11,7 @@
     @apply flex flex-wrap justify-between max-[1323px]:justify-center;
 
     li {
-      @apply mb-10 mr-3  max-[400px]:mr-0;
+      @apply mb-10 max-[1323px]:mr-3 max-[400px]:mr-0;
     }
   }
 }
