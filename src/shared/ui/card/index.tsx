@@ -6,14 +6,14 @@ import { AddCartButton, FavoriteButton } from '../buttons';
 
 type CardProps = {
   imagePath: string;
+  isNew?: boolean;
+  isSales?: boolean;
 };
 
-const Card: React.FC<CardProps> = ({ imagePath }) => {
+const Card: React.FC<CardProps> = ({ imagePath, isNew, isSales }) => {
   return (
     <div className={cn(styles.container)}>
-      <div className={styles.tag}>
-        <ProductTag />
-      </div>
+      <div className={styles.tag}>{isNew && <ProductTag isSales={isSales && true} />}</div>
       <div className={styles.favorite}>
         <FavoriteButton />
       </div>
