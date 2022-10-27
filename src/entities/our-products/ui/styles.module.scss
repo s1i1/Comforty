@@ -1,5 +1,5 @@
 .container {
-  @apply mt-[5rem] text-center;
+  @apply mt-[5rem] text-center #{!important};
 
   .header {
     @apply text-black font-semibold text-[2rem] leading-[110%] mb-4;
