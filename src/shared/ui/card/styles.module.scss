@@ -1,7 +1,8 @@
 .container {
-  @apply max-w-[19.5rem] relative;
+  @apply max-w-[19.5rem] relative transition-all delay-75;
 
   &:hover {
+    @apply drop-shadow-1md transition-all delay-75;
     .favorite {
       @apply opacity-100 transition-all delay-75;
     }

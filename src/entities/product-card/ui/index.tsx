@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import imagePath from './assets/product-image-1.jpg';
+import imagePath from './assets/product-image-1.svg';
 import { Card } from 'shared/ui';
 import styles from './styles.module.scss';
 
