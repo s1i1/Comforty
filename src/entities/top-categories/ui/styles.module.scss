@@ -1,0 +1,19 @@
+.container {
+  @apply mt-[3.25rem];
+
+  .list {
+    @apply flex flex-wrap justify-between max-[1331px]:justify-center max-[415px]:-mt-10 max-[356px]:-mt-16 max-[320px]:-mt-28;
+
+    li {
+      @apply w-[26.5rem] h-[26.5rem] max-[1315px]:mb-4;
+    }
+
+    li:not(:last-child) {
+      @apply mr-4 max-[626px]:mr-0;
+    }
+
+    li:last-child {
+      @apply max-[891px]:mr-4 max-[626px]:mr-0;
+    }
+  }
+}
