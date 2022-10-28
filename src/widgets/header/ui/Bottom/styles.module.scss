@@ -10,6 +10,14 @@
     .categories {
       @apply flex items-center max-[636px]:flex-col;
 
+      .categories__block {
+        @apply relative;
+
+        .modal {
+          @apply hidden absolute top-[54px] left-0 w-full mt-5;
+        }
+      }
+
       nav {
         @apply flex ml-8 flex-wrap justify-center max-[866px]:mt-5;
       }

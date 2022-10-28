@@ -3,6 +3,8 @@ import cn from 'classnames';
 import { CategoriesButton } from 'shared/ui/buttons';
 import { Contact } from 'entities/contact';
 import { Navbar } from 'entities/navbar';
+import { CategoriesModal } from 'entities/categories-modal';
+
 import styles from './styles.module.scss';
 
 const Bottom = () => {
@@ -12,7 +14,12 @@ const Bottom = () => {
     <div className={styles.header__bottom}>
       <div className={cn('_container', styles.container)}>
         <div className={styles.categories}>
-          <CategoriesButton />
+          <div className={styles.categories__block}>
+            <CategoriesButton />
+            <div className={styles.modal}>
+              <CategoriesModal />
+            </div>
+          </div>
           <nav>
             {navTitles.map((item, index) => {
               return (
