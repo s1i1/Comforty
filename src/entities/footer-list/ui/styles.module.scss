@@ -1,0 +1,11 @@
+.footer__list {
+  .header {
+    @apply font-medium text-sm leading-[110%] tracking-[0.06em] text-gray uppercase mb-5;
+  }
+
+  .list {
+    li:not(:last-child) {
+      @apply mb-3;
+    }
+  }
+}
