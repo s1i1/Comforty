@@ -7,6 +7,8 @@ import { ProductCard } from 'entities/product-card';
 import { TopCategories } from 'entities/top-categories';
 import { OurProducts } from 'entities/our-products';
 import AboutUs from 'entities/about-us/ui';
+import { Footer } from 'widgets/footer';
+
 import styles from './styles.module.scss';
 
 export const HomePage = () => {
@@ -30,6 +32,8 @@ export const HomePage = () => {
       <AboutUs />
 
       <ProductCard headerTitle="Recently Added" />
+
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,28 @@
+.footer {
+  @apply mt-20 pt-20 pb-[60px] shadow-1grey;
+
+  .container {
+    @apply flex flex-wrap justify-between max-[664px]:justify-around;
+
+    .info {
+      @apply max-w-[21.875rem] pr-3 max-[1088px]:mb-10 max-[664px]:order-1 max-[428px]:mt-10 max-[428px]:pr-0 max-[428px]:justify-center;
+
+      .logo {
+      }
+      .info__text {
+        @apply my-6 font-normal text-base leading-[150%] text-black opacity-60;
+      }
+      .links {
+      }
+    }
+    .category {
+      @apply pr-3 max-[428px]:pr-0;
+    }
+    .support {
+      @apply pr-3 max-[428px]:pr-0;
+    }
+    .newsletter {
+      @apply max-[664px]:my-10 max-[428px]:hidden;
+    }
+  }
+}
