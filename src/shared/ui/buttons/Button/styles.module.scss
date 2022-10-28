@@ -2,7 +2,7 @@
   @apply flex select-none;
 
   .container {
-    @apply flex py-3.5 px-6 bg-accents rounded-lg cursor-pointer transition-colors delay-75;
+    @apply flex py-3.5 px-6 bg-accents rounded-lg cursor-pointer transition-colors;
 
     &:hover {
       @apply transition-colors bg-darkAccents;
