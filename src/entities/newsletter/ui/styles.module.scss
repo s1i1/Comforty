@@ -1,0 +1,16 @@
+.container {
+  .header {
+    @apply font-medium text-sm leading-[110%] tracking-[0.06em] text-gray uppercase;
+  }
+  .mail {
+    @apply flex mt-5 mb-[0.9375rem];
+
+    input {
+      @apply pl-3 w-[17.8125rem] mr-3 border border-solid border-offWhiteE rounded-xl outline-none;
+    }
+  }
+
+  .text {
+    @apply font-normal max-w-[26.5rem] text-[0.9375rem] leading-[150%] text-black opacity-60;
+  }
+}
