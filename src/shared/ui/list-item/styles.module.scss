@@ -1,0 +1,11 @@
+.container {
+  @apply flex;
+
+  .list__item {
+    @apply font-normal text-base leading-[110%] text-black cursor-pointer transition-all delay-75;
+
+    &:hover {
+      @apply text-darkAccents shadow-2green-dark-accents;
+    }
+  }
+}
