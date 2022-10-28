@@ -8,10 +8,12 @@ type ArrowProps = {
 };
 
 const ArrowButton: React.FC<ArrowProps> = ({ rotate, green }) => {
+  const isGreenCheck = green ? styles.green : styles.grey;
+
   return (
     <div className={styles.arrow}>
       <svg
-        className={cn(green && styles.green, rotate && styles.rotate__arrow)}
+        className={cn(isGreenCheck, rotate && styles.rotate__arrow)}
         width="44"
         height="44"
         viewBox="0 0 44 44"
