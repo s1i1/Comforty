@@ -9,7 +9,7 @@
     @apply relative flex items-center max-[1214px]:flex-col;
 
     .header {
-      @apply z-10 relative w-[39.4375rem] mr-[8.3125rem] max-[1310px]:mr-[5.3125rem] max-[1258px]:mr-[2.3125rem] max-[1214px]:pt-5  max-[630px]:pb-5;
+      @apply w-[39.4375rem] mr-[8.3125rem] max-[1310px]:mr-[5.3125rem] max-[1258px]:mr-[2.3125rem] max-[1214px]:pt-5  max-[630px]:pb-5;
 
       @media (max-width: 750px) {
         @apply flex flex-col justify-center items-center text-center m-0;
