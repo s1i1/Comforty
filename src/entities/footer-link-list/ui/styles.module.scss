@@ -1,0 +1,25 @@
+.container {
+  @apply flex flex-wrap;
+
+  svg {
+    @apply cursor-pointer mr-1;
+
+    circle {
+      @apply stroke-white transition-colors delay-75;
+    }
+
+    path {
+      @apply fill-[#636270] transition-colors delay-75;
+    }
+
+    &:hover {
+      circle {
+        @apply stroke-[#007580];
+      }
+
+      path {
+        @apply fill-[#007580];
+      }
+    }
+  }
+}
