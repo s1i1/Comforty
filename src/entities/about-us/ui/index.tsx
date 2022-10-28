@@ -25,7 +25,7 @@ const AboutUs = () => {
   return (
     <div className={styles.about}>
       <div className={cn('_container', styles.container)}>
-        <Heading title="What client says about us" />
+        <Heading title="What Client Says About Us" />
 
         <ul className={styles.list}>
           {testData.map((obj, index) => (
