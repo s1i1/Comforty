@@ -1,0 +1,22 @@
+.container {
+  @apply py-3 transition-colors cursor-pointer;
+  .text {
+    @apply font-medium text-base leading-[110%] text-black  transition-colors;
+  }
+
+  &:hover {
+    @apply bg-accents;
+
+    .text {
+      @apply text-white;
+    }
+  }
+}
+
+.active {
+  @apply bg-accents;
+
+  .text {
+    @apply text-white;
+  }
+}
