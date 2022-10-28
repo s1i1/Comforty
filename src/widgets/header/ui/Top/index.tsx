@@ -4,6 +4,7 @@ import { Shipping } from 'entities/shipping';
 import { Language } from 'entities/language';
 import { Help } from 'entities/help';
 import styles from './styles.module.scss';
+import { LanguageModal } from 'entities/language-modal';
 
 const Top = () => {
   return (
@@ -13,8 +14,11 @@ const Top = () => {
           <Shipping />
         </div>
         <ul>
-          <li>
+          <li className={styles.language}>
             <Language />
+            <div className={styles.modal}>
+              <LanguageModal />
+            </div>
           </li>
           <li className={styles.faq}>Faqs</li>
           <li>

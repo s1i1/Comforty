@@ -2,21 +2,29 @@
   @apply bg-black;
 
   .container {
-    @apply flex justify-between opacity-70 py-3.5 max-[558px]:justify-center;
+    @apply flex justify-between py-3.5 max-[558px]:justify-center;
 
     .shipping {
-      @apply max-[558px]:hidden;
+      @apply max-[558px]:hidden opacity-70;
     }
 
     ul {
       @apply flex;
+
+      .language {
+        @apply relative;
+
+        .modal {
+          @apply absolute top-[20px] left-0 bg-gray rounded-md w-full text-center;
+        }
+      }
 
       li {
         @apply cursor-pointer;
       }
 
       .faq {
-        @apply mx-6 font-normal text-[0.8125rem] text-white;
+        @apply mx-6 font-normal text-[0.8125rem] text-white opacity-70;
       }
     }
   }

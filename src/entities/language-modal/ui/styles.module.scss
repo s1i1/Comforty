@@ -1,0 +1,9 @@
+.container {
+  .list {
+    @apply flex flex-col text-black;
+
+    .active {
+      @apply bg-darkAccents rounded-t-md text-white;
+    }
+  }
+}
