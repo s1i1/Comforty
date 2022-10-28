@@ -5,11 +5,11 @@
 
     &:hover {
       rect {
-        @apply transition-colors fill-darkAccents delay-75;
+        @apply transition-colors fill-darkAccents;
       }
 
       path {
-        @apply transition-colors stroke-white delay-75;
+        @apply transition-colors stroke-white;
       }
     }
     &:active {
@@ -22,21 +22,21 @@
 
 .grey {
   rect {
-    @apply fill-white transition-colors delay-75;
+    @apply fill-offWhiteF transition-colors;
   }
 
   path {
-    @apply stroke-black transition-colors delay-75;
+    @apply stroke-black transition-colors;
   }
 }
 
 .green {
   rect {
-    @apply fill-white transition-colors delay-75;
+    @apply fill-white transition-colors;
   }
 
   path {
-    @apply stroke-darkAccents transition-colors delay-75;
+    @apply stroke-darkAccents transition-colors;
   }
 }
 
