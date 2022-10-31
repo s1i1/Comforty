@@ -1,11 +1,11 @@
-import React from 'react';
-import { HomePage } from '../pages/home';
+import { Routing } from 'pages';
+
 import './styles/index.scss';
 
 const App = () => {
   return (
     <div className="App">
-      <HomePage />
+      <Routing />
     </div>
   );
 };
