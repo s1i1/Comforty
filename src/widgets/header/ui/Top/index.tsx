@@ -1,10 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 import { Shipping } from 'entities/shipping';
-import { Language } from 'entities/language';
+import { Language, LanguageModal } from 'features/language';
 import { Help } from 'entities/help';
 import styles from './styles.module.scss';
-import { LanguageModal } from 'entities/language-modal';
 
 const Top = () => {
   return (
