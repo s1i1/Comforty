@@ -5,7 +5,7 @@ import { CompaniesLogo } from 'widgets/companies-logo';
 import { ProductCard } from 'entities/product-card';
 import { TopCategories } from 'entities/top-categories';
 import { OurProducts } from 'entities/our-products';
-import AboutUs from 'entities/about-us/ui';
+import { AboutUs } from 'widgets/about-us';
 
 import styles from './styles.module.scss';
 
