@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Logo } from 'shared/ui';
 import { SearchProduct } from 'features/search-product';
-import { ToCart } from 'entities/to-cart';
+import { ToCart } from 'features/to-cart';
 import { FavoriteButton, ProfileButton } from 'shared/ui/buttons';
 import styles from './styles.module.scss';
 
