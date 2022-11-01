@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { CategoriesButton } from 'shared/ui/buttons';
 import { Contact } from 'entities/contact';
 import { Navbar } from 'entities/navbar';
-import { CategoriesModal } from 'entities/categories-modal';
+import { CategoriesModal } from 'features/categories';
 
 import styles from './styles.module.scss';
 

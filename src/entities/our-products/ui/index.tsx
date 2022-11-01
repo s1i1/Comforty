@@ -1,7 +1,7 @@
 import React from 'react';
 import imagePath from './assets/test-image.svg';
 import cn from 'classnames';
-import { CategoriesBar } from 'entities/categories-bar';
+import { CategoriesBar } from 'features/categories';
 import { Card } from 'shared/ui';
 import styles from './styles.module.scss';
 
