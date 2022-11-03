@@ -6,25 +6,32 @@ import { AddCartButton, FavoriteButton } from '../buttons';
 
 type CardProps = {
   imagePath: string;
-  isNew?: boolean;
-  isSales?: boolean;
+  title?: string; //Убрать ?
+  price?: number; //Убрать ?
+  prevPrice?: number;
+  whatTag?: string;
 };
 
-const Card: React.FC<CardProps> = ({ imagePath, isNew, isSales }) => {
+const Card: React.FC<CardProps> = ({ imagePath, title, price, prevPrice, whatTag }) => {
   return (
     <div className={cn(styles.container)}>
-      <div className={styles.tag}>{isNew && <ProductTag isSales={isSales && true} />}</div>
+      <div className={styles.tag}>
+        <ProductTag tag={whatTag} />
+      </div>
+
+      <div className={styles.image}>
+        <img className={styles.background} src={imagePath} alt="product-background" />
+      </div>
+
       <div className={styles.favorite}>
         <FavoriteButton />
       </div>
 
-      <img className={styles.background} src={imagePath} alt="product-background" />
-
       <div className={styles.bottom}>
         <div className={styles.product__info}>
-          <p className={styles.text}>Library Stool Chair</p>
-          <span className={styles.current__price}>$20</span>
-          <span className={styles.prev__price}>$39</span>
+          <p className={styles.text}>{title}</p>
+          <span className={styles.current__price}>${price}</span>
+          <span className={styles.prev__price}>{prevPrice && '$' + prevPrice}</span>
         </div>
 
         <div className={styles.cart}>

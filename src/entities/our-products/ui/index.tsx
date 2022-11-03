@@ -1,13 +1,14 @@
+//@ts-nocheck
 import React from 'react';
 import imagePath from './assets/test-image.svg';
 import cn from 'classnames';
 import { CategoriesBar } from 'features/categories';
 import { Card } from 'shared/ui';
 import styles from './styles.module.scss';
+import testData from 'data.json';
 
 const OurProducts = () => {
   const categoryNames = ['All', 'Newest', 'Trending', 'Best Sellers', 'Featured'];
-  const testArr = [...Array(8).fill(null)];
 
   return (
     <div className={cn('_container', styles.container)}>
@@ -22,9 +23,15 @@ const OurProducts = () => {
       </ul>
 
       <ul className={styles.products__list}>
-        {testArr.map((_, index) => (
+        {testData.map((item, index) => (
           <li key={index}>
-            <Card imagePath={imagePath} />
+            <Card
+              imagePath={item.image}
+              title={item.title}
+              price={item.price}
+              prevPrice={item.prevPrice}
+              whatTag={(item.prevPrice && 'sales') || (item.newest && 'new')}
+            />
           </li>
         ))}
       </ul>

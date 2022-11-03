@@ -3,12 +3,16 @@ import cn from 'classnames';
 import styles from './styles.module.scss';
 
 type ProductTagProps = {
-  isSales?: boolean;
+  tag?: string;
 };
 
-const ProductTag: React.FC<ProductTagProps> = ({ isSales }) => {
-  const checkIsSales = isSales ? styles.sales : styles.new;
-  const title = isSales ? 'Sales' : 'New';
+const ProductTag: React.FC<ProductTagProps> = ({ tag }) => {
+  if (!tag) {
+    return null;
+  }
+
+  const checkIsSales = tag === 'sales' ? styles.sales : styles.new;
+  const title = tag === 'sales' ? 'Sales' : 'New';
 
   return (
     <div className={cn(styles.container, checkIsSales)}>
