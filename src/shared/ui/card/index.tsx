@@ -9,7 +9,7 @@ type CardProps = {
   title?: string; //Убрать ?
   price?: number; //Убрать ?
   prevPrice?: number;
-  whatTag?: string;
+  whatTag?: string | boolean;
 };
 
 const Card: React.FC<CardProps> = ({ imagePath, title, price, prevPrice, whatTag }) => {
@@ -38,7 +38,7 @@ const Card: React.FC<CardProps> = ({ imagePath, title, price, prevPrice, whatTag
         </div>
 
         <div className={styles.cart}>
-          <AddCartButton isActive />
+          <AddCartButton />
         </div>
       </div>
     </div>

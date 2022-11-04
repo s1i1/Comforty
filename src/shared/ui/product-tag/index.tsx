@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './styles.module.scss';
 
 type ProductTagProps = {
-  tag?: string;
+  tag?: string | boolean;
 };
 
 const ProductTag: React.FC<ProductTagProps> = ({ tag }) => {

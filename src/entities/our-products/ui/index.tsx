@@ -1,14 +1,18 @@
-//@ts-nocheck
 import React from 'react';
-import imagePath from './assets/test-image.svg';
 import cn from 'classnames';
 import { CategoriesBar } from 'features/categories';
 import { Card } from 'shared/ui';
 import styles from './styles.module.scss';
-import testData from 'data.json';
+import { useGetItemsQuery } from 'shared/api/mock.api';
 
 const OurProducts = () => {
   const categoryNames = ['All', 'Newest', 'Trending', 'Best Sellers', 'Featured'];
+
+  const { data: products } = useGetItemsQuery({ pageNumber: 1, tag: '' });
+
+  const tagCheck = (newest: boolean, prevPrice?: number) => {
+    return (prevPrice && 'sales') || (newest && 'new');
+  };
 
   return (
     <div className={cn('_container', styles.container)}>
@@ -23,14 +27,14 @@ const OurProducts = () => {
       </ul>
 
       <ul className={styles.products__list}>
-        {testData.map((item, index) => (
-          <li key={index}>
+        {products?.map((obj) => (
+          <li key={obj.id}>
             <Card
-              imagePath={item.image}
-              title={item.title}
-              price={item.price}
-              prevPrice={item.prevPrice}
-              whatTag={(item.prevPrice && 'sales') || (item.newest && 'new')}
+              imagePath={obj.image}
+              title={obj.title}
+              price={obj.price}
+              prevPrice={obj.prevPrice}
+              whatTag={tagCheck(obj.newest, obj.prevPrice)}
             />
           </li>
         ))}
