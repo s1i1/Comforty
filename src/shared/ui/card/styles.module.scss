@@ -34,7 +34,7 @@
   }
 
   .bottom {
-    @apply flex justify-between items-center mt-3.5;
+    @apply flex justify-between mt-3.5 h-[96px];
 
     .product__info {
       @apply text-black text-start;
@@ -42,16 +42,20 @@
       .text {
         @apply font-medium text-base leading-[130%] mb-2.5 transition-colors delay-75;
       }
-      .current__price {
-        @apply font-semibold text-lg leading-[130%];
-      }
-      .prev__price {
-        @apply font-normal text-base leading-[130%] text-gray ml-1 line-through;
+
+      .prices {
+        @apply absolute bottom-0;
+        .current__price {
+          @apply font-semibold text-lg leading-[130%];
+        }
+        .prev__price {
+          @apply font-normal text-base leading-[130%] text-gray ml-1 line-through;
+        }
       }
     }
 
     .cart {
-      @apply select-none;
+      @apply select-none self-end;
     }
   }
 }

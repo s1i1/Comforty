@@ -30,8 +30,11 @@ const Card: React.FC<CardProps> = ({ imagePath, title, price, prevPrice, whatTag
       <div className={styles.bottom}>
         <div className={styles.product__info}>
           <p className={styles.text}>{title}</p>
-          <span className={styles.current__price}>${price}</span>
-          <span className={styles.prev__price}>{prevPrice && '$' + prevPrice}</span>
+
+          <div className={styles.prices}>
+            <span className={styles.current__price}>${price}</span>
+            <span className={styles.prev__price}>{prevPrice && '$' + prevPrice}</span>
+          </div>
         </div>
 
         <div className={styles.cart}>
