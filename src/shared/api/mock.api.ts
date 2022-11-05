@@ -18,7 +18,9 @@ export const mockApi = createApi({
         params: {
           page: pageNumber,
           limit: 8,
-          sort: tag,
+          sortBy: '',
+          order: 'desc',
+          filter: tag,
         },
       }),
     }),
