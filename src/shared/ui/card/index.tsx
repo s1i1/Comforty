@@ -1,26 +1,30 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './styles.module.scss';
 import { ProductTag } from 'shared/ui';
 import { AddCartButton, FavoriteButton } from '../buttons';
+import styles from './styles.module.scss';
 
 type CardProps = {
-  imagePath: string;
+  image: string;
   title: string;
   price: number;
   prevPrice?: number;
-  whatTag?: string | boolean;
+  newest?: boolean;
 };
 
-const Card: React.FC<CardProps> = ({ imagePath, title, price, prevPrice, whatTag }) => {
+const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest }) => {
+  const tagCheck = (newest?: boolean, prevPrice?: number) => {
+    return (prevPrice && 'sales') || (newest && 'new');
+  };
+
   return (
     <div className={cn(styles.container)}>
       <div className={styles.tag}>
-        <ProductTag tag={whatTag} />
+        <ProductTag tag={tagCheck(newest, prevPrice)} />
       </div>
 
       <div className={styles.image}>
-        <img className={styles.background} src={imagePath} alt="product-background" />
+        <img className={styles.background} src={image} alt="product-background" />
       </div>
 
       <div className={styles.favorite}>
