@@ -6,8 +6,8 @@ import { AddCartButton, FavoriteButton } from '../buttons';
 
 type CardProps = {
   imagePath: string;
-  title?: string; //Убрать ?
-  price?: number; //Убрать ?
+  title: string;
+  price: number;
   prevPrice?: number;
   whatTag?: string | boolean;
 };

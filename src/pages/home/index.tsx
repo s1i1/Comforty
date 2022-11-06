@@ -18,7 +18,7 @@ export const HomePage = () => {
 
       <CompaniesLogo />
 
-      <ProductCard headerTitle="Featured Products" />
+      <ProductCard headerTitle="Featured Products" searchTag="featured" />
 
       <TopCategories />
 
@@ -26,7 +26,7 @@ export const HomePage = () => {
 
       <AboutUs />
 
-      <ProductCard headerTitle="Recently Added" />
+      <ProductCard headerTitle="Recently Added" searchTag="newest" />
     </div>
   );
 };
