@@ -4,6 +4,7 @@ import { ProductItems } from './models';
 interface getItemsProps {
   pageNumber: number;
   tag: string;
+  limit: number;
 }
 
 export const mockApi = createApi({
@@ -13,11 +14,11 @@ export const mockApi = createApi({
   }),
   endpoints: (build) => ({
     getItems: build.query<ProductItems[], getItemsProps>({
-      query: ({ pageNumber, tag }) => ({
+      query: ({ pageNumber, tag, limit }) => ({
         url: 'items',
         params: {
           page: pageNumber,
-          limit: 8,
+          limit: limit,
           sortBy: '',
           order: 'desc',
           filter: tag,

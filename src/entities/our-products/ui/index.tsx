@@ -8,7 +8,7 @@ import { useGetItemsQuery } from 'shared/api/mock.api';
 const OurProducts = () => {
   const categoryNames = ['All', 'Newest', 'Trending', 'Best Sellers', 'Featured'];
 
-  const { data: products } = useGetItemsQuery({ pageNumber: 1, tag: '' });
+  const { data: products } = useGetItemsQuery({ pageNumber: 1, tag: '', limit: 8 });
 
   const tagCheck = (newest: boolean, prevPrice?: number) => {
     return (prevPrice && 'sales') || (newest && 'new');
