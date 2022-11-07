@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { CategoriesBar } from 'features/categories';
+import { CategoriesBar } from 'shared/ui/categories-bar';
 import { Card } from 'shared/ui';
 import styles from './styles.module.scss';
 import { useGetItemsQuery } from 'shared/api/mock.api';
