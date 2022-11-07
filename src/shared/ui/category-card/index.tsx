@@ -2,18 +2,20 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 type CategoryCardProps = {
-  imagePath: string;
+  image: string;
+  category: string;
+  total: string;
 };
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ imagePath }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ image, category, total, ...props }) => {
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-        <img src={imagePath} alt="CategoryCardImage" />
+        <img src={image} alt="CategoryCardImage" />
       </div>
       <div className={styles.info}>
-        <p className={styles.category__name}>Wing Chair</p>
-        <p className={styles.products__count}>3,584 Products</p>
+        <p className={styles.category__name}>{category}</p>
+        <p className={styles.products__count}>{total} Products</p>
       </div>
     </div>
   );
