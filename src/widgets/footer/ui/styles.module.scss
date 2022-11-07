@@ -1,5 +1,5 @@
 .footer {
-  @apply mt-20 pt-20 pb-[60px] shadow-1grey;
+  @apply mt-20 pt-20 pb-[60px] shadow-1grey max-[664px]:py-4;
 
   .container {
     @apply flex flex-wrap justify-between max-[664px]:justify-around;
