@@ -1,5 +1,5 @@
 .container {
-  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem]  drop-shadow-1md;
+  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem]  drop-shadow-1md cursor-pointer;
 
   .image {
     @apply relative max-w-[26.5rem] h-[26.5rem];
