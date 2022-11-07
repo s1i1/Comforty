@@ -1,12 +1,16 @@
 .container {
-  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem] drop-shadow-1md;
+  @apply relative flex flex-col justify-end max-w-[26.5rem] h-[26.5rem]  drop-shadow-1md;
 
   .image {
-    @apply absolute;
+    @apply relative max-w-[26.5rem] h-[26.5rem];
+
+    img {
+      @apply absolute w-full h-full top-0 left-0 rounded-[10px];
+    }
   }
 
   .info {
-    @apply bottom-0 bg-[#000] opacity-70 rounded-b-[0.625rem] p-5 text-white;
+    @apply absolute w-full bottom-0 bg-[#000] opacity-70 rounded-b-[0.625rem] p-5 text-white;
 
     .category__name {
       @apply font-semibold leading-[110%] mb-2;
