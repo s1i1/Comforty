@@ -19,7 +19,9 @@
       }
 
       nav {
-        @apply flex ml-8 flex-wrap justify-center max-[866px]:mt-5;
+        ul {
+          @apply flex ml-8 flex-wrap justify-center max-[866px]:mt-5;
+        }
       }
     }
 

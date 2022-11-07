@@ -21,13 +21,15 @@ const Bottom = () => {
             </div>
           </div>
           <nav>
-            {navTitles.map((item, index) => {
-              return (
-                <ul key={index}>
-                  <Navbar title={item} isActive={index === 0 && true} />
-                </ul>
-              );
-            })}
+            <ul>
+              {navTitles.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <Navbar title={item} isActive={index === 0 && true} />
+                  </li>
+                );
+              })}
+            </ul>
           </nav>
         </div>
         <div className={styles.contact}>

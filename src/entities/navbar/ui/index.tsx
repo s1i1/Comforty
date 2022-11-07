@@ -8,7 +8,7 @@ type NavbarProps = {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ title, isActive }) => {
-  return <li className={cn(styles.title, isActive && styles.active)}>{title}</li>;
+  return <div className={cn(styles.title, isActive && styles.active)}>{title}</div>;
 };
 
 export default Navbar;
