@@ -1,9 +1,14 @@
 .container {
+  @apply bg-gray rounded-md text-center;
   .list {
-    @apply flex flex-col text-black;
+    @apply flex flex-col justify-center items-center text-black;
+
+    li {
+      @apply w-[41px];
+    }
 
     .active {
-      @apply bg-darkAccents rounded-t-md text-white;
+      @apply bg-darkAccents rounded-md text-white; //rounded-t-md
     }
   }
 }
