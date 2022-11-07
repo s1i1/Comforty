@@ -7,6 +7,7 @@ import styles from './styles.module.scss';
 
 const Top = () => {
   const [showModal, setShowModal] = React.useState(false);
+  const [currentLanguage, setCurrentLanguage] = React.useState('Eng');
 
   const refLanguage = React.useRef<HTMLLIElement>(null);
 
@@ -42,8 +43,15 @@ const Top = () => {
         </div>
         <ul>
           <li ref={refLanguage} className={styles.language} onClick={toggleModal}>
-            <Language />
-            <div className={styles.modal}>{showModal && <LanguageModal />}</div>
+            <Language whatLanguage={currentLanguage} />
+            <div className={styles.modal}>
+              {showModal && (
+                <LanguageModal
+                  currentLanguage={currentLanguage}
+                  setCurrentLanguage={setCurrentLanguage}
+                />
+              )}
+            </div>
           </li>
           <li className={styles.faq}>Faqs</li>
           <li>

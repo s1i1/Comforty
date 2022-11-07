@@ -2,10 +2,14 @@ import React from 'react';
 import arrow from './assets/arrow.svg';
 import styles from './styles.module.scss';
 
-const Language = () => {
+type LanguageProps = {
+  whatLanguage: string;
+};
+
+const Language: React.FC<LanguageProps> = ({ whatLanguage }) => {
   return (
     <div className={styles.container}>
-      <p>Eng</p>
+      <p>{whatLanguage}</p>
       <img src={arrow} alt="arrow" />
     </div>
   );
