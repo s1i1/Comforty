@@ -11,11 +11,17 @@ type ProductCardProps = {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ headerTitle, searchTag }) => {
-  const { data: FeaturedItems } = useGetItemsQuery({ limit: 4, pageNumber: 1, tag: searchTag });
+  const [pageNum, setPageNum] = React.useState(1);
+
+  const { data: FeaturedItems } = useGetItemsQuery({
+    limit: 4,
+    pageNumber: pageNum,
+    tag: searchTag,
+  });
 
   return (
     <div className={cn('_container', styles.container)}>
-      <Heading title={headerTitle} />
+      <Heading title={headerTitle} pageNum={pageNum} setPageNum={setPageNum} />
       <ul className={styles.list}>
         {FeaturedItems?.map((obj, index) => (
           <li key={index}>

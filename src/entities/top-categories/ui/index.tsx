@@ -6,11 +6,13 @@ import { useGetTopCategoriesQuery } from 'shared/api/mock.api';
 import styles from './styles.module.scss';
 
 const TopCategories = () => {
-  const { data: products } = useGetTopCategoriesQuery({ limit: 3, pageNumber: 1 });
+  const [pageNum, setPageNum] = React.useState(1);
+
+  const { data: products } = useGetTopCategoriesQuery({ limit: 3, pageNumber: pageNum });
 
   return (
     <div className={cn('_container', styles.container)}>
-      <Heading title="Top Categories" />
+      <Heading title="Top Categories" pageNum={pageNum} setPageNum={setPageNum} />
 
       <ul className={styles.list}>
         {products?.map((product, index) => (
