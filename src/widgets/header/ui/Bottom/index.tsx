@@ -8,24 +8,57 @@ import { CategoriesModal } from 'features/categories';
 import styles from './styles.module.scss';
 
 const Bottom = () => {
+  const [currentCategory, setCurrentCategory] = React.useState('All Categories');
+  const [showModal, setShowModal] = React.useState(false);
+
+  const refCategoriesBlock = React.useRef<HTMLDivElement>(null);
+
   const navTitles: string[] = ['Home', 'Shop', 'Product', 'Pages', 'About'];
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  React.useEffect(() => {
+    const closePopup = (e: MouseEvent) => {
+      if (e.target instanceof Element) {
+        const refCurrent = refCategoriesBlock.current;
+        const target = e.target.closest(`.${refCurrent?.getAttribute('class')}`);
+
+        if (target !== refCurrent) {
+          setShowModal(false);
+        }
+      }
+    };
+
+    document.body.addEventListener('click', closePopup);
+
+    return () => {
+      document.body.removeEventListener('click', closePopup);
+    };
+  }, []);
 
   return (
     <div className={styles.header__bottom}>
       <div className={cn('_container', styles.container)}>
         <div className={styles.categories}>
-          <div className={styles.categories__block}>
-            <CategoriesButton />
+          <div ref={refCategoriesBlock} className={styles.categories__block} onClick={toggleModal}>
+            <CategoriesButton currentCategory={currentCategory} isActive={showModal} />
             <div className={styles.modal}>
-              <CategoriesModal />
+              {showModal && (
+                <CategoriesModal
+                  currentCategory={currentCategory}
+                  setCurrentCategory={setCurrentCategory}
+                />
+              )}
             </div>
           </div>
           <nav>
             <ul>
-              {navTitles.map((item, index) => {
+              {navTitles.map((title, index) => {
                 return (
                   <li key={index}>
-                    <Navbar title={item} isActive={index === 0 && true} />
+                    <Navbar title={title} isActive={index === 0 && true} />
                   </li>
                 );
               })}

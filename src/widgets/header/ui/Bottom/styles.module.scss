@@ -14,7 +14,7 @@
         @apply relative;
 
         .modal {
-          @apply hidden absolute top-[54px] left-0 w-full mt-5;
+          @apply absolute top-[54px] left-0 w-full mt-5;
         }
       }
 

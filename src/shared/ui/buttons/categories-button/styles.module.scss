@@ -1,37 +1,38 @@
 .categories__button {
+  @apply w-[180px] text-center;
   .menu {
-    @apply flex items-center px-6 py-4  cursor-pointer border-solid rounded-md border-[1px] border-offWhiteE;
+    @apply flex items-center justify-start px-6 py-4 cursor-pointer border-solid rounded-md border-[1px] border-offWhiteE;
 
     div {
-      @apply text-sm font-medium  pl-4;
+      @apply w-[111px] text-sm font-medium;
     }
   }
 
   .not__active {
-    @apply transition duration-1000 bg-white;
+    @apply transition-colors duration-300 bg-white;
 
     svg {
       path {
-        @apply transition duration-1000 fill-black;
+        @apply transition-colors duration-300 fill-black;
       }
     }
 
     div {
-      @apply transition duration-1000 text-black;
+      @apply transition-colors duration-300 text-black;
     }
   }
 
   .active {
-    @apply transition duration-75 bg-accents;
+    @apply transition-colors duration-300 bg-accents;
 
     svg {
       path {
-        @apply transition duration-75 fill-white;
+        @apply transition-colors duration-300 fill-white;
       }
     }
 
     div {
-      @apply transition duration-75 text-white;
+      @apply transition-colors duration-300 text-white;
     }
   }
 }

@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { CategoriesModalItem } from 'shared/ui';
 import styles from './styles.module.scss';
 
-const CategoriesModal = () => {
-  const testCategoriesData = [
+type CategoriesModalProps = {
+  currentCategory: string;
+  setCurrentCategory: Dispatch<SetStateAction<string>>;
+};
+
+const CategoriesModal: React.FC<CategoriesModalProps> = ({
+  currentCategory,
+  setCurrentCategory,
+}) => {
+  const categoryNames = [
     'All Categories',
     'Sofa',
     'Armchair',
@@ -13,11 +21,15 @@ const CategoriesModal = () => {
     'Park Bench',
   ];
 
+  const handlerClick = (categoryName: string) => {
+    setCurrentCategory(categoryName);
+  };
+
   return (
     <ul className={styles.container}>
-      {testCategoriesData.map((item, index) => (
-        <li key={index}>
-          <CategoriesModalItem title={item} isActive={index === 0 && true} />
+      {categoryNames.map((name, index) => (
+        <li key={index} onClick={() => handlerClick(name)}>
+          <CategoriesModalItem title={name} isActive={name === currentCategory && true} />
         </li>
       ))}
     </ul>

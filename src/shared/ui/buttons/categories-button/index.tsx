@@ -4,9 +4,10 @@ import styles from './styles.module.scss';
 
 type CategoriesButtonProps = {
   isActive?: boolean;
+  currentCategory: string;
 };
 
-const CategoriesButton: React.FC<CategoriesButtonProps> = ({ isActive }) => {
+const CategoriesButton: React.FC<CategoriesButtonProps> = ({ isActive, currentCategory }) => {
   const checkIsActive = isActive ? styles.active : styles.not__active;
 
   return (
@@ -22,7 +23,7 @@ const CategoriesButton: React.FC<CategoriesButtonProps> = ({ isActive }) => {
           <path d="M18 8.5H0V6.5H18V8.5Z" fill="#272343" />
           <path d="M18 14.5H0V12.5H18V14.5Z" fill="#272343" />
         </svg>
-        <div>All Categories</div>
+        <div>{currentCategory}</div>
       </div>
     </div>
   );
