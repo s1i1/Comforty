@@ -11,3 +11,10 @@ export interface ProductItems {
   category: string;
   rating: number;
 }
+
+export interface TopCategoriesItems {
+  id: string;
+  image: string;
+  category: string;
+  total: string;
+}
