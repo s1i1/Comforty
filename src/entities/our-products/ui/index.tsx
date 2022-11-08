@@ -51,7 +51,7 @@ const OurProducts = () => {
 
       <div className={styles.products__pagination}>
         <div className={styles.prev__button} onClick={onClickDecrementPageNum}>
-          <ArrowButton rotate />
+          <ArrowButton rotate disabled={pageNumber === 1} />
         </div>
         <ul className={styles.pagination__list}>
           {totalPages.map((number, index) => (
@@ -64,7 +64,7 @@ const OurProducts = () => {
           ))}
         </ul>
         <div className={styles.next__button} onClick={onClickIncrementPageNum}>
-          <ArrowButton />
+          <ArrowButton disabled={pageNumber === 6} />
         </div>
       </div>
     </div>
