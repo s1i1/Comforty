@@ -8,9 +8,26 @@ import styles from './styles.module.scss';
 
 const OurProducts = () => {
   const categoryNames = ['All', 'Newest', 'Trending', 'Best Sellers', 'Featured'];
+  const [pageNumber, setPageNumber] = React.useState(1);
   const totalPages = [1, 2, 3, 4, 5, 6];
 
-  const { data: products } = useGetItemsQuery({ pageNumber: 1, tag: '', limit: 8 });
+  const { data: products } = useGetItemsQuery({ pageNumber: pageNumber, tag: '', limit: 8 });
+
+  const onClickIncrementPageNum = () => {
+    if (pageNumber < 6) {
+      setPageNumber(pageNumber + 1);
+    }
+  };
+
+  const onClickDecrementPageNum = () => {
+    if (pageNumber > 1) {
+      setPageNumber(pageNumber - 1);
+    }
+  };
+
+  const onClickPagination = (number: number) => {
+    setPageNumber(number);
+  };
 
   return (
     <div className={cn('_container', styles.container)}>
@@ -33,17 +50,20 @@ const OurProducts = () => {
       </ul>
 
       <div className={styles.products__pagination}>
-        <div className={styles.prev__button}>
+        <div className={styles.prev__button} onClick={onClickDecrementPageNum}>
           <ArrowButton rotate />
         </div>
         <ul className={styles.pagination__list}>
-          {totalPages.map((pageNumber, index) => (
-            <li key={index} className={cn(styles.page__number, index === 0 && styles.active__page)}>
-              {pageNumber}
+          {totalPages.map((number, index) => (
+            <li
+              key={index}
+              className={cn(styles.page__number, pageNumber === number && styles.active__page)}
+              onClick={() => onClickPagination(number)}>
+              {number}
             </li>
           ))}
         </ul>
-        <div className={styles.next__button}>
+        <div className={styles.next__button} onClick={onClickIncrementPageNum}>
           <ArrowButton />
         </div>
       </div>
