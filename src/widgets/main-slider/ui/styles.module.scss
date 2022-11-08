@@ -56,7 +56,7 @@
     }
   }
 
-  .left__arrow {
+  .prev__page {
     @apply absolute -ml-[7.125rem] max-[1622px]:-ml-[5.125rem] max-[1538px]:right-[45%];
 
     @media (max-width: 1338px) {
@@ -80,7 +80,7 @@
     }
   }
 
-  .right__arrow {
+  .next__page {
     @apply absolute right-0 -mr-[7.125rem] max-[1622px]:-mr-[0] max-[1538px]:right-[3%];
 
     @media (max-width: 1338px) {
