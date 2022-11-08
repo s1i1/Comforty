@@ -14,4 +14,33 @@
       @apply mb-10 max-[1323px]:mr-3 max-[400px]:mr-0;
     }
   }
+
+  .products__pagination {
+    @apply flex justify-center items-center mt-[20px];
+    .prev__button {
+      @apply mr-5;
+    }
+    .pagination__list {
+      @apply flex;
+
+      li {
+        @apply flex justify-center items-center w-[2.75rem] h-[2.75rem] select-none cursor-pointer rounded-[26px] transition-colors bg-offWhiteF text-black font-semibold;
+
+        &:not(:last-child) {
+          @apply mr-3;
+        }
+
+        &:hover {
+          @apply bg-darkAccents text-white;
+        }
+
+        &:active {
+          @apply transition duration-75 bg-accents;
+        }
+      }
+    }
+    .next__button {
+      @apply ml-5;
+    }
+  }
 }
