@@ -23,7 +23,7 @@
     }
 
     .pagination__list {
-      @apply flex;
+      @apply flex max-[464px]:hidden;
 
       .page__number {
         @apply flex justify-center items-center w-[2.75rem] h-[2.75rem] select-none cursor-pointer rounded-[26px] transition-colors bg-offWhiteF text-black font-semibold;
