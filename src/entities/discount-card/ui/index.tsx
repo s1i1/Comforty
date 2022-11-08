@@ -1,14 +1,18 @@
 import React from 'react';
 import { ProductDiscount } from 'shared/ui';
-import productImage from './assets/product-image.png';
 import styles from './styles.module.scss';
 
-const DiscountCard: React.FC = () => {
+type DiscountCardProps = {
+  image: string;
+  discount: string;
+};
+
+const DiscountCard: React.FC<DiscountCardProps> = ({ image, discount }) => {
   return (
     <div className={styles.container}>
-      <img src={productImage} alt="productImage" />
+      <img src={image} alt="productImage" />
       <div className={styles.discount}>
-        <ProductDiscount />
+        <ProductDiscount discount={discount} />
       </div>
     </div>
   );

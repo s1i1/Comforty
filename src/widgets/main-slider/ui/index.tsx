@@ -2,9 +2,12 @@ import React from 'react';
 import cn from 'classnames';
 import { DiscountCard } from 'entities/discount-card';
 import { ArrowButton, Button } from 'shared/ui/buttons';
+import { useGetDiscountItemsQuery } from 'shared/api';
 import styles from './styles.module.scss';
 
 const MainSlider = () => {
+  const { data: discountItems } = useGetDiscountItemsQuery({ limit: 1, pageNumber: 1 });
+
   return (
     <div className={styles.main}>
       <div className={styles.background}></div>
@@ -20,7 +23,11 @@ const MainSlider = () => {
           <Button title="Shop Now" isArrow />
         </div>
         <div className={styles.product}>
-          <DiscountCard />
+          {discountItems?.map((discountObj, index) => (
+            <div key={index}>
+              <DiscountCard {...discountObj} />
+            </div>
+          ))}
         </div>
 
         <div className={styles.right__arrow}>
