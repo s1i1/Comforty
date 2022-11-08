@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { TopCategoriesItems } from './models';
+import { TopCategoriesItems, DiscountItems } from './models';
 
 interface getItemsProps {
   pageNumber: number;
@@ -22,7 +22,16 @@ export const mockApiSecondary = createApi({
         },
       }),
     }),
+    getDiscountItems: build.query<DiscountItems[], getItemsProps>({
+      query: ({ pageNumber, limit }) => ({
+        url: 'discount-items',
+        params: {
+          page: pageNumber,
+          limit: limit,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetTopCategoriesQuery } = mockApiSecondary;
+export const { useGetTopCategoriesQuery, useGetDiscountItemsQuery } = mockApiSecondary;

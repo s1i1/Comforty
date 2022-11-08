@@ -18,3 +18,8 @@ export interface TopCategoriesItems {
   category: string;
   total: string;
 }
+
+export interface DiscountItems {
+  image: string;
+  discount: string;
+}
