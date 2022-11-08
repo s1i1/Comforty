@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { CategoryCard } from 'shared/ui';
 import { Heading } from 'entities/heading';
-import { useGetTopCategoriesQuery } from 'shared/api/mock.api';
+import { useGetTopCategoriesQuery } from 'shared/api';
 import styles from './styles.module.scss';
 
 const TopCategories = () => {

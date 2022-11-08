@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Card } from 'shared/ui';
 import { Heading } from 'entities/heading';
-import { useGetItemsQuery } from 'shared/api/mock.api';
+import { useGetItemsQuery } from 'shared/api';
 import styles from './styles.module.scss';
 
 type ProductCardProps = {

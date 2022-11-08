@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { CategoriesBar } from 'shared/ui/categories-bar';
 import { Card } from 'shared/ui';
-import { useGetItemsQuery } from 'shared/api/mock.api';
+import { useGetItemsQuery } from 'shared/api';
 import { ArrowButton } from 'shared/ui/buttons';
 import styles from './styles.module.scss';
 

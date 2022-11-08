@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { mockApi } from 'shared/api/mock.api';
+import { mockApi, mockApiSecondary } from 'shared/api';
 
 export const store = configureStore({
   reducer: {
     [mockApi.reducerPath]: mockApi.reducer,
+    [mockApiSecondary.reducerPath]: mockApiSecondary.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(mockApi.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(mockApi.middleware, mockApiSecondary.middleware),
 });
