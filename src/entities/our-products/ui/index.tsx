@@ -38,7 +38,9 @@ const OurProducts = () => {
         </div>
         <ul className={styles.pagination__list}>
           {totalPages.map((pageNumber, index) => (
-            <li key={index}>{pageNumber}</li>
+            <li key={index} className={cn(styles.page__number, index === 0 && styles.active__page)}>
+              {pageNumber}
+            </li>
           ))}
         </ul>
         <div className={styles.next__button}>
