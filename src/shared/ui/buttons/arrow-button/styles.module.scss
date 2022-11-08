@@ -43,3 +43,22 @@
 .rotate__arrow {
   @apply rotate-180;
 }
+
+.disabled {
+  @apply opacity-60 transition-all;
+
+  &:hover {
+    rect {
+      @apply fill-offWhiteF #{!important};
+    }
+
+    path {
+      @apply transition-colors stroke-black #{!important};
+    }
+  }
+  &:active {
+    rect {
+      @apply fill-offWhiteF #{!important};
+    }
+  }
+}

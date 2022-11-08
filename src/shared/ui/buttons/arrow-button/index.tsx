@@ -5,15 +5,16 @@ import styles from './styles.module.scss';
 type ArrowProps = {
   rotate?: boolean;
   green?: boolean;
+  disabled?: boolean;
 };
 
-const ArrowButton: React.FC<ArrowProps> = ({ rotate, green }) => {
+const ArrowButton: React.FC<ArrowProps> = ({ rotate, green, disabled }) => {
   const isGreenCheck = green ? styles.green : styles.grey;
 
   return (
     <div className={styles.arrow}>
       <svg
-        className={cn(isGreenCheck, rotate && styles.rotate__arrow)}
+        className={cn(isGreenCheck, rotate && styles.rotate__arrow, disabled && styles.disabled)}
         width="44"
         height="44"
         viewBox="0 0 44 44"
