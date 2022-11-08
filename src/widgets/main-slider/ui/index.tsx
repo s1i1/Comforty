@@ -7,6 +7,7 @@ import styles from './styles.module.scss';
 
 const MainSlider = () => {
   const { data: discountItems } = useGetDiscountItemsQuery({ limit: 1, pageNumber: 1 });
+  const totalPages = ['1', '2', '3'];
 
   return (
     <div className={styles.main}>
@@ -28,6 +29,16 @@ const MainSlider = () => {
               <DiscountCard {...discountObj} />
             </div>
           ))}
+        </div>
+
+        <div className={styles.product__pagination}>
+          <ul className={styles.pagination__list}>
+            {totalPages.map((_, index) => (
+              <li
+                key={index}
+                className={cn(styles.number__page, index === 1 && styles.active__page)}></li>
+            ))}
+          </ul>
         </div>
 
         <div className={styles.right__arrow}>

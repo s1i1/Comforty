@@ -39,6 +39,21 @@
     .product {
       @apply pt-[4.125rem] max-[1214px]:pb-5 max-[630px]:hidden;
     }
+
+    .product__pagination {
+      @apply absolute -bottom-8 left-[47%];
+
+      .pagination__list {
+        @apply flex;
+
+        .number__page {
+          @apply w-3 h-3 mr-3 bg-gray opacity-40 rounded-3xl transition-colors;
+        }
+        .active__page {
+          @apply bg-black opacity-100;
+        }
+      }
+    }
   }
 
   .left__arrow {
