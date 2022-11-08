@@ -2,7 +2,7 @@
   @apply flex cursor-pointer p-2;
 
   .title {
-    @apply text-gray font-medium text-base leading-[110%] tracking-wider uppercase transition-all delay-75 p-2;
+    @apply text-gray font-medium text-base leading-[110%] tracking-wider uppercase transition-all delay-75 p-2 select-none;
   }
 
   &:hover {
