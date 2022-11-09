@@ -36,7 +36,7 @@ const MainSlider = () => {
         </div>
 
         <div className={styles.header}>
-          <p>Welcome to chairy</p>
+          <p>Welcome to Comforty</p>
           <h1>Best Furniture Collection for your interior.</h1>
           <Button title="Shop Now" isArrow />
         </div>
