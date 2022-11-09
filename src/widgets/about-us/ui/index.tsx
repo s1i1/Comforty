@@ -1,26 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
-import imagePath from './assets/test-image.svg';
 import CardAbout from 'shared/ui/card-about';
 import { Heading } from 'entities/heading';
+import { useGetAboutUsQuery } from 'shared/api';
 
 import styles from './styles.module.scss';
 
 const AboutUs = () => {
-  const testData = [
-    {
-      imagePath: imagePath,
-      name: 'Kristin Watson',
-      profession: 'Fashion Designer',
-      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mi nec massa tincidunt blandit et eu sem. Maecenas laoreet ultrices diam dignissim posuere. Aenean ultrices dui at ipsum sagittis, pharetra lacinia dui faucibus. In ac bibendum ex. Aenean dolor massa, euismod sit amet suscipit et“',
-    },
-    {
-      imagePath: imagePath,
-      name: 'Kristin Watson',
-      profession: 'Fashion Designer',
-      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mi nec massa tincidunt blandit et eu sem. Maecenas laoreet ultrices diam dignissim posuere. Aenean ultrices dui at ipsum sagittis, pharetra lacinia dui faucibus. In ac bibendum ex. Aenean dolor massa, euismod sit amet suscipit et“',
-    },
-  ];
+  const { data: aboutUsItems } = useGetAboutUsQuery({ limit: 2, pageNumber: 1 });
 
   return (
     <div className={styles.about}>
@@ -28,14 +15,9 @@ const AboutUs = () => {
         <Heading title="What Client Says About Us" />
 
         <ul className={styles.list}>
-          {testData.map((obj, index) => (
+          {aboutUsItems?.map((obj, index) => (
             <li key={index}>
-              <CardAbout
-                text={obj.text}
-                imageUrl={obj.imagePath}
-                name={obj.name}
-                profession={obj.profession}
-              />
+              <CardAbout {...obj} />
             </li>
           ))}
         </ul>
