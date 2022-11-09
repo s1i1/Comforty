@@ -6,7 +6,7 @@
   }
 
   .container {
-    @apply relative flex items-center max-[1214px]:flex-col;
+    @apply relative flex items-center max-[1214px]:flex-col max-[1214px]:mb-[70px];
 
     .header {
       @apply w-[39.4375rem] mr-[8.3125rem] max-[1310px]:mr-[5.3125rem] max-[1258px]:mr-[2.3125rem] max-[1214px]:pt-5  max-[630px]:pb-5;
@@ -37,11 +37,11 @@
     }
 
     .product {
-      @apply pt-[4.125rem] max-[1214px]:pb-5 max-[630px]:hidden;
+      @apply pt-[4.125rem] max-[1214px]:pb-[100px] max-[630px]:hidden;
     }
 
     .product__pagination {
-      @apply absolute -bottom-8 left-[47%];
+      @apply absolute -bottom-8 left-[47%] max-[1214px]:bottom-9 max-[630px]:hidden;
 
       .pagination__list {
         @apply flex;
@@ -57,54 +57,10 @@
   }
 
   .prev__page {
-    @apply absolute -ml-[7.125rem] max-[1622px]:-ml-[5.125rem] max-[1538px]:right-[45%];
-
-    @media (max-width: 1338px) {
-      @apply -bottom-[8%] right-[30%];
-    }
-
-    @media (max-width: 1214px) {
-      @apply bottom-[40%] left-[30%];
-    }
-
-    @media (max-width: 1142px) {
-      @apply left-[25%];
-    }
-
-    @media (max-width: 970px) {
-      @apply left-[15%];
-    }
-
-    @media (max-width: 630px) {
-      @apply hidden;
-    }
+    @apply absolute -ml-[7.125rem] max-[1622px]:-bottom-12 max-[1622px]:left-[50%]  max-[1214px]:bottom-6 max-[1134px]:left-[51%] max-[962px]:left-[52%] max-[716px]:left-[54%] max-[646px]:left-[55%] max-[630px]:hidden;
   }
 
   .next__page {
-    @apply absolute right-0 -mr-[7.125rem] max-[1622px]:-mr-[0] max-[1538px]:right-[3%];
-
-    @media (max-width: 1338px) {
-      @apply -bottom-[8%] right-[20%];
-    }
-
-    @media (max-width: 1214px) {
-      @apply bottom-[40%] right-[25%];
-    }
-
-    @media (max-width: 1142px) {
-      @apply right-[20%];
-    }
-
-    @media (max-width: 970px) {
-      @apply right-[10%];
-    }
-
-    @media (max-width: 750px) {
-      @apply right-[5%];
-    }
-
-    @media (max-width: 630px) {
-      @apply hidden;
-    }
+    @apply absolute right-0 -mr-[7.125rem]  max-[1622px]:-bottom-12 max-[1622px]:right-[51.5%] max-[1214px]:bottom-6 max-[630px]:hidden;
   }
 }
