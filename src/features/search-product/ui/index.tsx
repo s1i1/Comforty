@@ -12,6 +12,9 @@ const SearchProduct: React.FC = () => {
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
+  const onClickClearSearch = () => {
+    setSearchValue('');
+  };
 
   return (
     <div className={styles.container}>
@@ -26,6 +29,7 @@ const SearchProduct: React.FC = () => {
           className={cn(styles.image, searchValue && styles.clear)}
           src={iconPath}
           alt="searchIcon"
+          onClick={onClickClearSearch}
         />
       </div>
     </div>
