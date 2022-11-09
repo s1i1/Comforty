@@ -1,11 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import { FooterList } from 'entities/footer-list';
-
-import styles from './styles.module.scss';
 import { Logo } from 'shared/ui';
 import { FooterLinkList } from 'entities/footer-link-list';
 import { Newsletter } from 'entities/newsletter';
+import styles from './styles.module.scss';
 
 const Footer = () => {
   const categoryTestArr = [
@@ -26,8 +25,8 @@ const Footer = () => {
             <Logo />
           </div>
           <p className={styles.info__text}>
-            Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. Cras egestas
-            purus{' '}
+            At Comforty, we want you to do great things. That’s why we make problem-solving designs
+            that are as beautiful as they are useful.
           </p>
           <div className={styles.links}>
             <FooterLinkList />

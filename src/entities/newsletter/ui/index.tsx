@@ -10,9 +10,7 @@ const Newsletter = () => {
         <input type="text" placeholder="Your email" />
         <Button title="Subscribe" />
       </label>
-      <p className={styles.text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.
-      </p>
+      <p className={styles.text}>Sign up for our newsletter</p>
     </div>
   );
 };
