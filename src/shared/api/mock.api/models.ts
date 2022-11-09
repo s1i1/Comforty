@@ -23,3 +23,11 @@ export interface DiscountItems {
   image: string;
   discount: string;
 }
+
+export interface AboutUsItems {
+  id: string;
+  image: string;
+  name: string;
+  profession: string;
+  text: string;
+}
