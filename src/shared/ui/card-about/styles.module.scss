@@ -1,5 +1,5 @@
 .container {
-  @apply relative max-w-[40.5rem] bg-white rounded-xl p-10 shadow-2md;
+  @apply relative flex flex-col justify-between  max-w-[40.5rem] h-full bg-white rounded-xl p-10 shadow-2md;
 
   .text {
     @apply font-normal text-xl leading-[150%] text-darkGray shadow-3green pl-6;
