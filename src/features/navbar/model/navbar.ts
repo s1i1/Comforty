@@ -1,18 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { baseRoutes } from 'shared/lib';
 
 interface navbarModelState {
-  activePage: number;
+  activePage: string;
 }
 
 const initialState: navbarModelState = {
-  activePage: 0,
+  activePage: baseRoutes.HOME,
 };
 
 const navbarModel = createSlice({
   name: 'navbar',
   initialState,
   reducers: {
-    setActivePage: (state, { payload }: PayloadAction<number>) => {
+    setActivePage: (state, { payload }: PayloadAction<string>) => {
       state.activePage = payload;
     },
   },

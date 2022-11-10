@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'shared/lib';
+import { Link, useLocation } from 'react-router-dom';
+import { useAppDispatch } from 'shared/lib';
 import { NavItem } from 'shared/ui';
 import { baseRoutes } from 'shared/lib';
 import { navbarModel } from 'features/navbar';
@@ -9,8 +9,11 @@ import styles from './styles.module.scss';
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
+  const location = useLocation();
 
-  const { activePage } = useAppSelector((state) => state.navbar);
+  React.useEffect(() => {
+    dispatch(navbarModel.setActivePage(location.pathname));
+  }, [dispatch, location]);
 
   const navigation = [
     { title: 'Home', link: baseRoutes.HOME },
@@ -19,18 +22,15 @@ const Navbar = () => {
     { title: 'Pages', link: '' },
     { title: 'About', link: '' },
   ];
-  const onClickSetActive = (index: number) => {
-    dispatch(navbarModel.setActivePage(index));
-  };
 
   return (
     <nav className={styles.container}>
       <ul>
         {navigation.map((obj, index) => {
           return (
-            <li key={index} onClick={() => onClickSetActive(index)}>
+            <li key={index}>
               <Link to={obj.link}>
-                <NavItem title={obj.title} isActive={index === activePage} />
+                <NavItem title={obj.title} isActive={location.pathname === obj.link} />
               </Link>
             </li>
           );
