@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { NavItem } from 'shared/ui';
 import { baseRoutes } from 'shared/lib';
+import { navbarModel } from 'features/navbar';
 
 import styles from './styles.module.scss';
 
-export const Navbar = () => {
-  const [isActiveNav, setIsActiveNav] = React.useState(0);
+const Navbar = () => {
+  const dispatch = useAppDispatch();
+
+  const { activePage } = useAppSelector((state) => state.navbar);
 
   const navigation = [
     { title: 'Home', link: baseRoutes.HOME },
@@ -16,7 +20,7 @@ export const Navbar = () => {
     { title: 'About', link: '' },
   ];
   const onClickSetActive = (index: number) => {
-    setIsActiveNav(index);
+    dispatch(navbarModel.setActivePage(index));
   };
 
   return (
@@ -26,7 +30,7 @@ export const Navbar = () => {
           return (
             <li key={index} onClick={() => onClickSetActive(index)}>
               <Link to={obj.link}>
-                <NavItem title={obj.title} isActive={index === isActiveNav} />
+                <NavItem title={obj.title} isActive={index === activePage} />
               </Link>
             </li>
           );
@@ -35,3 +39,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;
