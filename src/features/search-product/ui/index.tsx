@@ -14,18 +14,22 @@ const SearchProduct: React.FC = () => {
 
   const iconPath = searchValue ? clearIcon : searchIcon;
 
+  const refSearch = React.useRef<HTMLInputElement>(null);
+
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(searchModel.setSearchValue(e.target.value));
   };
 
   const onClickClearSearch = () => {
     dispatch(searchModel.setSearchValue(''));
+    refSearch.current?.focus();
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.search}>
         <input
+          ref={refSearch}
           type="text"
           placeholder="Search here..."
           value={searchValue}
