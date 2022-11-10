@@ -1,11 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 import { DiscountCard } from 'entities/discount-card';
 import { ArrowButton, Button } from 'shared/ui/buttons';
 import { useGetDiscountItemsQuery } from 'shared/api';
+import { baseRoutes, useAppDispatch } from 'shared/lib';
+import { navbarModel } from 'features/navbar';
 import styles from './styles.module.scss';
 
 const MainSlider = () => {
+  const dispatch = useAppDispatch();
+
   const [pageNumber, setPageNumber] = React.useState(1);
   const totalPages = ['1', '2', '3'];
 
@@ -38,7 +43,9 @@ const MainSlider = () => {
         <div className={styles.header}>
           <p>Welcome to Comforty</p>
           <h1>Best Furniture Collection for your interior.</h1>
-          <Button title="Shop Now" isArrow />
+          <Link to={baseRoutes.SHOP} onClick={() => dispatch(navbarModel.setActivePage(1))}>
+            <Button title="Shop Now" isArrow />
+          </Link>
         </div>
         <div className={styles.product}>
           {discountItems?.map((discountObj, index) => (
