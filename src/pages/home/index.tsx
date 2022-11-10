@@ -21,8 +21,9 @@ export const HomePage = () => {
       <ProductCard headerTitle="Featured Products" searchTag="featured" />
 
       <TopCategories />
-
-      <OurProducts />
+      <div className={styles.our__products}>
+        <OurProducts />
+      </div>
 
       <AboutUs />
 
