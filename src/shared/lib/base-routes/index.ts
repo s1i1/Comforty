@@ -1,4 +1,4 @@
 export const baseRoutes = {
   HOME: '/',
-  SHOP: 'shop',
+  SHOP: '/shop',
 };
