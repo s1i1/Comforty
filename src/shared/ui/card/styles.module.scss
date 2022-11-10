@@ -12,7 +12,7 @@
   }
 
   .tag {
-    @apply flex absolute z-10 m-5 select-none;
+    @apply flex absolute z-[1] m-5 select-none;
   }
   .favorite {
     @apply absolute top-0 right-0 m-5 select-none opacity-0 transition-all delay-75;
