@@ -1,32 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
 import { CategoriesButton } from 'shared/ui/buttons';
 import { Contact } from 'entities/contact';
-import { Navbar } from 'entities/navbar';
 import { CategoriesModal } from 'features/categories';
-import { baseRoutes } from 'shared/lib';
+import { Navbar } from 'features/navbar';
 
 import styles from './styles.module.scss';
 
 const Bottom = () => {
   const [currentCategory, setCurrentCategory] = React.useState('All Categories');
   const [showModal, setShowModal] = React.useState(false);
-  const [isActiveNav, setIsActiveNav] = React.useState(0);
 
   const refCategoriesBlock = React.useRef<HTMLDivElement>(null);
-
-  const navigation = [
-    { title: 'Home', link: baseRoutes.HOME },
-    { title: 'Shop', link: baseRoutes.SHOP },
-    { title: 'Product', link: '' },
-    { title: 'Pages', link: '' },
-    { title: 'About', link: '' },
-  ];
-
-  const onClickSetActive = (index: number) => {
-    setIsActiveNav(index);
-  };
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -66,19 +51,7 @@ const Bottom = () => {
               )}
             </div>
           </div>
-          <nav>
-            <ul>
-              {navigation.map((obj, index) => {
-                return (
-                  <li key={index} onClick={() => onClickSetActive(index)}>
-                    <Link to={obj.link}>
-                      <Navbar title={obj.title} isActive={index === isActiveNav} />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <Navbar />
         </div>
         <div className={styles.contact}>
           <Contact />
