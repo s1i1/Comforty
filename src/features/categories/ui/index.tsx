@@ -21,10 +21,6 @@ const Categories: React.FC = () => {
     { title: 'Park Bench', category: 'park-bench-category' },
   ];
 
-  // const [currentCategory, setCurrentCategory] = React.useState({
-  //   title: 'All Categories',
-  //   category: '',
-  // });
   const [showModal, setShowModal] = React.useState(false);
 
   const refContainer = React.useRef<HTMLDivElement>(null);
