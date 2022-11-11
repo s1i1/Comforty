@@ -1,27 +1,37 @@
 import React from 'react';
+import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { CategoriesModalItem } from 'shared/ui';
 import { CategoriesButton } from 'shared/ui/buttons';
+import { CategoryItems } from 'features/categories/model';
+import { categoriesModel } from 'features/categories';
 import styles from './styles.module.scss';
 
 const Categories: React.FC = () => {
-  const categoryNames = [
-    'All Categories',
-    'Sofa',
-    'Armchair',
-    'Wing Chair',
-    'Desk Chair',
-    'Wooden Chair',
-    'Park Bench',
+  const dispatch = useAppDispatch();
+
+  const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
+
+  const categoryItems = [
+    { title: 'All Categories', category: '' },
+    { title: 'Sofa', category: 'sofa-category' },
+    { title: 'Armchair', category: 'armchair-category' },
+    { title: 'Wing Chair', category: 'wing-chair-category' },
+    { title: 'Desk Chair', category: 'desk-chair-category' },
+    { title: 'Wooden Chair', category: 'wooden-chair-category' },
+    { title: 'Park Bench', category: 'park-bench-category' },
   ];
 
-  const handlerClick = (categoryName: string) => {
-    setCurrentCategory(categoryName);
-  };
-
-  const [currentCategory, setCurrentCategory] = React.useState('All Categories');
+  // const [currentCategory, setCurrentCategory] = React.useState({
+  //   title: 'All Categories',
+  //   category: '',
+  // });
   const [showModal, setShowModal] = React.useState(false);
 
   const refContainer = React.useRef<HTMLDivElement>(null);
+
+  const handlerClick = (categoryObj: CategoryItems) => {
+    dispatch(categoriesModel.setCurrentCategory(categoryObj));
+  };
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -48,13 +58,16 @@ const Categories: React.FC = () => {
 
   return (
     <div ref={refContainer} className={styles.container} onClick={toggleModal}>
-      <CategoriesButton currentCategory={currentCategory} isActive={showModal} />
+      <CategoriesButton currentCategory={currentCategory.title} isActive={showModal} />
       <div className={styles.modal}>
         {showModal && (
           <ul className={styles.modal__list}>
-            {categoryNames.map((name, index) => (
-              <li key={index} onClick={() => handlerClick(name)}>
-                <CategoriesModalItem title={name} isActive={name === currentCategory && true} />
+            {categoryItems.map((obj, index) => (
+              <li key={index} onClick={() => handlerClick(obj)}>
+                <CategoriesModalItem
+                  title={obj.title}
+                  isActive={obj.title === currentCategory.title && true}
+                />
               </li>
             ))}
           </ul>
