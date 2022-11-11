@@ -4,29 +4,47 @@ import { CategoriesBar } from 'shared/ui/categories-bar';
 import { Card } from 'shared/ui';
 import { useGetItemsQuery } from 'shared/api';
 import { ArrowButton } from 'shared/ui/buttons';
+import { useAppDispatch, useAppSelector } from 'shared/lib';
+import { ourProductsModel } from 'entities/our-products';
 import styles from './styles.module.scss';
 
 const OurProducts = () => {
-  const categoryNames = ['All', 'Newest', 'Trending', 'Best Sellers', 'Featured'];
-  const [pageNumber, setPageNumber] = React.useState(1);
+  const dispatch = useAppDispatch();
+
+  const { pageNumber, linkTag } = useAppSelector((state) => state.ourProducts);
+
+  const [activeLink, setActiveLink] = React.useState(0);
+
+  const categoryNames = [
+    { title: 'All', link: '' },
+    { title: 'Newest', link: 'newest' },
+    { title: 'Trending', link: 'trending' },
+    { title: 'Best Sellers', link: 'bestSeller' },
+    { title: 'Featured', link: 'featured' },
+  ];
   const totalPages = [1, 2, 3, 4, 5, 6];
 
-  const { data: products } = useGetItemsQuery({ pageNumber: pageNumber, tag: '', limit: 8 });
+  const { data: products } = useGetItemsQuery({ pageNumber: pageNumber, tag: linkTag, limit: 8 });
 
   const onClickIncrementPageNum = () => {
     if (pageNumber < 6) {
-      setPageNumber(pageNumber + 1);
+      dispatch(ourProductsModel.setPageNumber(pageNumber + 1));
     }
   };
 
   const onClickDecrementPageNum = () => {
     if (pageNumber > 1) {
-      setPageNumber(pageNumber - 1);
+      dispatch(ourProductsModel.setPageNumber(pageNumber - 1));
     }
   };
 
   const onClickPagination = (number: number) => {
-    setPageNumber(number);
+    dispatch(ourProductsModel.setPageNumber(number));
+  };
+
+  const handlerClickCategory = (index: number) => {
+    dispatch(ourProductsModel.setLinkTag(categoryNames[index].link));
+    setActiveLink(index);
   };
 
   return (
@@ -34,9 +52,9 @@ const OurProducts = () => {
       <h2 className={styles.header}>Our Products</h2>
 
       <ul className={styles.categories__list}>
-        {categoryNames.map((items, index) => (
-          <li key={index}>
-            <CategoriesBar title={items} isActive={index === 0 && true} />
+        {categoryNames.map((itemsObj, index) => (
+          <li key={index} onClick={() => handlerClickCategory(index)}>
+            <CategoriesBar title={itemsObj.title} isActive={index === activeLink && true} />
           </li>
         ))}
       </ul>
