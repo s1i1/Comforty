@@ -1,0 +1,9 @@
+.container {
+  .modal {
+    @apply relative text-center;
+
+    .modal__list {
+      @apply absolute w-full bg-white rounded-lg py-2 mt-5;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .header__bottom {
   @apply bg-white drop-shadow-1md;
+
   .container {
     @apply flex justify-between py-3.5 items-center;
 
@@ -9,14 +10,6 @@
 
     .categories {
       @apply flex items-center max-[636px]:flex-col;
-
-      .categories__block {
-        @apply relative;
-
-        .modal {
-          @apply absolute top-[54px] left-0 w-full mt-5;
-        }
-      }
     }
 
     .contact {

@@ -1,1 +1,1 @@
-export * from './categories-modal';
+export { default as Categories } from './ui';
