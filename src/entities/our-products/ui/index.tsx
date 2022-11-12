@@ -6,25 +6,37 @@ import { useGetItemsQuery } from 'shared/api';
 import { ArrowButton } from 'shared/ui/buttons';
 import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { ourProductsModel } from 'entities/our-products';
+import { ProductItems } from 'shared/api/mock.api/models';
+import { categoriesModel } from 'features/categories';
 import styles from './styles.module.scss';
 
 const OurProducts = () => {
   const dispatch = useAppDispatch();
 
-  const { pageNumber, linkTag } = useAppSelector((state) => state.ourProducts);
+  const { productItems, pageNumber, linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
+  const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
 
   const [activeLink, setActiveLink] = React.useState(0);
 
-  const categoryNames = [
-    { title: 'All', link: '' },
-    { title: 'Newest', link: 'newest' },
-    { title: 'Trending', link: 'trending' },
-    { title: 'Best Sellers', link: 'bestSeller' },
-    { title: 'Featured', link: 'featured' },
-  ];
   const totalPages = [1, 2, 3, 4, 5, 6];
 
-  const { data: products } = useGetItemsQuery({ pageNumber: pageNumber, tag: linkTag, limit: 8 });
+  const { data: products, isSuccess } = useGetItemsQuery({
+    pageNumber: pageNumber,
+    tag: linkTag,
+    limit: 8,
+  });
+
+  React.useEffect(() => {
+    const activeCategory = currentCategory.category;
+
+    if (isSuccess) {
+      dispatch(ourProductsModel.setProductItems(products));
+    }
+
+    if (activeCategory && linkTag) {
+      dispatch(ourProductsModel.filterProductItems(activeCategory));
+    }
+  }, [dispatch, products, currentCategory, linkTag]);
 
   const onClickIncrementPageNum = () => {
     if (pageNumber < 6) {
@@ -43,7 +55,7 @@ const OurProducts = () => {
   };
 
   const handlerClickCategory = (index: number) => {
-    dispatch(ourProductsModel.setLinkTag(categoryNames[index].link));
+    dispatch(ourProductsModel.setLinkTag(ourProductsModel.categoryNames[index].link));
     setActiveLink(index);
   };
 
@@ -52,7 +64,7 @@ const OurProducts = () => {
       <h2 className={styles.header}>Our Products</h2>
 
       <ul className={styles.categories__list}>
-        {categoryNames.map((itemsObj, index) => (
+        {ourProductsModel.categoryNames.map((itemsObj, index) => (
           <li key={index} onClick={() => handlerClickCategory(index)}>
             <CategoriesBar title={itemsObj.title} isActive={index === activeLink && true} />
           </li>
@@ -60,7 +72,7 @@ const OurProducts = () => {
       </ul>
 
       <ul className={styles.products__list}>
-        {products?.map((obj) => (
+        {productItems?.map((obj: ProductItems) => (
           <li key={obj.id}>
             <Card {...obj} />
           </li>

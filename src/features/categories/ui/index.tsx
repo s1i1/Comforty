@@ -4,12 +4,14 @@ import { CategoriesModalItem } from 'shared/ui';
 import { CategoriesButton } from 'shared/ui/buttons';
 import { CategoryItems } from 'features/categories/model';
 import { categoriesModel } from 'features/categories';
+import { ourProductsModel } from 'entities/our-products';
 import styles from './styles.module.scss';
 
 const Categories: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
+  const { linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
 
   const categoryItems = [
     { title: 'All Categories', category: '' },
@@ -51,6 +53,16 @@ const Categories: React.FC = () => {
       document.body.removeEventListener('click', closePopup);
     };
   }, []);
+
+  React.useEffect(() => {
+    const categoryLinks = ourProductsModel.categoryNames.map((item, index) => {
+      return index !== 0 && item.link;
+    });
+
+    if (!categoryLinks.includes(linkTag)) {
+      dispatch(ourProductsModel.setLinkTag(currentCategory.category));
+    }
+  }, [dispatch, linkTag, currentCategory]);
 
   return (
     <div ref={refContainer} className={styles.container} onClick={toggleModal}>
