@@ -13,16 +13,6 @@ const Categories: React.FC = () => {
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
   const { linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
 
-  const categoryItems = [
-    { title: 'All Categories', category: '' },
-    { title: 'Sofa', category: 'sofa-category' },
-    { title: 'Armchair', category: 'armchair-category' },
-    { title: 'Wing Chair', category: 'wing-chair-category' },
-    { title: 'Desk Chair', category: 'desk-chair-category' },
-    { title: 'Wooden Chair', category: 'wooden-chair-category' },
-    { title: 'Park Bench', category: 'park-bench-category' },
-  ];
-
   const [showModal, setShowModal] = React.useState(false);
 
   const refContainer = React.useRef<HTMLDivElement>(null);
@@ -70,7 +60,7 @@ const Categories: React.FC = () => {
       <div className={styles.modal}>
         {showModal && (
           <ul className={styles.modal__list}>
-            {categoryItems.map((obj, index) => (
+            {categoriesModel.categoryNames.map((obj, index) => (
               <li key={index} onClick={() => handlerClick(obj)}>
                 <CategoriesModalItem
                   title={obj.title}
