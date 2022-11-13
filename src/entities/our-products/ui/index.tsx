@@ -63,6 +63,7 @@ const OurProducts = () => {
   const handlerClickCategory = (index: number) => {
     dispatch(ourProductsModel.setLinkTag(ourProductsModel.categoryNames[index].link));
     dispatch(ourProductsModel.setActiveCategory(index));
+    dispatch(searchModel.setSearchValue(''));
   };
 
   return (
