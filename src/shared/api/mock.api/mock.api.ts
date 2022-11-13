@@ -1,10 +1,20 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ProductItems } from './models';
 
-interface getItemsProps {
+interface GetItemsProps {
   pageNumber: number;
-  tag?: string;
   limit: number;
+  tag?: string;
+  searchProduct?: string;
+}
+
+interface GetItemsParams {
+  page: number;
+  limit: number;
+  sortBy: string;
+  order: string;
+  filter?: string;
+  title?: string;
 }
 
 export const mockApi = createApi({
@@ -13,17 +23,23 @@ export const mockApi = createApi({
     baseUrl: 'https://636379b08a3337d9a2deb7e0.mockapi.io/',
   }),
   endpoints: (build) => ({
-    getItems: build.query<ProductItems[], getItemsProps>({
-      query: ({ pageNumber, tag, limit }) => ({
-        url: 'items',
-        params: {
+    getItems: build.query<ProductItems[], GetItemsProps>({
+      query: ({ pageNumber, tag, limit, searchProduct }) => {
+        const params: GetItemsParams = {
           page: pageNumber,
           limit: limit,
-          sortBy: '',
-          order: 'desc',
-          filter: tag,
-        },
-      }),
+          sortBy: 'rating',
+          order: 'ask',
+        };
+
+        if (tag) params.filter = tag;
+        if (searchProduct) params.title = searchProduct;
+
+        return {
+          url: 'items',
+          params: params,
+        };
+      },
     }),
   }),
 });

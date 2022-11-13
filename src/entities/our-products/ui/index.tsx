@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { ourProductsModel } from 'entities/our-products';
 import { ProductItems } from 'shared/api/mock.api/models';
 import { categoriesModel } from 'features/categories';
+import { searchModel } from 'features/search-product';
 import styles from './styles.module.scss';
 
 const OurProducts = () => {
@@ -15,6 +16,7 @@ const OurProducts = () => {
 
   const { productItems, pageNumber, linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
+  const { value: searchValue } = useAppSelector(searchModel.selectSearch);
 
   const [activeLink, setActiveLink] = React.useState(0);
 
@@ -24,6 +26,7 @@ const OurProducts = () => {
     pageNumber: pageNumber,
     tag: linkTag,
     limit: 8,
+    searchProduct: searchValue,
   });
 
   React.useEffect(() => {
