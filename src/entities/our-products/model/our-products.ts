@@ -6,12 +6,14 @@ interface OurProductsModelState {
   productItems: ProductItems[];
   pageNumber: number;
   linkTag: string;
+  activeCategory: number;
 }
 
 const initialState: OurProductsModelState = {
   productItems: [],
   pageNumber: 1,
   linkTag: '',
+  activeCategory: 0,
 };
 
 export const categoryNames = [
@@ -35,6 +37,9 @@ const ourProductsModel = createSlice({
     setLinkTag: (state, { payload }: PayloadAction<string>) => {
       state.linkTag = payload;
     },
+    setActiveCategory: (state, { payload }: PayloadAction<number>) => {
+      state.activeCategory = payload;
+    },
     filterProductItems: (state, { payload }: PayloadAction<string>) => {
       state.productItems = state.productItems.filter((obj) => obj.category === payload);
     },
@@ -43,7 +48,7 @@ const ourProductsModel = createSlice({
 
 export const selectOurProducts = (state: RootState) => state.ourProducts;
 
-export const { setProductItems, setPageNumber, setLinkTag, filterProductItems } =
+export const { setProductItems, setPageNumber, setLinkTag, setActiveCategory, filterProductItems } =
   ourProductsModel.actions;
 
 export const reducer = ourProductsModel.reducer;
