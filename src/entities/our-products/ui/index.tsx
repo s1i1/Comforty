@@ -14,11 +14,14 @@ import styles from './styles.module.scss';
 const OurProducts = () => {
   const dispatch = useAppDispatch();
 
-  const { productItems, pageNumber, linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
+  const {
+    productItems,
+    pageNumber,
+    linkTag,
+    activeCategory: activeLink,
+  } = useAppSelector(ourProductsModel.selectOurProducts);
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
   const { value: searchValue } = useAppSelector(searchModel.selectSearch);
-
-  const [activeLink, setActiveLink] = React.useState(0);
 
   const totalPages = [1, 2, 3, 4, 5, 6];
 
@@ -59,7 +62,7 @@ const OurProducts = () => {
 
   const handlerClickCategory = (index: number) => {
     dispatch(ourProductsModel.setLinkTag(ourProductsModel.categoryNames[index].link));
-    setActiveLink(index);
+    dispatch(ourProductsModel.setActiveCategory(index));
   };
 
   return (

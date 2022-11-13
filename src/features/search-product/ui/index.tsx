@@ -4,6 +4,8 @@ import clearIcon from './assets/clear-icon.svg';
 import searchIcon from './assets/search-icon.svg';
 import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { searchModel } from 'features/search-product';
+import { ourProductsModel } from 'entities/our-products';
+import { categoriesModel } from 'features/categories';
 
 import styles from './styles.module.scss';
 
@@ -11,17 +13,29 @@ const SearchProduct: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const { value: searchValue } = useAppSelector(searchModel.selectSearch);
+  const { linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
+
+  const { setSearchValue } = searchModel;
 
   const iconPath = searchValue ? clearIcon : searchIcon;
 
   const refSearch = React.useRef<HTMLInputElement>(null);
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchModel.setSearchValue(e.target.value));
+    const { setLinkTag, setActiveCategory } = ourProductsModel;
+    const { setCurrentCategory, categoryNames } = categoriesModel;
+
+    if (linkTag) {
+      dispatch(setLinkTag(''));
+      dispatch(setActiveCategory(0));
+      dispatch(setCurrentCategory(categoryNames[0]));
+    }
+
+    dispatch(setSearchValue(e.target.value));
   };
 
   const onClickClearSearch = () => {
-    dispatch(searchModel.setSearchValue(''));
+    dispatch(setSearchValue(''));
     refSearch.current?.focus();
   };
 
