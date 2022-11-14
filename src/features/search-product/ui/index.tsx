@@ -22,7 +22,7 @@ const SearchProduct: React.FC = () => {
   const refSearch = React.useRef<HTMLInputElement>(null);
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { setLinkTag, setActiveCategory } = ourProductsModel;
+    const { setLinkTag, setActiveCategory, setPageNumber } = ourProductsModel;
     const { setCurrentCategory, categoryNames } = categoriesModel;
 
     if (linkTag) {
@@ -31,6 +31,7 @@ const SearchProduct: React.FC = () => {
       dispatch(setCurrentCategory(categoryNames[0]));
     }
 
+    dispatch(setPageNumber(1));
     dispatch(setSearchValue(e.target.value));
   };
 
