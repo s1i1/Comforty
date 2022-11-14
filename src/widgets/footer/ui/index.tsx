@@ -4,18 +4,20 @@ import { FooterList } from 'entities/footer-list';
 import { Logo } from 'shared/ui';
 import { FooterLinkList } from 'entities/footer-link-list';
 import { Newsletter } from 'entities/newsletter';
+import { categoriesModel } from 'features/categories';
 import styles from './styles.module.scss';
 
 const Footer = () => {
-  const categoryTestArr = [
-    'Sofa',
-    'Armchair',
-    'Wing Chair',
-    'Desk Chair',
-    'Wooden Chair',
-    'Park Bench',
+  //Удалить setCurrentCategory={categoriesModel.setCurrentCategory} в FooterList(support)
+
+  const { categoryNames, setCurrentCategory } = categoriesModel;
+
+  const supportTestArr = [
+    { title: 'Help & Support', category: '' },
+    { title: 'Tearms & Conditions', category: '' },
+    { title: 'Privacy Policy', category: '' },
+    { title: 'Help', category: '' },
   ];
-  const supportTestArr = ['Help & Support', 'Tearms & Conditions', 'Privacy Policy', 'Help'];
 
   return (
     <footer className={styles.footer}>
@@ -34,11 +36,19 @@ const Footer = () => {
         </div>
 
         <div className={styles.category}>
-          <FooterList header="Category" titles={categoryTestArr} />
+          <FooterList
+            header="Category"
+            categoryNames={categoryNames}
+            setCurrentCategory={setCurrentCategory}
+          />
         </div>
 
         <div className={styles.support}>
-          <FooterList header="Support" titles={supportTestArr} />
+          <FooterList
+            header="Support"
+            categoryNames={supportTestArr}
+            setCurrentCategory={setCurrentCategory}
+          />
         </div>
 
         <div className={styles.newsletter}>
