@@ -33,6 +33,10 @@ const OurProducts = () => {
   });
 
   React.useEffect(() => {
+    console.log(pageNumber);
+  }, [pageNumber]);
+
+  React.useEffect(() => {
     const activeCategory = currentCategory.category;
 
     if (isSuccess) {
@@ -64,6 +68,7 @@ const OurProducts = () => {
     dispatch(ourProductsModel.setLinkTag(ourProductsModel.categoryNames[index].link));
     dispatch(ourProductsModel.setActiveCategory(index));
     dispatch(searchModel.setSearchValue(''));
+    dispatch(ourProductsModel.setPageNumber(1));
   };
 
   return (
@@ -86,11 +91,11 @@ const OurProducts = () => {
         ))}
       </ul>
 
-      <div className={styles.products__pagination}>
+      <div className={cn(linkTag ? 'hidden' : styles.products__pagination)}>
         <div className={styles.prev__button} onClick={onClickDecrementPageNum}>
           <ArrowButton rotate disabled={pageNumber === 1} />
         </div>
-        <ul className={styles.pagination__list}>
+        <ul className={cn(searchValue ? 'hidden' : styles.pagination__list)}>
           {totalPages.map((number, index) => (
             <li
               key={index}
