@@ -8,7 +8,7 @@
     @apply flex flex-wrap justify-center mb-10;
   }
   .products__list {
-    @apply grid grid-cols-4 grid-rows-2 gap-y-10 gap-x-6 max-[1192px]:grid-cols-3 max-[911px]:grid-cols-2 max-[911px]:gap-x-3 max-[649px]:grid-cols-1 max-[649px]:w-[312px] max-[649px]:inline-block;
+    @apply grid grid-cols-4 auto-rows-auto gap-y-10 gap-x-6 max-[1192px]:grid-cols-3 max-[911px]:grid-cols-2 max-[911px]:gap-x-3 max-[649px]:grid-cols-1 max-[649px]:w-[312px] max-[649px]:inline-block;
 
     li {
       @apply max-[649px]:mb-10 max-[439px]:max-w-[290px];
