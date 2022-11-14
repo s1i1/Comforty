@@ -1,13 +1,10 @@
 .container {
+  text-align: -webkit-center;
   .list {
-    @apply flex flex-wrap justify-between max-[1011px]:justify-around max-[683px]:justify-center;
+    @apply grid grid-rows-1 grid-cols-4 gap-x-6 max-[1138px]:grid-cols-2 max-[1138px]:gap-y-10 max-[1138px]:w-[60%] max-[860px]:grid-cols-1 max-[860px]:w-[312px] max-[669px]:gap-y-5;
 
     li {
-      @apply pb-7 max-[1011px]:pr-4 max-[530px]:pr-0;
-    }
-
-    li:not(:last-child) {
-      @apply pr-4 max-[530px]:pr-0;
+      @apply max-[439px]:max-w-[290px];
     }
   }
 }

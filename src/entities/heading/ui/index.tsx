@@ -35,11 +35,11 @@ const Heading: React.FC<HeadingProps> = ({ title, pageNum, setPageNum }) => {
         </div>
       </div>
       <div className={styles.alternative__arrows}>
-        <span className={styles.left}>
-          <ArrowButton rotate />
+        <span className={styles.left} onClick={onClickDecrementPage}>
+          <ArrowButton rotate disabled={pageNum === 1} />
         </span>
-        <span className={styles.right}>
-          <ArrowButton />
+        <span className={styles.right} onClick={onClickIncrementPage}>
+          <ArrowButton disabled={pageNum === 2} />
         </span>
       </div>
     </div>
