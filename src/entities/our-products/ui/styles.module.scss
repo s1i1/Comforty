@@ -8,11 +8,7 @@
     @apply flex flex-wrap justify-center mb-10;
   }
   .products__list {
-    @apply flex flex-wrap justify-between max-[1323px]:justify-center;
-
-    li {
-      @apply mb-10 max-[1323px]:mr-3 max-[400px]:mr-0;
-    }
+    @apply grid  grid-cols-4 grid-rows-2 gap-y-10 gap-x-6 max-[1192px]:grid-cols-3 max-[911px]:grid-cols-2 max-[911px]:gap-x-3 max-[649px]:grid-cols-1;
   }
 
   .products__pagination {

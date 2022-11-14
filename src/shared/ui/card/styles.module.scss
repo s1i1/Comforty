@@ -1,5 +1,5 @@
 .container {
-  @apply max-w-[19.5rem] relative transition-all delay-75;
+  @apply relative transition-all delay-75;
 
   &:hover {
     @apply drop-shadow-1md transition-all delay-75;
@@ -19,16 +19,12 @@
   }
 
   .image {
-    @apply relative w-[19.5rem] h-[19.5rem];
+    @apply relative h-[19.5rem] max-[911px]:h-[25rem] max-[428px]:h-[19.5rem];
 
     img {
       @apply top-0 left-0 absolute h-full w-full rounded-md;
     }
   }
-
-  /* .favorite {
-    @apply absolute top-0 right-0 m-5 select-none opacity-0 transition-all delay-75;
-  } */
 
   .background {
   }
