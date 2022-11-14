@@ -33,10 +33,6 @@ const OurProducts = () => {
   });
 
   React.useEffect(() => {
-    console.log(pageNumber);
-  }, [pageNumber]);
-
-  React.useEffect(() => {
     const activeCategory = currentCategory.category;
 
     if (isSuccess) {
@@ -49,7 +45,7 @@ const OurProducts = () => {
   }, [dispatch, products, currentCategory, linkTag]);
 
   const onClickIncrementPageNum = () => {
-    if (pageNumber < 6) {
+    if (productItems.length === 8 && pageNumber < 6) {
       dispatch(ourProductsModel.setPageNumber(pageNumber + 1));
     }
   };
@@ -106,7 +102,7 @@ const OurProducts = () => {
           ))}
         </ul>
         <div className={styles.next__button} onClick={onClickIncrementPageNum}>
-          <ArrowButton disabled={pageNumber === 6} />
+          <ArrowButton disabled={productItems.length < 8 || pageNumber === 6} />
         </div>
       </div>
     </div>
