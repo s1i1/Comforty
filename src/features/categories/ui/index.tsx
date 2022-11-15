@@ -1,4 +1,6 @@
 import React from 'react';
+import { baseRoutes } from 'shared/lib';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { CategoriesModalItem } from 'shared/ui';
 import { CategoriesButton } from 'shared/ui/buttons';
@@ -9,6 +11,8 @@ import styles from './styles.module.scss';
 
 const Categories: React.FC = () => {
   const dispatch = useAppDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
   const { linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
@@ -18,6 +22,10 @@ const Categories: React.FC = () => {
   const refContainer = React.useRef<HTMLDivElement>(null);
 
   const handlerClick = (categoryObj: CategoryItems) => {
+    if (location.pathname !== baseRoutes.SHOP) {
+      navigate(baseRoutes.SHOP);
+    }
+
     dispatch(categoriesModel.setCurrentCategory(categoryObj));
   };
 
