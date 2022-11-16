@@ -1,4 +1,6 @@
-export const categoryNames = [
+import { CategoryNamesItems } from './types';
+
+export const categoryNames: CategoryNamesItems[] = [
   { title: 'All', link: '' },
   { title: 'Newest', link: 'newest' },
   { title: 'Trending', link: 'trending' },

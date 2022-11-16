@@ -1,4 +1,6 @@
-export const sortNames = [
+import { SortNamesItems } from './types';
+
+export const sortNames: SortNamesItems[] = [
   { title: 'Most popular', sortName: 'rating', order: 'desc' },
   { title: 'Price (Low to Hight)', sortName: 'price', order: 'asc' },
   { title: 'Price (Hight to Low)', sortName: 'price', order: 'desc' },
