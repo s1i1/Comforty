@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { CategoriesBar } from 'shared/ui/categories-bar';
-import { Card } from 'shared/ui';
+import { Card, CategoriesModalItem } from 'shared/ui';
 import { useGetItemsQuery } from 'shared/api';
 import { ArrowButton } from 'shared/ui/buttons';
 import { useAppDispatch, useAppSelector } from 'shared/lib';
@@ -9,6 +9,7 @@ import { ourProductsModel } from 'entities/our-products';
 import { ProductItems } from 'shared/api/mock.api/models';
 import { categoriesModel } from 'features/categories';
 import { searchModel } from 'features/search-product';
+import { SortNamesItems } from '../model';
 import styles from './styles.module.scss';
 
 const OurProducts = () => {
@@ -81,6 +82,11 @@ const OurProducts = () => {
     dispatch(setPageNumber(1));
   };
 
+  const handlerClickSortNames = (obj: SortNamesItems) => {
+    setCurrentSort(obj);
+    setShowModal(false);
+  };
+
   return (
     <div className={cn('_container', styles.container)}>
       <h2 className={styles.header}>Our Products</h2>
@@ -93,7 +99,10 @@ const OurProducts = () => {
             </li>
           ))}
         </ul>
-        <div className={styles.sort}>
+        <div
+          className={styles.sort}
+          onMouseOver={() => setShowModal(true)}
+          onMouseOut={() => setShowModal(false)}>
           <div className={styles.sort__button_block}>
             <p className={styles.sort__by}>Sort by:</p>
             <div className={styles.current__sort}>
