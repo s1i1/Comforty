@@ -42,6 +42,8 @@ const OurProducts = () => {
     tag: linkTag,
     limit: 8,
     searchProduct: searchValue,
+    sortProduct: currentSort.sortName,
+    order: currentSort.order,
   });
 
   React.useEffect(() => {
