@@ -6,6 +6,8 @@ interface GetItemsProps {
   limit: number;
   tag?: string;
   searchProduct?: string;
+  sortProduct?: string;
+  order?: string;
 }
 
 interface GetItemsParams {
@@ -24,12 +26,12 @@ export const mockApi = createApi({
   }),
   endpoints: (build) => ({
     getItems: build.query<ProductItems[], GetItemsProps>({
-      query: ({ pageNumber, tag, limit, searchProduct }) => {
+      query: ({ pageNumber, tag, limit, searchProduct, sortProduct = 'rating', order = 'asc' }) => {
         const params: GetItemsParams = {
           page: pageNumber,
           limit: limit,
-          sortBy: 'rating',
-          order: 'ask',
+          sortBy: sortProduct,
+          order: order,
         };
 
         if (tag) params.filter = tag;
