@@ -5,7 +5,7 @@
     @apply pr-1.5 font-normal text-[0.8125rem] text-white;
   }
   img {
-    @apply w-3 h-3 transition-all;
+    @apply w-3 h-3 transition-all duration-[400ms];
   }
 
   .rotate {

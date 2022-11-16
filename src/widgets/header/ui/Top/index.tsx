@@ -31,10 +31,6 @@ const Top = () => {
     };
   }, []);
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
   return (
     <div className={styles.header__top}>
       <div className={cn('_container', styles.container)}>
@@ -42,8 +38,12 @@ const Top = () => {
           <Shipping />
         </div>
         <ul>
-          <li ref={refLanguage} className={styles.language} onClick={toggleModal}>
-            <Language whatLanguage={currentLanguage} />
+          <li
+            ref={refLanguage}
+            className={styles.language}
+            onMouseOver={() => setShowModal(true)}
+            onMouseOut={() => setShowModal(false)}>
+            <Language whatLanguage={currentLanguage} rotate={showModal} />
             <div className={styles.modal}>
               {showModal && (
                 <LanguageModal
