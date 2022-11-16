@@ -85,13 +85,53 @@ const OurProducts = () => {
     <div className={cn('_container', styles.container)}>
       <h2 className={styles.header}>Our Products</h2>
 
-      <ul className={styles.categories__list}>
-        {ourProductsModel.categoryNames.map((itemsObj, index) => (
-          <li key={index} onClick={() => handlerClickCategory(index)}>
-            <CategoriesBar title={itemsObj.title} isActive={index === activeLink && true} />
-          </li>
-        ))}
-      </ul>
+      <div className={styles.categories__block}>
+        <ul className={styles.categories__list}>
+          {ourProductsModel.categoryNames.map((itemsObj, index) => (
+            <li key={index} onClick={() => handlerClickCategory(index)}>
+              <CategoriesBar title={itemsObj.title} isActive={index === activeLink && true} />
+            </li>
+          ))}
+        </ul>
+        <div className={styles.sort}>
+          <div className={styles.sort__button_block}>
+            <p className={styles.sort__by}>Sort by:</p>
+            <div className={styles.current__sort}>
+              <p className={styles.title}>{currentSort.title}</p>
+              <div className={cn(styles.arrow__icon, showModal && styles.rotate__arrow)}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 9 5"
+                  fill="none">
+                  <path
+                    d="M8 0.75L4.5 4.25L1 0.75"
+                    stroke="#272343"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.modal}>
+            {showModal && (
+              <ul className={styles.modal__list}>
+                {sortNames.map((obj, index) => (
+                  <li key={index} onClick={() => handlerClickSortNames(obj)}>
+                    <CategoriesModalItem
+                      title={obj.title}
+                      isActive={obj.title === currentSort.title}
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </div>
 
       <ul className={styles.products__list}>
         {productItems?.map((obj: ProductItems) => (
