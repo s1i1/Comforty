@@ -23,6 +23,18 @@ const OurProducts = () => {
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
   const { value: searchValue } = useAppSelector(searchModel.selectSearch);
 
+  const {
+    sortNames,
+    setProductItems,
+    filterProductItems,
+    setPageNumber,
+    setLinkTag,
+    setActiveCategory,
+  } = ourProductsModel;
+
+  const [showModal, setShowModal] = React.useState(false);
+  const [currentSort, setCurrentSort] = React.useState(sortNames[0]);
+
   const totalPages = [1, 2, 3, 4, 5, 6];
 
   const { data: products, isSuccess } = useGetItemsQuery({
@@ -36,35 +48,35 @@ const OurProducts = () => {
     const activeCategory = currentCategory.category;
 
     if (isSuccess) {
-      dispatch(ourProductsModel.setProductItems(products));
+      dispatch(setProductItems(products));
     }
 
     if (activeCategory && linkTag) {
-      dispatch(ourProductsModel.filterProductItems(activeCategory));
+      dispatch(filterProductItems(activeCategory));
     }
-  }, [dispatch, products, currentCategory, linkTag]);
+  }, [dispatch, isSuccess, products, currentCategory, linkTag]);
 
   const onClickIncrementPageNum = () => {
     if (productItems.length === 8 && pageNumber < 6) {
-      dispatch(ourProductsModel.setPageNumber(pageNumber + 1));
+      dispatch(setPageNumber(pageNumber + 1));
     }
   };
 
   const onClickDecrementPageNum = () => {
     if (pageNumber > 1) {
-      dispatch(ourProductsModel.setPageNumber(pageNumber - 1));
+      dispatch(setPageNumber(pageNumber - 1));
     }
   };
 
   const onClickPagination = (number: number) => {
-    dispatch(ourProductsModel.setPageNumber(number));
+    dispatch(setPageNumber(number));
   };
 
   const handlerClickCategory = (index: number) => {
-    dispatch(ourProductsModel.setLinkTag(ourProductsModel.categoryNames[index].link));
-    dispatch(ourProductsModel.setActiveCategory(index));
+    dispatch(setLinkTag(ourProductsModel.categoryNames[index].link));
+    dispatch(setActiveCategory(index));
     dispatch(searchModel.setSearchValue(''));
-    dispatch(ourProductsModel.setPageNumber(1));
+    dispatch(setPageNumber(1));
   };
 
   return (
