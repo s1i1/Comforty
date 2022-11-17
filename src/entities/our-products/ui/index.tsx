@@ -43,7 +43,7 @@ const OurProducts = () => {
 
   const { data: products, isSuccess } = useGetItemsQuery({
     pageNumber: pageNumber,
-    tag: linkTag,
+    tag: linkTag || currentCategory.category,
     limit: 8,
     searchProduct: searchValue,
     sortProduct: currentSort.sortName,
