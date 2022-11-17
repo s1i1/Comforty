@@ -1,0 +1,18 @@
+.container {
+  text-align: -webkit-center;
+  .header {
+    @apply text-black font-semibold text-[2rem] leading-[110%]  text-center my-[1.5625rem];
+  }
+
+  .list {
+    @apply grid grid-cols-3 auto-rows-auto gap-7 max-[1165px]:grid-cols-2 max-[751px]:grid-cols-1;
+
+    .list__item {
+      @apply text-start;
+
+      @media (max-width: 751px) {
+        text-align: -webkit-center;
+      }
+    }
+  }
+}

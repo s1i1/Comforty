@@ -18,7 +18,7 @@ const Navbar = () => {
   const navigation = [
     { title: 'Home', link: baseRoutes.HOME },
     { title: 'Shop', link: baseRoutes.SHOP },
-    { title: 'Product', link: '' },
+    { title: 'Product', link: baseRoutes.PRODUCT },
     { title: 'Pages', link: '' },
     { title: 'About', link: '' },
   ];
