@@ -1,6 +1,5 @@
 import React from 'react';
 import cn from 'classnames';
-import { useLocation } from 'react-router-dom';
 import { CategoriesBar } from 'shared/ui/categories-bar';
 import { Card, CategoriesModalItem } from 'shared/ui';
 import { useGetItemsQuery } from 'shared/api';
@@ -15,8 +14,6 @@ import styles from './styles.module.scss';
 
 const OurProducts = () => {
   const dispatch = useAppDispatch();
-
-  const { pathname } = useLocation();
 
   const {
     productItems,
@@ -49,11 +46,6 @@ const OurProducts = () => {
     sortProduct: currentSort.sortName,
     order: currentSort.order,
   });
-
-  React.useEffect(() => {
-    dispatch(setActiveCategory(0));
-    dispatch(setLinkTag(ourProductsModel.categoryNames[0].link));
-  }, [pathname]);
 
   React.useEffect(() => {
     const activeCategory = currentCategory.category;
