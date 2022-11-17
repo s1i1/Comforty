@@ -1,7 +1,8 @@
 .container {
   text-align: -webkit-center;
+
   .header {
-    @apply text-black font-semibold text-[2rem] leading-[110%]  text-center my-[1.5625rem];
+    @apply text-black font-semibold text-[2rem] leading-[110%]  text-center mt-[1.5625rem] mb-[60px];
   }
 
   .list {
