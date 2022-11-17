@@ -14,6 +14,7 @@ const SearchProduct: React.FC = () => {
 
   const { value: searchValue } = useAppSelector(searchModel.selectSearch);
   const { linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
+  const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
 
   const { setSearchValue } = searchModel;
 
@@ -25,7 +26,7 @@ const SearchProduct: React.FC = () => {
     const { setLinkTag, setActiveCategory, setPageNumber } = ourProductsModel;
     const { setCurrentCategory, categoryNames } = categoriesModel;
 
-    if (linkTag) {
+    if (linkTag || currentCategory.category) {
       dispatch(setLinkTag(''));
       dispatch(setActiveCategory(0));
       dispatch(setCurrentCategory(categoryNames[0]));
