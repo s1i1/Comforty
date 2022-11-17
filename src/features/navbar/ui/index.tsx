@@ -19,7 +19,6 @@ const Navbar = () => {
     { title: 'Home', link: baseRoutes.HOME },
     { title: 'Shop', link: baseRoutes.SHOP },
     { title: 'Product', link: baseRoutes.PRODUCT },
-    { title: 'Pages', link: '' },
     { title: 'About', link: baseRoutes.ABOUT },
   ];
 
