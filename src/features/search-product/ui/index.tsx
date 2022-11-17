@@ -2,7 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import clearIcon from './assets/clear-icon.svg';
 import searchIcon from './assets/search-icon.svg';
-import { useAppDispatch, useAppSelector } from 'shared/lib';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { baseRoutes, useAppDispatch, useAppSelector } from 'shared/lib';
 import { searchModel } from 'features/search-product';
 import { ourProductsModel } from 'entities/our-products';
 import { categoriesModel } from 'features/categories';
@@ -11,6 +12,8 @@ import styles from './styles.module.scss';
 
 const SearchProduct: React.FC = () => {
   const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const { value: searchValue } = useAppSelector(searchModel.selectSearch);
   const { linkTag } = useAppSelector(ourProductsModel.selectOurProducts);
@@ -25,6 +28,10 @@ const SearchProduct: React.FC = () => {
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { setLinkTag, setActiveCategory, setPageNumber } = ourProductsModel;
     const { setCurrentCategory, categoryNames } = categoriesModel;
+
+    if (pathname !== baseRoutes.SHOP) {
+      navigate(baseRoutes.SHOP);
+    }
 
     if (linkTag || currentCategory.category) {
       dispatch(setLinkTag(''));
