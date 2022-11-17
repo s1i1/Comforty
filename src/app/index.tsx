@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { baseRoutes, useAppDispatch } from 'shared/lib';
 import { ourProductsModel } from 'entities/our-products';
 import { categoriesModel } from 'features/categories';
+import { searchModel } from 'features/search-product';
 import { Routing } from 'pages';
 import { Header } from 'widgets/header';
 import { Footer } from 'widgets/footer';
@@ -18,6 +19,7 @@ const App = () => {
     setActiveCategory,
   } = ourProductsModel;
   const { categoryNames, setCurrentCategory } = categoriesModel;
+  const { setSearchValue } = searchModel;
 
   const { pathname } = useLocation();
 
@@ -28,6 +30,7 @@ const App = () => {
 
     if (pathname !== baseRoutes.SHOP) {
       dispatch(setCurrentCategory(categoryNames[0]));
+      dispatch(setSearchValue(''));
     }
   }, [pathname]);
 
