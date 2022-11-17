@@ -11,15 +11,17 @@ const Navbar = () => {
   const dispatch = useAppDispatch();
   const location = useLocation();
 
+  const { HOME, SHOP, PRODUCT, ABOUT } = baseRoutes;
+
   React.useEffect(() => {
     dispatch(navbarModel.setActivePage(location.pathname));
   }, [dispatch, location]);
 
   const navigation = [
-    { title: 'Home', link: baseRoutes.HOME },
-    { title: 'Shop', link: baseRoutes.SHOP },
-    { title: 'Product', link: baseRoutes.PRODUCT },
-    { title: 'About', link: baseRoutes.ABOUT },
+    { title: 'Home', link: HOME },
+    { title: 'Shop', link: SHOP },
+    { title: 'Product', link: PRODUCT },
+    { title: 'About', link: ABOUT },
   ];
 
   return (
