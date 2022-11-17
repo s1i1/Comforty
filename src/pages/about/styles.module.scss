@@ -1,0 +1,23 @@
+.container {
+  @apply max-w-[1000px] text-justify text-black;
+
+  .title {
+    @apply text-center mt-[1.5625rem] mb-[40px];
+
+    .header {
+      @apply font-semibold text-[2rem] leading-[110%] mb-4;
+    }
+
+    .subtitle {
+      @apply font-semibold text-[1.4rem];
+    }
+  }
+
+  .text {
+    @apply font-medium text-lg;
+
+    span {
+      @apply font-black;
+    }
+  }
+}

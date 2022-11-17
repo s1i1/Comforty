@@ -20,7 +20,7 @@ const Navbar = () => {
     { title: 'Shop', link: baseRoutes.SHOP },
     { title: 'Product', link: baseRoutes.PRODUCT },
     { title: 'Pages', link: '' },
-    { title: 'About', link: '' },
+    { title: 'About', link: baseRoutes.ABOUT },
   ];
 
   return (
