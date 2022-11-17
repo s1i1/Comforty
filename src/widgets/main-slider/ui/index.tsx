@@ -40,9 +40,11 @@ const MainSlider = () => {
         <div className={styles.header}>
           <p>Welcome to Comforty</p>
           <h1>Best Furniture Collection for your interior.</h1>
-          <Link to={baseRoutes.SHOP}>
-            <Button title="Shop Now" isArrow />
-          </Link>
+          <div className={styles.shop__button}>
+            <Link to={baseRoutes.SHOP}>
+              <Button title="Shop Now" isArrow />
+            </Link>
+          </div>
         </div>
         <div className={styles.product}>
           {discountItems?.map((discountObj, index) => (

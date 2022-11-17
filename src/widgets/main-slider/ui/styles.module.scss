@@ -15,6 +15,10 @@
         @apply flex flex-col justify-center items-center text-center m-0;
       }
 
+      .shop__button {
+        @apply flex;
+      }
+
       p {
         @apply text-black tracking-[0.12rem] max-[1214px]:text-lg uppercase;
       }
