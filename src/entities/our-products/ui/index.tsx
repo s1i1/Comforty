@@ -4,7 +4,7 @@ import { CategoriesBar } from 'shared/ui/categories-bar';
 import { Card, CategoriesModalItem } from 'shared/ui';
 import { useGetItemsQuery } from 'shared/api';
 import { ArrowButton } from 'shared/ui/buttons';
-import { useAppDispatch, useAppSelector } from 'shared/lib';
+import { useAppDispatch, useAppSelector, useDebounce } from 'shared/lib';
 import { ourProductsModel } from 'entities/our-products';
 import { ProductItems } from 'shared/api/mock.api/models';
 import { categoriesModel } from 'features/categories';
@@ -24,6 +24,8 @@ const OurProducts = () => {
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
   const { value: searchValue } = useAppSelector(searchModel.selectSearch);
 
+  const debounced = useDebounce(searchValue);
+
   const {
     sortNames,
     setProductItems,
@@ -42,7 +44,7 @@ const OurProducts = () => {
     pageNumber: pageNumber,
     tag: linkTag || currentCategory.category,
     limit: 8,
-    searchProduct: searchValue,
+    searchProduct: debounced,
     sortProduct: currentSort.sortName,
     order: currentSort.order,
   });
