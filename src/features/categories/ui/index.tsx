@@ -19,7 +19,7 @@ const Categories: React.FC = () => {
 
   const [showModal, setShowModal] = React.useState(false);
 
-  const { setCurrentCategory, categoryNames } = categoriesModel;
+  const { setCurrentCategory } = categoriesModel;
 
   const refContainer = React.useRef<HTMLDivElement>(null);
 
@@ -34,12 +34,6 @@ const Categories: React.FC = () => {
   const toggleModal = () => {
     setShowModal(!showModal);
   };
-
-  React.useEffect(() => {
-    if (pathname !== baseRoutes.SHOP) {
-      dispatch(setCurrentCategory(categoryNames[0]));
-    }
-  }, [dispatch, pathname]);
 
   React.useEffect(() => {
     const closePopup = (e: MouseEvent) => {

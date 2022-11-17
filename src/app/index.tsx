@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib';
+import { baseRoutes, useAppDispatch } from 'shared/lib';
 import { ourProductsModel } from 'entities/our-products';
+import { categoriesModel } from 'features/categories';
 import { Routing } from 'pages';
 import { Header } from 'widgets/header';
 import { Footer } from 'widgets/footer';
@@ -11,14 +12,23 @@ import './styles/index.scss';
 const App = () => {
   const dispatch = useAppDispatch();
 
-  const { categoryNames, setLinkTag, setActiveCategory } = ourProductsModel;
+  const {
+    categoryNames: ourProductCategoryNames,
+    setLinkTag,
+    setActiveCategory,
+  } = ourProductsModel;
+  const { categoryNames, setCurrentCategory } = categoriesModel;
 
   const { pathname } = useLocation();
 
   React.useEffect(() => {
     document.querySelector('#root')?.scrollTo(0, 0);
     dispatch(setActiveCategory(0));
-    dispatch(setLinkTag(categoryNames[0].link));
+    dispatch(setLinkTag(ourProductCategoryNames[0].link));
+
+    if (pathname !== baseRoutes.SHOP) {
+      dispatch(setCurrentCategory(categoryNames[0]));
+    }
   }, [pathname]);
 
   return (
