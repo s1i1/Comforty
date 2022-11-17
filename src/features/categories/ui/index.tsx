@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
 
 const Categories: React.FC = () => {
   const dispatch = useAppDispatch();
-  const location = useLocation();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const { currentCategory } = useAppSelector(categoriesModel.selectCategories);
@@ -19,19 +19,27 @@ const Categories: React.FC = () => {
 
   const [showModal, setShowModal] = React.useState(false);
 
+  const { setCurrentCategory, categoryNames } = categoriesModel;
+
   const refContainer = React.useRef<HTMLDivElement>(null);
 
   const handlerClick = (categoryObj: CategoryItems) => {
-    if (location.pathname !== baseRoutes.SHOP) {
+    if (pathname !== baseRoutes.SHOP) {
       navigate(baseRoutes.SHOP);
     }
 
-    dispatch(categoriesModel.setCurrentCategory(categoryObj));
+    dispatch(setCurrentCategory(categoryObj));
   };
 
   const toggleModal = () => {
     setShowModal(!showModal);
   };
+
+  React.useEffect(() => {
+    if (pathname !== baseRoutes.SHOP) {
+      dispatch(setCurrentCategory(categoryNames[0]));
+    }
+  }, [dispatch, pathname]);
 
   React.useEffect(() => {
     const closePopup = (e: MouseEvent) => {
