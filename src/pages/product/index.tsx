@@ -9,7 +9,7 @@ export const ProductPage = () => {
 
   return (
     <div className={cn('_container', styles.container)}>
-      <h2 className={styles.header}>Our Products</h2>
+      <h2 className={styles.header}>Our Categories</h2>
       <ul className={styles.list}>
         {product?.map((obj) => (
           <li key={obj.id} className={styles.list__item}>
