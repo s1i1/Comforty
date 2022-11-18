@@ -24,7 +24,7 @@ const App = () => {
   const { pathname } = useLocation();
 
   React.useEffect(() => {
-    document.querySelector('#root')?.scrollTo(0, 0);
+    window?.scrollTo(0, 0);
     dispatch(setActiveCategory(0));
     dispatch(setLinkTag(ourProductCategoryNames[0].link));
 
