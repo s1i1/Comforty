@@ -1,13 +1,16 @@
 import React from 'react';
+import cn from 'classnames';
 import { useLocation } from 'react-router-dom';
-import { baseRoutes, useAppDispatch } from 'shared/lib';
+import { baseRoutes, useAppDispatch, useAppSelector } from 'shared/lib';
 import { ourProductsModel } from 'entities/our-products';
 import { categoriesModel } from 'features/categories';
 import { searchModel } from 'features/search-product';
 import { Routing } from 'pages';
-import { Header } from 'widgets/header';
+import { Header, headerModel } from 'widgets/header';
 import { Footer } from 'widgets/footer';
+import { ToTopButton } from 'shared/ui/buttons';
 
+import styles from './styles.module.scss';
 import './styles/index.scss';
 
 const App = () => {
@@ -20,6 +23,7 @@ const App = () => {
   } = ourProductsModel;
   const { categoryNames, setCurrentCategory } = categoriesModel;
   const { setSearchValue } = searchModel;
+  const { scroll } = useAppSelector(headerModel.selectHeader);
 
   const { pathname } = useLocation();
 
@@ -37,6 +41,10 @@ const App = () => {
   return (
     <div className="wrapper">
       <div className="App">
+        <div className={cn(styles.to__top_button, scroll < window.innerHeight && 'hidden')}>
+          <ToTopButton />
+        </div>
+
         <Header />
 
         <Routing />
