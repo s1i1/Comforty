@@ -1,8 +1,9 @@
 .container {
+  @apply pt-[5rem];
   text-align: -webkit-center;
 
   .header {
-    @apply text-black font-semibold text-[2rem] leading-[110%]  text-center mt-[1.5625rem] mb-[60px];
+    @apply text-black font-semibold text-[2rem] leading-[110%]  text-center  mb-[60px];
   }
 
   .list {
@@ -19,5 +20,5 @@
 }
 
 .with__scroll {
-  @apply pt-[218px] max-[866px]:pt-0;
+  @apply pt-[297px] max-[866px]:pt-[5rem];
 }
