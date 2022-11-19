@@ -29,12 +29,12 @@ const App = () => {
 
   React.useEffect(() => {
     window?.scrollTo(0, 0);
-    dispatch(setActiveCategory(0));
-    dispatch(setLinkTag(ourProductCategoryNames[0].link));
 
     if (pathname !== baseRoutes.SHOP) {
+      dispatch(setActiveCategory(0));
       dispatch(setCurrentCategory(categoryNames[0]));
       dispatch(setSearchValue(''));
+      dispatch(setLinkTag(ourProductCategoryNames[0].link));
     }
   }, [pathname]);
 

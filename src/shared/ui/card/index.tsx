@@ -1,7 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
+import { baseRoutes, useAppDispatch } from 'shared/lib';
 import { ProductTag } from 'shared/ui';
 import { AddCartButton, FavoriteButton } from '../buttons';
+import { ourProductsModel } from 'entities/our-products';
 import styles from './styles.module.scss';
 
 type CardProps = {
@@ -10,11 +13,24 @@ type CardProps = {
   price: number;
   prevPrice?: number;
   newest?: boolean;
+  searchTag?: string;
 };
 
-const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest }) => {
+const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest, searchTag }) => {
+  const dispatch = useAppDispatch();
+
+  const { categoryNames, setLinkTag, setActiveCategory } = ourProductsModel;
+
   const tagCheck = (newest?: boolean, prevPrice?: number) => {
     return (prevPrice && 'sales') || (newest && 'new');
+  };
+  const handlerClickImage = () => {
+    categoryNames.forEach((obj, index) => {
+      if (obj.link === searchTag) {
+        dispatch(setLinkTag(searchTag));
+        dispatch(setActiveCategory(index));
+      }
+    });
   };
 
   return (
@@ -23,9 +39,11 @@ const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest }) =
         <ProductTag tag={tagCheck(newest, prevPrice)} />
       </div>
 
-      <div className={styles.image}>
-        <img className={styles.background} src={image} alt="product-background" />
-      </div>
+      <Link to={baseRoutes.SHOP} onClick={handlerClickImage}>
+        <div className={styles.image}>
+          <img className={styles.background} src={image} alt="product-background" />
+        </div>
+      </Link>
 
       <div className={styles.favorite}>
         <FavoriteButton />

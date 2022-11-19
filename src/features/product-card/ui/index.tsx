@@ -25,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ headerTitle, searchTag }) => 
       <ul className={styles.list}>
         {FeaturedItems?.map((obj, index) => (
           <li key={index}>
-            <Card {...obj} />
+            <Card {...obj} searchTag={searchTag} />
           </li>
         ))}
       </ul>
