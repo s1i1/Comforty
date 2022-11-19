@@ -1,4 +1,10 @@
 .homepage {
+  @apply relative;
+
+  .to__top_button {
+    @apply fixed bottom-10 left-20 z-50 max-[789px]:left-10 max-[657px]:left-5;
+  }
+
   .our__products {
     @apply mt-[5rem];
   }

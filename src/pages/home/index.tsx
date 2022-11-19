@@ -9,6 +9,7 @@ import { TopCategories } from 'entities/top-categories';
 import { OurProducts } from 'entities/our-products';
 import { AboutUs } from 'widgets/about-us';
 import { headerModel } from 'widgets/header';
+import { ToTopButton } from 'shared/ui/buttons';
 
 import styles from './styles.module.scss';
 
@@ -17,6 +18,9 @@ export const HomePage = () => {
 
   return (
     <div className={cn(styles.homepage, scroll >= 48 && styles.with__scroll)}>
+      <div className={cn(styles.to__top_button, scroll < window.innerHeight && 'hidden')}>
+        <ToTopButton />
+      </div>
       <MainSlider />
 
       <FeaturesBlock />

@@ -1,0 +1,11 @@
+.container {
+  @apply p-4 bg-darkAccents rounded-2xl rotate-180 cursor-pointer transition-all opacity-75;
+
+  &:hover {
+    @apply bg-accents;
+  }
+
+  &:active {
+    @apply bg-darkAccents transition-all duration-75;
+  }
+}
