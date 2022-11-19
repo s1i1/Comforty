@@ -19,7 +19,7 @@ type CardBlockProps = {
   isHideBuyButton?: boolean;
 };
 
-//Поменять key в testArr
+//Поменять key в products
 const CardBlock: React.FC<CardBlockProps> = ({ header, products, isHideBuyButton }) => {
   const { scroll } = useAppSelector(headerModel.selectHeader);
 
