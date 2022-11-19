@@ -3,3 +3,7 @@
     @apply mt-[5rem];
   }
 }
+
+.with__scroll {
+  @apply pt-[218px] max-[866px]:pt-0;
+}

@@ -4,6 +4,7 @@ import { searchModel } from 'features/search-product';
 import { navbarModel } from 'features/navbar';
 import { ourProductsModel } from 'entities/our-products';
 import { categoriesModel } from 'features/categories';
+import { headerModel } from 'widgets/header';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     navbar: navbarModel.reducer,
     ourProducts: ourProductsModel.reducer,
     categories: categoriesModel.reducer,
+    header: headerModel.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(mockApi.middleware, mockApiSecondary.middleware),

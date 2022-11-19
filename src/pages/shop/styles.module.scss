@@ -1,3 +1,7 @@
 .container {
-  @apply mt-[25px] #{!important};
+  @apply pt-[25px];
+}
+
+.with__scroll {
+  @apply pt-[243px] max-[866px]:pt-[25px];
 }

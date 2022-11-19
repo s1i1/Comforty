@@ -2,15 +2,18 @@ import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { useGetTopCategoriesQuery } from 'shared/api';
-import { useAppDispatch, baseRoutes } from 'shared/lib';
+import { useAppDispatch, baseRoutes, useAppSelector } from 'shared/lib';
 import { CategoryCard } from 'shared/ui';
 import { categoriesModel } from 'features/categories';
+import { headerModel } from 'widgets/header';
 import styles from './styles.module.scss';
 
 export const ProductPage = () => {
   const dispatch = useAppDispatch();
 
   const { data: products } = useGetTopCategoriesQuery({ limit: 6, pageNumber: 1 });
+
+  const { scroll } = useAppSelector(headerModel.selectHeader);
 
   const handlerClickCategory = (categoryName: string) => {
     categoriesModel.categoryNames.forEach((obj) => {
@@ -21,7 +24,7 @@ export const ProductPage = () => {
   };
 
   return (
-    <div className={cn('_container', styles.container)}>
+    <div className={cn('_container', styles.container, scroll >= 48 && styles.with__scroll)}>
       <h2 className={styles.header}>Our Categories</h2>
       <ul className={styles.list}>
         {products?.map((product) => (

@@ -1,10 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
+import { useAppSelector } from 'shared/lib';
+import { headerModel } from 'widgets/header';
 import styles from './styles.module.scss';
 
 export const About = () => {
+  const { scroll } = useAppSelector(headerModel.selectHeader);
   return (
-    <div className={cn('_container', styles.container)}>
+    <div className={cn('_container', styles.container, scroll >= 48 && styles.with__scroll)}>
       <div className={styles.title}>
         <h2 className={styles.header}>All about Comforty</h2>
         <h4 className={styles.subtitle}>Welcome to the world of Design</h4>
