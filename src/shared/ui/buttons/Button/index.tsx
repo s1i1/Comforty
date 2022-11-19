@@ -7,12 +7,18 @@ type ButtonProps = {
   title: string;
   isArrow?: boolean;
   isLarge?: boolean;
+  isTitleCenter?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = ({ title, isArrow, isLarge }) => {
+const Button: React.FC<ButtonProps> = ({ title, isArrow, isLarge, isTitleCenter }) => {
   return (
     <div className={styles.button}>
-      <div className={cn(styles.container, isLarge && styles.largeButton)}>
+      <div
+        className={cn(
+          styles.container,
+          isLarge && styles.largeButton,
+          isTitleCenter && styles.title__center,
+        )}>
         <div className={styles.title}>{title}</div>
         {isArrow && <img className={styles.image} src={arrowPath} alt="arrow" />}
       </div>

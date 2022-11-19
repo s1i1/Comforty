@@ -28,4 +28,8 @@
       @apply ml-4;
     }
   }
+
+  .title__center {
+    @apply place-content-center;
+  }
 }
