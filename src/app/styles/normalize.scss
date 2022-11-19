@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 html {
-  width: 100%;
-  width: 100vw;
 }
 body,
 #root {
@@ -38,6 +36,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.wrapper {
+  width: 100vw;
+}
 ._container {
   @apply max-w-[84.25rem] m-auto px-3.5;
 }

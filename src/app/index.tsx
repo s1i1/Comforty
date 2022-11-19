@@ -35,12 +35,14 @@ const App = () => {
   }, [pathname]);
 
   return (
-    <div className="App">
-      <Header />
+    <div className="wrapper">
+      <div className="App">
+        <Header />
 
-      <Routing />
+        <Routing />
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };
