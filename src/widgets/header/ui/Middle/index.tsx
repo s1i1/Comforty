@@ -1,5 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
+import { baseRoutes } from 'shared/lib';
 import { Logo } from 'shared/ui';
 import { SearchProduct } from 'features/search-product';
 import { ToCart } from 'features/to-cart';
@@ -16,7 +18,9 @@ const Middle = () => {
         <SearchProduct />
         <ul>
           <li>
-            <ToCart />
+            <Link to={baseRoutes.CART}>
+              <ToCart />
+            </Link>
           </li>
           <li>
             <FavoriteButton inHeader />
