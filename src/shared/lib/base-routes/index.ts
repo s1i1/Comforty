@@ -3,4 +3,5 @@ export const baseRoutes = {
   SHOP: '/shop',
   PRODUCT: '/product',
   ABOUT: '/about',
+  CART: '/cart',
 };
