@@ -4,4 +4,5 @@ export const baseRoutes = {
   PRODUCT: '/product',
   ABOUT: '/about',
   CART: '/cart',
+  FAVORITES: '/favorites',
 };

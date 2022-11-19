@@ -23,7 +23,9 @@ const Middle = () => {
             </Link>
           </li>
           <li>
-            <FavoriteButton inHeader />
+            <Link to={baseRoutes.FAVORITES}>
+              <FavoriteButton inHeader />
+            </Link>
           </li>
           <li>
             <ProfileButton />
