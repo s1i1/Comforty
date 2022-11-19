@@ -1,0 +1,17 @@
+.container {
+  @apply w-[200px] flex justify-between items-center cursor-pointer p-3 uppercase bg-darkAccents select-none rounded-xl transition-all opacity-80;
+
+  .image {
+    @apply rotate-180;
+  }
+  .text {
+    @apply text-white font-medium text-lg leading-[110%];
+  }
+
+  &:hover {
+    @apply bg-accents;
+  }
+  &:active {
+    @apply bg-darkAccents duration-75;
+  }
+}
