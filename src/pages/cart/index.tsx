@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.scss';
 import { CardBlock } from 'widgets/card-block';
 
 export const CartPage = () => {
@@ -13,7 +14,7 @@ export const CartPage = () => {
     { image: 'https://i.imgur.com/X2sAq9u.jpg', price: 100, title: "Barny 78'' Upholstered" },
   ];
   return (
-    <div>
+    <div className={styles.container}>
       <CardBlock header="Your Shopping Cart" products={testArr} />
     </div>
   );
