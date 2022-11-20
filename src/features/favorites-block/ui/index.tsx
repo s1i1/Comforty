@@ -18,11 +18,10 @@ type productsItems = {
 type FavoritesBlockProps = {
   header: string;
   products: productsItems[];
-  isHideBuyButton?: boolean;
 };
 
 //Поменять key в products
-const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ header, products, isHideBuyButton }) => {
+const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ header, products }) => {
   const { scroll } = useAppSelector(headerModel.selectHeader);
 
   return (
@@ -41,14 +40,6 @@ const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ header, products, isHid
           </li>
         ))}
       </ul>
-
-      {!isHideBuyButton && (
-        <div className={styles.purchase_button}>
-          <div className={styles.button}>
-            <Button title="buy now" isTitleCenter />
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -16,7 +16,7 @@ export const FavoritesPage = () => {
 
   return (
     <div className={styles.container}>
-      <FavoritesBlock header="Your Wishlist" products={testArr} isHideBuyButton />
+      <FavoritesBlock header="Your Wishlist" products={testArr} />
     </div>
   );
 };

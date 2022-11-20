@@ -19,14 +19,6 @@
       @apply max-[649px]:mb-10 max-[439px]:max-w-[290px];
     }
   }
-
-  .purchase_button {
-    @apply mt-16  uppercase flex flex-col justify-center items-center;
-
-    .button {
-      @apply w-[300px];
-    }
-  }
 }
 
 .with__scroll {
