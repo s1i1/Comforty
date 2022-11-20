@@ -1,0 +1,127 @@
+.container {
+  //border-top: 1px solid #f6f6f6;
+  @apply flex justify-between items-center w-[820px] text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-4;
+
+  .info__block {
+    @apply flex items-center;
+
+    .image {
+      @apply w-[80px] h-[80px] mr-4;
+
+      img {
+        @apply rounded-2xl;
+      }
+    }
+
+    .title {
+      @apply w-[350px];
+    }
+  }
+
+  .count {
+    @apply flex justify-between items-center select-none;
+
+    .minus__button {
+      @apply cursor-pointer;
+
+      svg {
+        circle {
+          @apply stroke-darkAccents transition-colors;
+        }
+
+        path {
+          @apply fill-darkAccents transition-colors;
+        }
+
+        &:hover {
+          circle {
+            @apply fill-darkAccents;
+          }
+
+          path {
+            @apply fill-white;
+          }
+        }
+
+        &:active {
+          circle {
+            @apply fill-accents stroke-accents duration-75;
+          }
+
+          path {
+            @apply fill-white;
+          }
+        }
+      }
+    }
+
+    .total {
+      @apply mx-3;
+    }
+
+    .plus__button {
+      @apply cursor-pointer;
+
+      svg {
+        circle {
+          @apply stroke-darkAccents transition-colors;
+        }
+
+        path {
+          @apply fill-darkAccents transition-colors;
+        }
+
+        &:hover {
+          circle {
+            @apply fill-darkAccents;
+          }
+
+          path {
+            @apply fill-white;
+          }
+        }
+
+        &:active {
+          circle {
+            @apply fill-accents stroke-accents  duration-75;
+          }
+
+          path {
+            @apply fill-white;
+          }
+        }
+      }
+    }
+  }
+  .price {
+  }
+
+  .delete__button {
+    @apply cursor-pointer select-none;
+
+    svg {
+      @apply transition-all duration-75;
+      circle {
+        @apply transition-colors;
+      }
+
+      path {
+        @apply transition-colors;
+      }
+
+      &:hover {
+        circle {
+          @apply stroke-black fill-black;
+        }
+
+        path {
+          @apply fill-white;
+        }
+      }
+
+      &:active {
+        @apply opacity-90;
+      }
+    }
+  }
+}

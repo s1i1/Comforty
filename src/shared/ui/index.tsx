@@ -7,3 +7,4 @@ export { default as ListItem } from './list-item';
 export { default as CategoriesModalItem } from './categories-modal-item';
 export { default as NavItem } from './nav-item';
 export { default as CategoriesBar } from './categories-bar';
+export { default as CartItem } from './cart-item';
