@@ -1,5 +1,7 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
+import { baseRoutes } from 'shared/lib';
 import styles from './styles.module.scss';
 
 type FavoriteProps = {
@@ -8,11 +10,23 @@ type FavoriteProps = {
 };
 
 const FavoriteButton: React.FC<FavoriteProps> = ({ isActive, inHeader }) => {
-  const checkIsHeader = inHeader && styles.reactive;
+  const { pathname } = useLocation();
+
+  const [isActiveHeader, setIsActiveHeader] = React.useState(true);
+
+  const checkIsHeader = isActiveHeader && styles.active;
   const checkIsActive = isActive ? styles.active : styles.not__active;
 
+  React.useEffect(() => {
+    if (pathname === baseRoutes.FAVORITES && inHeader) {
+      setIsActiveHeader(true);
+    } else {
+      setIsActiveHeader(false);
+    }
+  }, [pathname]);
+
   return (
-    <div className={cn(styles.button, checkIsHeader, checkIsActive)}>
+    <div className={cn(styles.button, checkIsActive, checkIsHeader)}>
       <svg
         width="44"
         height="44"

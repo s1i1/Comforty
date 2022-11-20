@@ -11,33 +11,22 @@
   path {
     @apply transition duration-1000 stroke-black;
   }
+
+  &:active {
+    rect {
+      @apply transition duration-75 fill-accents;
+    }
+    path {
+      @apply transition duration-75 stroke-white;
+    }
+  }
 }
 
 .active {
   rect {
-    @apply transition duration-1000 fill-accents;
+    @apply fill-accents;
   }
   path {
-    @apply transition duration-1000 stroke-white;
-  }
-}
-
-.reactive {
-  svg {
-    rect {
-      @apply transition duration-1000 fill-white;
-    }
-    path {
-      @apply transition duration-1000 stroke-black;
-    }
-
-    &:active {
-      rect {
-        @apply transition duration-75 fill-accents;
-      }
-      path {
-        @apply transition duration-75 stroke-white;
-      }
-    }
+    @apply stroke-white;
   }
 }
