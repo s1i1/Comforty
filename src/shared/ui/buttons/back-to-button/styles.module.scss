@@ -13,7 +13,7 @@
   }
 
   &:hover {
-    @apply bg-darkAccents;
+    @apply bg-darkAccents border-darkAccents;
 
     .image {
       path {
@@ -26,6 +26,6 @@
     }
   }
   &:active {
-    @apply bg-accents duration-75;
+    @apply bg-accents border-accents duration-75;
   }
 }
