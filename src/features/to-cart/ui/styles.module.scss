@@ -14,6 +14,7 @@
 
     &:active {
       @apply transition duration-75 bg-accents;
+
       path {
         @apply transition duration-75 stroke-white;
       }
@@ -26,6 +27,23 @@
       .count {
         @apply transition duration-75 bg-white  text-black;
       }
+    }
+  }
+
+  .active {
+    @apply bg-accents;
+
+    path {
+      @apply stroke-white;
+    }
+    .basket__bottom {
+      @apply fill-white;
+    }
+    .title {
+      @apply text-white;
+    }
+    .count {
+      @apply bg-white  text-black;
     }
   }
 }

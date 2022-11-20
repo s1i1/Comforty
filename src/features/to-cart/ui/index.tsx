@@ -1,10 +1,24 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import cn from 'classnames';
+import { baseRoutes } from 'shared/lib';
 import styles from './styles.module.scss';
 
 const ToCart = () => {
+  const [active, setActive] = React.useState(false);
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    if (pathname === baseRoutes.CART) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [pathname]);
+
   return (
     <div className={styles.to__cart}>
-      <div className={styles.container}>
+      <div className={cn(styles.container, active && styles.active)}>
         <svg
           width="22"
           height="22"
