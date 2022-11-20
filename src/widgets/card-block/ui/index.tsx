@@ -35,7 +35,7 @@ const CardBlock: React.FC<CardBlockProps> = ({ header, products, isHideBuyButton
       </div>
 
       <ul className={styles.list}>
-        {products.map((item, index) => (
+        {products?.map((item, index) => (
           <li key={index} className={styles.items}>
             <Card image={item.image} price={item.price} title={item.title} />
           </li>
