@@ -1,5 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
+import { baseRoutes } from 'shared/lib';
 import { useAppSelector } from 'shared/lib';
 import { Card } from 'shared/ui';
 import { Button, BackToButton } from 'shared/ui/buttons';
@@ -27,9 +29,9 @@ const CardBlock: React.FC<CardBlockProps> = ({ header, products, isHideBuyButton
     <div className={cn('_container', styles.container, scroll >= 48 && styles.with__scroll)}>
       <div className={styles.header}>
         <h2 className={styles.title}>{header}</h2>
-        <div className={styles.to__shop}>
+        <Link to={baseRoutes.SHOP} className={styles.to__shop}>
           <BackToButton title="Back To Shop" />
-        </div>
+        </Link>
       </div>
 
       <ul className={styles.list}>
