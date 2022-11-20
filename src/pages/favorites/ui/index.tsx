@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardBlock } from 'widgets/card-block';
+import { FavoritesBlock } from 'features/favorites-block';
 import styles from './styles.module.scss';
 
 export const FavoritesPage = () => {
@@ -16,7 +16,7 @@ export const FavoritesPage = () => {
 
   return (
     <div className={styles.container}>
-      <CardBlock header="Your Wishlist" products={testArr} isHideBuyButton />
+      <FavoritesBlock header="Your Wishlist" products={testArr} isHideBuyButton />
     </div>
   );
 };

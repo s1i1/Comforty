@@ -15,14 +15,14 @@ type productsItems = {
   title: string;
 };
 
-type CardBlockProps = {
+type FavoritesBlockProps = {
   header: string;
   products: productsItems[];
   isHideBuyButton?: boolean;
 };
 
 //Поменять key в products
-const CardBlock: React.FC<CardBlockProps> = ({ header, products, isHideBuyButton }) => {
+const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ header, products, isHideBuyButton }) => {
   const { scroll } = useAppSelector(headerModel.selectHeader);
 
   return (
@@ -53,4 +53,4 @@ const CardBlock: React.FC<CardBlockProps> = ({ header, products, isHideBuyButton
   );
 };
 
-export default CardBlock;
+export default FavoritesBlock;
