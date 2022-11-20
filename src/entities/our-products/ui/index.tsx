@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { CategoriesBar } from 'shared/ui/categories-bar';
+import { CategoriesBar } from 'shared/ui';
 import { Card, CategoriesModalItem } from 'shared/ui';
 import { useGetItemsQuery } from 'shared/api';
 import { ArrowButton } from 'shared/ui/buttons';
