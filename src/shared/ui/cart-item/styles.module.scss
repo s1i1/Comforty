@@ -1,6 +1,6 @@
 .container {
   //border-top: 1px solid #f6f6f6;
-  @apply flex justify-between items-center w-[820px] text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-4;
+  @apply flex justify-between items-center w-[820px] text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-6;
 
   .info__block {
     @apply flex items-center;
