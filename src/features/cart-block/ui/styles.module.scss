@@ -1,0 +1,68 @@
+.container {
+  @apply pt-[5rem] max-w-[850px] #{!important};
+
+  .header {
+    @apply relative mb-16 flex items-center justify-center max-[745px]:flex-col;
+
+    .title {
+      @apply text-center text-black font-semibold text-[2.5rem] max-[745px]:mb-8;
+    }
+
+    .to__shop {
+      @apply absolute top-0 left-0 max-[745px]:relative;
+    }
+  }
+
+  .list {
+    /* @apply flex flex-col items-center justify-center; */
+    @apply grid auto-rows-auto grid-cols-1;
+
+    .clear {
+      @apply flex items-center mb-3 place-content-end cursor-pointer opacity-60 transition-opacity;
+
+      &:hover {
+        @apply opacity-100;
+      }
+
+      .image {
+        @apply pr-1;
+      }
+      .title {
+      }
+    }
+
+    .items {
+    }
+  }
+
+  .total__block {
+    @apply flex justify-between text-black text-xl mt-7 mb-[52px] max-[404px]:flex-col;
+
+    span {
+      @apply font-semibold;
+    }
+
+    .quantity {
+      @apply uppercase;
+    }
+    .total__price {
+      @apply uppercase;
+    }
+  }
+
+  .buttons {
+    @apply uppercase flex justify-between items-center max-[543px]:flex-col;
+
+    .to__shop {
+      @apply max-[543px]:mb-7;
+    }
+
+    .purchase__button {
+      @apply w-[300px];
+    }
+  }
+}
+
+.with__scroll {
+  @apply pt-[297px] max-[866px]:pt-[5rem] #{!important};
+}
