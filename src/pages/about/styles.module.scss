@@ -1,8 +1,8 @@
 .container {
-  @apply max-w-[1000px] pt-[5rem] text-justify text-black;
+  @apply max-w-[1000px] text-justify text-black #{!important};
 
   .title {
-    @apply text-center mb-[40px];
+    @apply text-center mb-[40px] pt-[5rem];
 
     .header {
       @apply font-semibold text-[2rem] leading-[110%] mb-4;
@@ -23,5 +23,5 @@
 }
 
 .with__scroll {
-  @apply pt-[297px] max-[866px]:pt-[5rem];
+  @apply pt-[217px] max-[866px]:pt-0;
 }
