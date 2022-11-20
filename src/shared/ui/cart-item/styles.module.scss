@@ -1,12 +1,11 @@
 .container {
-  //border-top: 1px solid #f6f6f6;
-  @apply flex justify-between items-center w-[820px] text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-6;
+  @apply relative flex justify-between items-center text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-6 max-[459px]:flex-col;
 
   .info__block {
-    @apply flex items-center;
+    @apply flex items-center max-[459px]:mt-4;
 
     .image {
-      @apply w-[80px] h-[80px] mr-4;
+      @apply w-[80px] h-[80px] mr-4 flex flex-col items-center justify-center;
 
       img {
         @apply rounded-2xl;
@@ -14,12 +13,12 @@
     }
 
     .title {
-      @apply w-[350px];
+      @apply max-w-[350px] pr-3 max-[459px]:pr-0;
     }
   }
 
   .count {
-    @apply flex justify-between items-center select-none;
+    @apply flex justify-between items-center select-none max-[459px]:my-5;
 
     .minus__button {
       @apply cursor-pointer;
@@ -94,10 +93,11 @@
     }
   }
   .price {
+    @apply px-3 max-[459px]:py-3;
   }
 
   .delete__button {
-    @apply cursor-pointer select-none;
+    @apply cursor-pointer select-none max-[459px]:absolute max-[459px]:right-0 max-[339px]:top-10;
 
     svg {
       @apply transition-all duration-75;
