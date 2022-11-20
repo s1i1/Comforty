@@ -1,5 +1,4 @@
 import React from 'react';
-import ArrowButton from '../arrow-button';
 import styles from './styles.module.scss';
 
 type BackToButtonProps = {
