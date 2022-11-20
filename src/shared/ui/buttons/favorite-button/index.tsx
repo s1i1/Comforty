@@ -12,7 +12,7 @@ type FavoriteProps = {
 const FavoriteButton: React.FC<FavoriteProps> = ({ isActive, inHeader }) => {
   const { pathname } = useLocation();
 
-  const [isActiveHeader, setIsActiveHeader] = React.useState(true);
+  const [isActiveHeader, setIsActiveHeader] = React.useState(false);
 
   const checkIsHeader = isActiveHeader && styles.active;
   const checkIsActive = isActive ? styles.active : styles.not__active;

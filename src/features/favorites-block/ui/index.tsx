@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { baseRoutes } from 'shared/lib';
 import { useAppSelector } from 'shared/lib';
 import { Card } from 'shared/ui';
-import { Button, BackToButton } from 'shared/ui/buttons';
+import { BackToButton } from 'shared/ui/buttons';
 import { headerModel } from 'widgets/header';
 
 import styles from './styles.module.scss';
