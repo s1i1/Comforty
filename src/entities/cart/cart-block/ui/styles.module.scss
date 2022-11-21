@@ -5,7 +5,7 @@
     @apply grid auto-rows-auto grid-cols-1;
 
     .clear {
-      @apply flex items-center mb-3 place-content-end cursor-pointer opacity-60 transition-opacity;
+      @apply flex items-center mb-3 place-content-end cursor-pointer opacity-60 transition-opacity select-none;
 
       &:hover {
         @apply opacity-100;

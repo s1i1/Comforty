@@ -61,7 +61,7 @@ const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
           </div>
           <p className={styles.title}>Remove All</p>
         </div>
-        {products?.map((obj, index) => (
+        {products?.map((obj) => (
           <li key={obj.id} className={styles.items}>
             <CartItem {...obj} />
           </li>
