@@ -1,13 +1,23 @@
 import React from 'react';
+import { useAppDispatch } from 'shared/lib';
+import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
 
 type CartItemProps = {
+  id: string;
   image: string;
   title: string;
   price: number;
 };
 
-const CartItem: React.FC<CartItemProps> = ({ image, price, title }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, image, price, title }) => {
+  const dispatch = useAppDispatch();
+
+  const { removeCartProduct } = cartPageModel;
+  const onClickRemoveProduct = () => {
+    dispatch(removeCartProduct(id));
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.info__block}>
@@ -51,7 +61,7 @@ const CartItem: React.FC<CartItemProps> = ({ image, price, title }) => {
 
       <div className={styles.price}>${price}</div>
 
-      <div className={styles.delete__button}>
+      <div className={styles.delete__button} onClick={onClickRemoveProduct}>
         <svg
           width="32"
           height="32"

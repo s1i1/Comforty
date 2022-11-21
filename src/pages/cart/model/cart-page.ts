@@ -31,10 +31,16 @@ const cartPageModel = createSlice({
       state.cartProducts.push(payload);
       localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
     },
+    removeCartProduct: (state, { payload }: PayloadAction<string>) => {
+      state.cartProducts = state.cartProducts.filter((obj) => {
+        return obj.id !== payload;
+      });
+      localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
+    },
   },
 });
 
 export const selectCartPage = (state: RootState) => state.cart;
 
-export const { setCartProducts } = cartPageModel.actions;
+export const { setCartProducts, removeCartProduct } = cartPageModel.actions;
 export const reducer = cartPageModel.reducer;
