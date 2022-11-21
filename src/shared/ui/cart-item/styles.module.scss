@@ -1,24 +1,24 @@
 .container {
-  @apply relative flex justify-between items-center text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-6 max-[459px]:flex-col;
+  @apply relative flex justify-between items-center text-black text-xl font-medium border-t border-solid border-t-offWhiteF py-6 max-[584px]:flex-col;
 
   .info__block {
-    @apply flex items-center max-[459px]:mt-4;
+    @apply flex items-center max-w-[400px] max-[584px]:mt-4;
 
     .image {
-      @apply w-[80px] h-[80px] mr-4 flex flex-col items-center justify-center;
+      @apply relative min-w-[150px] min-h-[150px] mr-4 flex flex-col items-center justify-center;
 
       img {
-        @apply rounded-2xl;
+        @apply absolute w-full h-full top-0 left-0 rounded-2xl;
       }
     }
 
     .title {
-      @apply max-w-[350px] pr-3 max-[459px]:pr-0;
+      @apply pr-3 max-[628px]:pr-0 max-[628px]:w-[150px] max-[584px]:w-[300px] max-[426px]:w-[150px];
     }
   }
 
   .count {
-    @apply flex justify-between items-center select-none max-[459px]:my-5;
+    @apply flex justify-between items-center select-none max-[584px]:my-5;
 
     .minus__button {
       @apply cursor-pointer;
@@ -93,11 +93,11 @@
     }
   }
   .price {
-    @apply px-3 max-[459px]:py-3;
+    @apply px-3 max-[584px]:py-3;
   }
 
   .delete__button {
-    @apply cursor-pointer select-none max-[459px]:absolute max-[459px]:right-0 max-[339px]:top-10;
+    @apply cursor-pointer select-none max-[584px]:absolute max-[584px]:right-0 max-[339px]:top-10;
 
     svg {
       @apply transition-all duration-75;
