@@ -1,5 +1,5 @@
 import React from 'react';
-import { FavoritesBlock } from 'features/favorites-block';
+import { FavoritesBlock } from 'entities/favorites';
 import styles from './styles.module.scss';
 
 export const FavoritesPage = () => {
