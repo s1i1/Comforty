@@ -67,7 +67,7 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
         </div>
 
         <div className={styles.add__to_cart} onClick={addToCart}>
-          <AddCartButton />
+          <AddCartButton id={id} />
         </div>
       </div>
     </div>

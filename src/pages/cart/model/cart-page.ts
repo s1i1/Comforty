@@ -3,7 +3,7 @@ import { RootState } from 'app/store/types';
 
 const LS_CART_KEY = 'rck';
 
-interface CartProductsItems {
+export interface CartProductsItems {
   id: string;
   image: string;
   price: number;

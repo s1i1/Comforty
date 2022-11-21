@@ -1,12 +1,24 @@
 import React from 'react';
 import cn from 'classnames';
+import { useAppSelector } from 'shared/lib';
+import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
 
-type AddCartProps = {
-  isActive?: boolean;
+type AddCartButtonProps = {
+  id: string;
 };
 
-const AddCartButton: React.FC<AddCartProps> = ({ isActive }) => {
+const AddCartButton: React.FC<AddCartButtonProps> = ({ id }) => {
+  const { cartProducts } = useAppSelector(cartPageModel.selectCartPage);
+
+  const [isActive, setIsActive] = React.useState(false);
+
+  React.useEffect(() => {
+    if (cartProducts.find((obj: any) => obj.id === id)) {
+      setIsActive(true);
+    }
+  }, [cartProducts]);
+
   const checkIsActive = isActive ? styles.active : styles.not__active;
 
   return (
