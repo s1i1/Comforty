@@ -5,9 +5,11 @@ import { baseRoutes, useAppDispatch } from 'shared/lib';
 import { ProductTag } from 'shared/ui';
 import { AddCartButton, FavoriteButton } from '../buttons';
 import { ourProductsModel } from 'entities/our-products';
+import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
 
 type CardProps = {
+  id: string;
   image: string;
   title: string;
   price: number;
@@ -16,10 +18,11 @@ type CardProps = {
   searchTag?: string;
 };
 
-const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest, searchTag }) => {
+const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest, searchTag }) => {
   const dispatch = useAppDispatch();
 
   const { categoryNames, setLinkTag, setActiveCategory } = ourProductsModel;
+  const { setCartProducts } = cartPageModel;
 
   const tagCheck = (newest?: boolean, prevPrice?: number) => {
     return (prevPrice && 'sales') || (newest && 'new');
@@ -31,6 +34,10 @@ const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest, sea
         dispatch(setActiveCategory(index));
       }
     });
+  };
+
+  const addToCart = () => {
+    dispatch(setCartProducts({ id, image, price, title, count: 1 }));
   };
 
   return (
@@ -59,7 +66,7 @@ const Card: React.FC<CardProps> = ({ image, title, price, prevPrice, newest, sea
           </div>
         </div>
 
-        <div className={styles.cart}>
+        <div className={styles.add__to_cart} onClick={addToCart}>
           <AddCartButton />
         </div>
       </div>

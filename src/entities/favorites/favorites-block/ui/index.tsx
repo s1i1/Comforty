@@ -4,6 +4,7 @@ import { Card } from 'shared/ui';
 import styles from './styles.module.scss';
 
 type productsItems = {
+  id: string;
   image: string;
   price: number;
   title: string;
@@ -18,9 +19,9 @@ const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ products }) => {
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-        {products?.map((item, index) => (
+        {products?.map((obj, index) => (
           <li key={index} className={styles.items}>
-            <Card image={item.image} price={item.price} title={item.title} />
+            <Card {...obj} />
           </li>
         ))}
       </ul>

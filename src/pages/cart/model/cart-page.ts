@@ -1,17 +1,35 @@
-//@ts-nocheck
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'app/store/types';
 
-const initialState = {
-  cartProducts: [],
+const LS_CART_KEY = 'rck';
+
+interface CartProductsItems {
+  id: string;
+  image: string;
+  price: number;
+  title: string;
+  count: number;
+}
+
+interface CartPageState {
+  cartProducts: CartProductsItems[];
+}
+
+const initialState: CartPageState = {
+  cartProducts: JSON.parse(localStorage.getItem(LS_CART_KEY) ?? '[]'),
 };
 
 const cartPageModel = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    setCartProducts: (state, { payload }) => {
+    setCartProducts: (state, { payload }: PayloadAction<CartProductsItems>) => {
+      const findDuplicate = state.cartProducts.find((obj) => obj.id === payload.id);
+
+      if (findDuplicate) return;
+
       state.cartProducts.push(payload);
+      localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
     },
   },
 });
