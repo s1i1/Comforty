@@ -1,0 +1,18 @@
+.container {
+  @apply pt-[5rem] text-center text-black max-w-[700px] #{!important};
+
+  .title {
+    @apply uppercase font-semibold text-[2.5rem];
+  }
+  .text {
+    @apply font-medium text-[1.5rem] my-10;
+  }
+
+  .back__to_button {
+    @apply flex justify-center;
+  }
+}
+
+.with__scroll {
+  @apply pt-[297px] max-[866px]:pt-[5rem] #{!important};
+}

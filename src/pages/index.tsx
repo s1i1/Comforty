@@ -6,6 +6,7 @@ import { ProductPage } from './product';
 import { About } from './about';
 import { CartPage } from './cart';
 import { FavoritesPage } from './favorites';
+import { NotFoundPage } from './not-found';
 
 export const Routing = () => {
   return (
@@ -16,6 +17,7 @@ export const Routing = () => {
       <Route path="/about" element={<About />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/favorites" element={<FavoritesPage />} />
+      <Route path="/*" element={<NotFoundPage />} />
     </Routes>
   );
 };
