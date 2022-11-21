@@ -18,7 +18,7 @@
   }
 
   .count {
-    @apply flex justify-between items-center select-none max-[584px]:my-5;
+    @apply flex justify-between items-center text-center select-none max-[584px]:my-5;
 
     .minus__button {
       @apply cursor-pointer;
@@ -54,8 +54,12 @@
       }
     }
 
+    .disabled {
+      @apply opacity-30 select-none #{!important};
+    }
+
     .total {
-      @apply mx-3;
+      @apply w-[40px];
     }
 
     .plus__button {
