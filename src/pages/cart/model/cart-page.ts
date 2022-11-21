@@ -1,15 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'app/store/types';
+import { CartProductsItems } from 'pages/cart/model';
 
 const LS_CART_KEY = 'rck';
-
-export interface CartProductsItems {
-  id: string;
-  image: string;
-  price: number;
-  title: string;
-  count: number;
-}
 
 interface CartPageState {
   cartProducts: CartProductsItems[];
