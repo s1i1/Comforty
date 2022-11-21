@@ -7,6 +7,7 @@ import { BackToButton, Button } from 'shared/ui/buttons';
 import styles from './styles.module.scss';
 
 type productsItems = {
+  id: string;
   image: string;
   price: number;
   title: string;
@@ -16,7 +17,6 @@ type CartBlockProps = {
   products: productsItems[];
 };
 
-//Заменить key в products
 const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
   return (
     <div className={cn('_container', styles.container)}>
@@ -62,7 +62,7 @@ const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
           <p className={styles.title}>Remove All</p>
         </div>
         {products?.map((obj, index) => (
-          <li key={index} className={styles.items}>
+          <li key={obj.id} className={styles.items}>
             <CartItem {...obj} />
           </li>
         ))}
