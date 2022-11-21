@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'app/store/types';
 import { CartProductsItems } from 'pages/cart/model';
