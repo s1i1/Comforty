@@ -1,11 +1,12 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import { baseRoutes, useAppDispatch } from 'shared/lib';
+import { baseRoutes, useAppDispatch, useAppSelector } from 'shared/lib';
 import { ProductTag } from 'shared/ui';
 import { AddCartButton, FavoriteButton } from '../buttons';
 import { ourProductsModel } from 'entities/our-products';
 import { cartPageModel } from 'pages/cart';
+import { CartProductsItems } from 'pages/cart/model';
 import styles from './styles.module.scss';
 
 type CardProps = {
@@ -21,8 +22,10 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest, searchTag }) => {
   const dispatch = useAppDispatch();
 
+  const { cartProducts } = useAppSelector(cartPageModel.selectCartPage);
+
   const { categoryNames, setLinkTag, setActiveCategory } = ourProductsModel;
-  const { setCartProducts } = cartPageModel;
+  const { setCartProducts, removeCartProduct } = cartPageModel;
 
   const tagCheck = (newest?: boolean, prevPrice?: number) => {
     return (prevPrice && 'sales') || (newest && 'new');
@@ -37,7 +40,13 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
   };
 
   const addToCart = () => {
-    dispatch(setCartProducts({ id, image, price, title, count: 1 }));
+    const findDuplicate = cartProducts.find((obj: CartProductsItems) => obj.id === id);
+
+    if (findDuplicate) {
+      dispatch(removeCartProduct(id));
+    } else {
+      dispatch(setCartProducts({ id, image, price, title, count: 1 }));
+    }
   };
 
   return (
