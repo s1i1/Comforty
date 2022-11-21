@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'app/store/types';
 import { CartProductsItems } from 'pages/cart/model';
@@ -34,10 +35,21 @@ const cartPageModel = createSlice({
       state.cartProducts = [];
       localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
     },
+
+    incrementCount: (state, { payload }: PayloadAction<string>) => {
+      state.cartProducts = state.cartProducts.map((obj) => {
+        if (obj.id === payload) {
+          obj.count++;
+        }
+        return obj;
+      });
+      localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
+    },
   },
 });
 
 export const selectCartPage = (state: RootState) => state.cart;
 
-export const { setCartProducts, removeCartProduct, removeAllProducts } = cartPageModel.actions;
+export const { setCartProducts, removeCartProduct, removeAllProducts, incrementCount } =
+  cartPageModel.actions;
 export const reducer = cartPageModel.reducer;

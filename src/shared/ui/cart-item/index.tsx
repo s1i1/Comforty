@@ -8,14 +8,20 @@ type CartItemProps = {
   image: string;
   title: string;
   price: number;
+  count?: number;
 };
 
-const CartItem: React.FC<CartItemProps> = ({ id, image, price, title }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, image, price, title, count }) => {
   const dispatch = useAppDispatch();
 
-  const { removeCartProduct } = cartPageModel;
+  const { removeCartProduct, incrementCount } = cartPageModel;
+
   const onClickRemoveProduct = () => {
     dispatch(removeCartProduct(id));
+  };
+
+  const onClickIncrementCount = () => {
+    dispatch(incrementCount(id));
   };
 
   return (
@@ -42,8 +48,8 @@ const CartItem: React.FC<CartItemProps> = ({ id, image, price, title }) => {
             />
           </svg>
         </div>
-        <p className={styles.total}>1</p>
-        <div className={styles.plus__button}>
+        <p className={styles.total}>{count}</p>
+        <div className={styles.plus__button} onClick={onClickIncrementCount}>
           <svg
             width="32"
             height="32"
