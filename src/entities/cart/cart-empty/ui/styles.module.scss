@@ -1,0 +1,9 @@
+.container {
+  @apply text-center max-w-[300px];
+  .text {
+    @apply uppercase text-black font-semibold text-[1.5rem] mb-[80px];
+  }
+
+  .back__to_button {
+  }
+}
