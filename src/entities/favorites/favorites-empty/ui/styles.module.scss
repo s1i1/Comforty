@@ -1,0 +1,6 @@
+.container {
+  @apply text-center;
+  .text {
+    @apply uppercase text-black font-semibold text-[1.5rem] mb-[80px];
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { useAppSelector } from 'shared/lib';
-import { FavoritesBlock } from 'entities/favorites';
+import { FavoritesBlock, FavoritesEmpty } from 'entities/favorites';
 import { Link } from 'react-router-dom';
 import { baseRoutes } from 'shared/lib';
 import { BackToButton } from 'shared/ui/buttons';
@@ -32,7 +32,7 @@ export const FavoritesPage = () => {
         </Link>
       </div>
 
-      <FavoritesBlock products={testArr} />
+      {testArr.length >= 1 ? <FavoritesBlock products={testArr} /> : <FavoritesEmpty />}
     </div>
   );
 };
