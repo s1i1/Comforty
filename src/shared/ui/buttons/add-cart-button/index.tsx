@@ -16,6 +16,8 @@ const AddCartButton: React.FC<AddCartButtonProps> = ({ id }) => {
   React.useEffect(() => {
     if (cartProducts.find((obj: CartProductsItems) => obj.id === id)) {
       setIsActive(true);
+    } else {
+      setIsActive(false);
     }
   }, [cartProducts]);
 
