@@ -1,20 +1,7 @@
 .container {
-  @apply pt-[5rem] max-w-[850px] #{!important};
-
-  .header {
-    @apply relative mb-16 flex items-center justify-center max-[745px]:flex-col;
-
-    .title {
-      @apply text-center text-black font-semibold text-[2.5rem] max-[745px]:mb-8;
-    }
-
-    .to__shop {
-      @apply absolute top-0 left-0 max-[745px]:relative;
-    }
-  }
+  @apply max-w-[850px] #{!important};
 
   .list {
-    /* @apply flex flex-col items-center justify-center; */
     @apply grid auto-rows-auto grid-cols-1;
 
     .clear {
@@ -61,8 +48,4 @@
       @apply w-[300px];
     }
   }
-}
-
-.with__scroll {
-  @apply pt-[297px] max-[866px]:pt-[5rem] #{!important};
 }

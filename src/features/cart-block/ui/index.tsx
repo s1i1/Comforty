@@ -2,9 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { CartItem } from 'shared/ui';
-import { baseRoutes, useAppSelector } from 'shared/lib';
+import { baseRoutes } from 'shared/lib';
 import { BackToButton, Button } from 'shared/ui/buttons';
-import { headerModel } from 'widgets/header';
 import styles from './styles.module.scss';
 
 type productsItems = {
@@ -14,20 +13,13 @@ type productsItems = {
 };
 
 type CartBlockProps = {
-  header: string;
   products: productsItems[];
 };
 
 //Заменить key в products
-const CartBlock: React.FC<CartBlockProps> = ({ header, products }) => {
-  const { scroll } = useAppSelector(headerModel.selectHeader);
-
+const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
   return (
-    <div className={cn('_container', styles.container, scroll >= 48 && styles.with__scroll)}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>{header}</h2>
-      </div>
-
+    <div className={cn('_container', styles.container)}>
       <ul className={styles.list}>
         <div className={styles.clear}>
           <div className={styles.image}>
