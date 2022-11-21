@@ -2,9 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { CartItem } from 'shared/ui';
-import { baseRoutes } from 'shared/lib';
+import { baseRoutes, useAppDispatch } from 'shared/lib';
 import { BackToButton, Button } from 'shared/ui/buttons';
 import styles from './styles.module.scss';
+import { cartPageModel } from 'pages/cart';
 
 type productsItems = {
   id: string;
@@ -18,10 +19,18 @@ type CartBlockProps = {
 };
 
 const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
+  const dispatch = useAppDispatch();
+
+  const { removeAllProducts } = cartPageModel;
+
+  const onClickRemoveAll = () => {
+    dispatch(removeAllProducts());
+  };
+
   return (
     <div className={cn('_container', styles.container)}>
       <ul className={styles.list}>
-        <div className={styles.clear}>
+        <div className={styles.clear} onClick={onClickRemoveAll}>
           <div className={styles.image}>
             <svg
               width="20"

@@ -37,10 +37,14 @@ const cartPageModel = createSlice({
       });
       localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
     },
+    removeAllProducts: (state) => {
+      state.cartProducts = [];
+      localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
+    },
   },
 });
 
 export const selectCartPage = (state: RootState) => state.cart;
 
-export const { setCartProducts, removeCartProduct } = cartPageModel.actions;
+export const { setCartProducts, removeCartProduct, removeAllProducts } = cartPageModel.actions;
 export const reducer = cartPageModel.reducer;
