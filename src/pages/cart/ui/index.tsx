@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useAppSelector } from 'shared/lib';
 import { cartPageModel } from 'pages/cart';
-import { CartBlock } from 'features/cart-block';
+import { CartEmpty, CartBlock } from 'entities/cart';
 import { headerModel } from 'widgets/header';
 
 import styles from './styles.module.scss';
@@ -28,7 +28,7 @@ export const CartPage = () => {
       <div className={styles.header}>
         <h2 className={styles.title}>Your Shopping Cart</h2>
       </div>
-      <CartBlock products={cartProducts} />
+      {cartProducts.length >= 1 ? <CartBlock products={cartProducts} /> : <CartEmpty />}
     </div>
   );
 };
