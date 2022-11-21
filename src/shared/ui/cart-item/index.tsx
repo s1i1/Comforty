@@ -25,7 +25,9 @@ const CartItem: React.FC<CartItemProps> = ({ id, image, price, title, count }) =
   };
 
   const onClickDecrementCount = () => {
-    dispatch(decrementCount(id));
+    if (count) {
+      count > 1 && dispatch(decrementCount(id));
+    }
   };
 
   return (
