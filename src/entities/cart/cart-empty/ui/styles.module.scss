@@ -1,5 +1,5 @@
 .container {
-  @apply text-center max-w-[300px];
+  @apply text-center max-w-[300px] #{!important};
   .text {
     @apply uppercase text-black font-semibold text-[1.5rem] mb-[80px];
   }
