@@ -21,7 +21,7 @@ type CartBlockProps = {
 const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
   const dispatch = useAppDispatch();
 
-  const { TotalCount } = useAppSelector(cartPageModel.selectCartPage);
+  const { totalCount } = useAppSelector(cartPageModel.selectCartPage);
 
   const { removeAllProducts } = cartPageModel;
 
@@ -81,7 +81,7 @@ const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
 
       <div className={styles.total__block}>
         <div className={styles.quantity}>
-          quantity: <span>{TotalCount}</span>
+          quantity: <span>{totalCount}</span>
         </div>
         <div className={styles.total__price}>
           total price: <span>$1120</span>

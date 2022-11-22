@@ -6,7 +6,7 @@ import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
 
 const ToCart = () => {
-  const { TotalCount } = useAppSelector(cartPageModel.selectCartPage);
+  const { totalCount } = useAppSelector(cartPageModel.selectCartPage);
 
   const [active, setActive] = React.useState(false);
   const { pathname } = useLocation();
@@ -66,7 +66,7 @@ const ToCart = () => {
           />
         </svg>
         <div className={styles.title}>Cart</div>
-        <div className={styles.count}>{TotalCount}</div>
+        <div className={styles.count}>{totalCount}</div>
       </div>
     </div>
   );
