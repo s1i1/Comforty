@@ -14,13 +14,12 @@ type FavoritesBlockProps = {
   products: productsItems[];
 };
 
-//Поменять key в products
 const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ products }) => {
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-        {products?.map((obj, index) => (
-          <li key={index} className={styles.items}>
+        {products?.map((obj) => (
+          <li key={obj.id} className={styles.items}>
             <Card {...obj} />
           </li>
         ))}
