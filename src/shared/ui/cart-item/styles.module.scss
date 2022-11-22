@@ -97,7 +97,7 @@
     }
   }
   .price {
-    @apply px-3 max-[584px]:py-3;
+    @apply w-[78px] flex justify-start max-[584px]:py-3;
   }
 
   .delete__button {
