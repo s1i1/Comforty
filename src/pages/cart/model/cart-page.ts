@@ -58,7 +58,7 @@ const cartPageModel = createSlice({
       });
       localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
     },
-    setQuantity: (state, { payload }: PayloadAction<number>) => {
+    setTotalCount: (state, { payload }: PayloadAction<number>) => {
       state.TotalCount = payload;
     },
   },
@@ -72,6 +72,6 @@ export const {
   removeAllProducts,
   incrementCount,
   decrementCount,
-  setQuantity,
+  setTotalCount,
 } = cartPageModel.actions;
 export const reducer = cartPageModel.reducer;

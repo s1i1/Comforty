@@ -13,7 +13,7 @@ import styles from './styles.module.scss';
 const Middle = () => {
   const dispatch = useAppDispatch();
 
-  const { setQuantity } = cartPageModel;
+  const { setTotalCount } = cartPageModel;
 
   const { cartProducts } = useAppSelector(cartPageModel.selectCartPage);
 
@@ -24,7 +24,7 @@ const Middle = () => {
       counts += obj.count;
     });
 
-    dispatch(setQuantity(counts));
+    dispatch(setTotalCount(counts));
     counts = 0;
   }, [cartProducts]);
 
