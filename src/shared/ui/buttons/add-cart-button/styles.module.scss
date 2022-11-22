@@ -2,29 +2,38 @@
   svg {
     @apply cursor-pointer;
   }
+
+  &:active {
+    rect {
+      @apply transition duration-75 fill-accents;
+    }
+    path {
+      @apply transition duration-75 stroke-white;
+    }
+  }
 }
 
 .not__active {
   rect {
-    @apply transition duration-1000 fill-offWhiteF;
+    @apply transition duration-500 fill-offWhiteF;
   }
   path {
-    @apply transition duration-1000 stroke-black;
+    @apply transition duration-500 stroke-black;
   }
   .basket__bottom {
-    @apply transition duration-1000 fill-black;
+    @apply transition duration-500 fill-black;
   }
 }
 
 .active {
   rect {
-    @apply transition duration-1000 fill-accents;
+    @apply transition duration-500 fill-accents;
   }
 
   path {
-    @apply transition duration-1000 stroke-white;
+    @apply transition duration-500 stroke-white;
   }
   .basket__bottom {
-    @apply transition duration-1000 fill-white;
+    @apply transition duration-500 fill-white;
   }
 }
