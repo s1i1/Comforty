@@ -6,10 +6,10 @@
 
 .not__active {
   rect {
-    @apply transition duration-1000 fill-white;
+    @apply transition duration-500 fill-white;
   }
   path {
-    @apply transition duration-1000 stroke-black;
+    @apply transition duration-500 stroke-black;
   }
 
   &:active {
@@ -24,9 +24,9 @@
 
 .active {
   rect {
-    @apply fill-accents;
+    @apply transition duration-500 fill-accents;
   }
   path {
-    @apply stroke-white;
+    @apply transition duration-500 stroke-white;
   }
 }
