@@ -1,23 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
-import { baseRoutes, useAppSelector } from 'shared/lib';
-import { favoritesPageModel } from 'pages/favorites';
+import { baseRoutes } from 'shared/lib';
 import styles from './styles.module.scss';
-import { CartProductsItems } from 'pages/cart/model';
 
 type FavoriteProps = {
-  id?: string;
+  isActive?: boolean;
   inHeader?: boolean;
 };
 
-const FavoriteButton: React.FC<FavoriteProps> = ({ inHeader, id }) => {
+const FavoriteButton: React.FC<FavoriteProps> = ({ inHeader, isActive }) => {
   const { pathname } = useLocation();
 
-  const { favoritesItems } = useAppSelector(favoritesPageModel.selectFavoritesPage);
-
   const [isActiveHeader, setIsActiveHeader] = React.useState(false);
-  const [isActive, setIsActive] = React.useState(false);
 
   const checkIsHeader = isActiveHeader && styles.active;
   const checkIsActive = isActive ? styles.active : styles.not__active;
@@ -29,14 +24,6 @@ const FavoriteButton: React.FC<FavoriteProps> = ({ inHeader, id }) => {
       setIsActiveHeader(false);
     }
   }, [pathname]);
-
-  React.useEffect(() => {
-    if (favoritesItems.find((obj: CartProductsItems) => obj.id === id)) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }, [favoritesItems]);
 
   return (
     <div className={cn(styles.button, checkIsActive, checkIsHeader)}>

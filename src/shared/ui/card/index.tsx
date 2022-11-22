@@ -82,7 +82,9 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
             : 'opacity-0',
         )}
         onClick={addToFavorites}>
-        <FavoriteButton id={id} />
+        <FavoriteButton
+          isActive={favoritesItems.find((obj: CartProductsItems) => obj.id === id && true)}
+        />
       </div>
 
       <div className={styles.bottom}>
@@ -96,7 +98,9 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
         </div>
 
         <div className={styles.add__to_cart} onClick={addToCart}>
-          <AddCartButton id={id} />
+          <AddCartButton
+            isActive={cartProducts.find((obj: CartProductsItems) => obj.id === id && true)}
+          />
         </div>
       </div>
     </div>
