@@ -1,15 +1,15 @@
 .to__cart {
   .container {
-    @apply items-center flex py-3 px-4 rounded-lg bg-white font-medium cursor-pointer transition duration-1000;
+    @apply items-center flex py-3 px-4 rounded-lg bg-white font-medium cursor-pointer transition duration-500;
 
     path {
-      @apply transition duration-1000;
+      @apply transition duration-500;
     }
     .title {
-      @apply pl-2 pr-3 text-sm text-black transition duration-1000;
+      @apply pl-2 pr-3 text-sm text-black transition duration-500;
     }
     .count {
-      @apply w-5 h-5 text-[0.625rem] flex justify-center items-center text-white font-dmSans  bg-darkAccents rounded-3xl transition duration-1000;
+      @apply w-5 h-5 text-[0.625rem] flex justify-center items-center text-white font-dmSans  bg-darkAccents rounded-3xl transition duration-500;
     }
 
     &:active {
