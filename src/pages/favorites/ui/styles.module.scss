@@ -12,6 +12,10 @@
       @apply absolute top-0 left-0 max-[745px]:relative;
     }
   }
+
+  .favorite__block {
+    @apply pt-4;
+  }
 }
 
 .with__scroll {

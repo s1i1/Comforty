@@ -24,11 +24,13 @@ export const FavoritesPage = () => {
         </Link>
       </div>
 
-      {favoritesItems.length >= 1 ? (
-        <FavoritesBlock products={favoritesItems} />
-      ) : (
-        <FavoritesEmpty />
-      )}
+      <div className={styles.favorite__block}>
+        {favoritesItems.length >= 1 ? (
+          <FavoritesBlock products={favoritesItems} />
+        ) : (
+          <FavoritesEmpty />
+        )}
+      </div>
     </div>
   );
 };
