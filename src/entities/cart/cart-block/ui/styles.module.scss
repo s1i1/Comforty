@@ -23,7 +23,7 @@
   }
 
   .total__block {
-    @apply flex justify-between text-black text-xl mt-7 mb-[52px] max-[404px]:flex-col;
+    @apply flex justify-between text-black text-xl mt-7 mb-[52px] max-[454px]:flex-col;
 
     span {
       @apply font-semibold;
@@ -33,7 +33,11 @@
       @apply uppercase;
     }
     .total__price {
-      @apply uppercase;
+      @apply uppercase flex;
+
+      span {
+        @apply w-[105px] text-start;
+      }
     }
   }
 
