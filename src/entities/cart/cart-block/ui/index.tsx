@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { CartItem } from 'shared/ui';
-import { baseRoutes, useAppDispatch } from 'shared/lib';
+import { baseRoutes, useAppDispatch, useAppSelector } from 'shared/lib';
 import { BackToButton, Button } from 'shared/ui/buttons';
 import styles from './styles.module.scss';
 import { cartPageModel } from 'pages/cart';
@@ -20,6 +20,8 @@ type CartBlockProps = {
 
 const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
   const dispatch = useAppDispatch();
+
+  const { TotalCount } = useAppSelector(cartPageModel.selectCartPage);
 
   const { removeAllProducts } = cartPageModel;
 
@@ -79,7 +81,7 @@ const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
 
       <div className={styles.total__block}>
         <div className={styles.quantity}>
-          quantity: <span>1</span>
+          quantity: <span>{TotalCount}</span>
         </div>
         <div className={styles.total__price}>
           total price: <span>$1120</span>

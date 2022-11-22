@@ -6,10 +6,12 @@ const LS_CART_KEY = 'rck';
 
 interface CartPageState {
   cartProducts: CartProductsItems[];
+  TotalCount: number;
 }
 
 const initialState: CartPageState = {
   cartProducts: JSON.parse(localStorage.getItem(LS_CART_KEY) ?? '[]'),
+  TotalCount: 0,
 };
 
 const cartPageModel = createSlice({
@@ -39,6 +41,7 @@ const cartPageModel = createSlice({
       state.cartProducts = state.cartProducts.map((obj) => {
         if (obj.id === payload) {
           obj.count++;
+          state.TotalCount += 1;
         }
         return obj;
       });
@@ -49,10 +52,14 @@ const cartPageModel = createSlice({
       state.cartProducts = state.cartProducts.map((obj) => {
         if (obj.id === payload) {
           obj.count--;
+          state.TotalCount -= 1;
         }
         return obj;
       });
       localStorage.setItem(LS_CART_KEY, JSON.stringify(state.cartProducts));
+    },
+    setQuantity: (state, { payload }: PayloadAction<number>) => {
+      state.TotalCount = payload;
     },
   },
 });
@@ -65,5 +72,6 @@ export const {
   removeAllProducts,
   incrementCount,
   decrementCount,
+  setQuantity,
 } = cartPageModel.actions;
 export const reducer = cartPageModel.reducer;

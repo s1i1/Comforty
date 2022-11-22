@@ -1,10 +1,13 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
-import { baseRoutes } from 'shared/lib';
+import { useLocation } from 'react-router-dom';
+import { baseRoutes, useAppSelector } from 'shared/lib';
+import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
 
 const ToCart = () => {
+  const { TotalCount } = useAppSelector(cartPageModel.selectCartPage);
+
   const [active, setActive] = React.useState(false);
   const { pathname } = useLocation();
 
@@ -63,7 +66,7 @@ const ToCart = () => {
           />
         </svg>
         <div className={styles.title}>Cart</div>
-        <div className={styles.count}>2</div>
+        <div className={styles.count}>{TotalCount}</div>
       </div>
     </div>
   );

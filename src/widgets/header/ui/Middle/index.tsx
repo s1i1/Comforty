@@ -1,14 +1,33 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import { baseRoutes } from 'shared/lib';
+import { baseRoutes, useAppDispatch, useAppSelector } from 'shared/lib';
 import { Logo } from 'shared/ui';
 import { SearchProduct } from 'features/search-product';
 import { ToCart } from 'features/to-cart';
 import { FavoriteButton, ProfileButton } from 'shared/ui/buttons';
+import { CartProductsItems } from 'pages/cart/model';
+import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
 
 const Middle = () => {
+  const dispatch = useAppDispatch();
+
+  const { setQuantity } = cartPageModel;
+
+  const { cartProducts } = useAppSelector(cartPageModel.selectCartPage);
+
+  React.useEffect(() => {
+    let counts = 0;
+
+    cartProducts.forEach((obj: CartProductsItems) => {
+      counts += obj.count;
+    });
+
+    dispatch(setQuantity(counts));
+    counts = 0;
+  }, [cartProducts]);
+
   return (
     <div className={styles.header__middle}>
       <div className={cn('_container', styles.container)}>
