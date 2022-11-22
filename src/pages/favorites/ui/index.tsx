@@ -6,18 +6,12 @@ import { Link } from 'react-router-dom';
 import { baseRoutes } from 'shared/lib';
 import { BackToButton } from 'shared/ui/buttons';
 import { headerModel } from 'widgets/header';
+import { favoritesPageModel } from 'pages/favorites';
 
 import styles from './styles.module.scss';
 
 export const FavoritesPage = () => {
-  const testArr = [
-    {
-      id: '1',
-      image: 'https://i.imgur.com/X2sAq9u.jpg',
-      price: 100,
-      title: "Barny 78'' Upholstered",
-    },
-  ];
+  const { favoritesItems } = useAppSelector(favoritesPageModel.selectFavoritesPage);
 
   const { scroll } = useAppSelector(headerModel.selectHeader);
 
@@ -30,7 +24,11 @@ export const FavoritesPage = () => {
         </Link>
       </div>
 
-      {testArr.length >= 1 ? <FavoritesBlock products={testArr} /> : <FavoritesEmpty />}
+      {favoritesItems.length >= 1 ? (
+        <FavoritesBlock products={favoritesItems} />
+      ) : (
+        <FavoritesEmpty />
+      )}
     </div>
   );
 };

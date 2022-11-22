@@ -7,6 +7,7 @@ import { AddCartButton, FavoriteButton } from '../buttons';
 import { ourProductsModel } from 'entities/our-products';
 import { cartPageModel } from 'pages/cart';
 import { CartProductsItems } from 'pages/cart/model';
+import { favoritesPageModel } from 'pages/favorites';
 import styles from './styles.module.scss';
 
 type CardProps = {
@@ -23,9 +24,11 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
   const dispatch = useAppDispatch();
 
   const { cartProducts } = useAppSelector(cartPageModel.selectCartPage);
+  const { favoritesItems } = useAppSelector(favoritesPageModel.selectFavoritesPage);
 
   const { categoryNames, setLinkTag, setActiveCategory } = ourProductsModel;
   const { setCartProducts, removeCartProduct } = cartPageModel;
+  const { addFavorites, removeFavorite } = favoritesPageModel;
 
   const tagCheck = (newest?: boolean, prevPrice?: number) => {
     return (prevPrice && 'sales') || (newest && 'new');
@@ -49,6 +52,16 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
     }
   };
 
+  const addToFavorites = () => {
+    const findDuplicate = favoritesItems.find((obj: CartProductsItems) => obj.id === id);
+
+    if (findDuplicate) {
+      dispatch(removeFavorite(id));
+    } else {
+      dispatch(addFavorites({ id, image, price, title, count: 1 }));
+    }
+  };
+
   return (
     <div className={cn(styles.container)}>
       <div className={styles.tag}>
@@ -61,7 +74,7 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
         </div>
       </Link>
 
-      <div className={styles.favorite}>
+      <div className={styles.favorite} onClick={addToFavorites}>
         <FavoriteButton />
       </div>
 
