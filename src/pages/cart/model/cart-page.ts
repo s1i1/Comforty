@@ -7,11 +7,13 @@ const LS_CART_KEY = 'rck';
 interface CartPageState {
   cartProducts: CartProductsItems[];
   totalCount: number;
+  totalPrice: number;
 }
 
 const initialState: CartPageState = {
   cartProducts: JSON.parse(localStorage.getItem(LS_CART_KEY) ?? '[]'),
   totalCount: 0,
+  totalPrice: 0,
 };
 
 const cartPageModel = createSlice({
@@ -61,6 +63,9 @@ const cartPageModel = createSlice({
     setTotalCount: (state, { payload }: PayloadAction<number>) => {
       state.totalCount = payload;
     },
+    setTotalPrice: (state, { payload }: PayloadAction<number>) => {
+      state.totalPrice = Math.floor(payload * 100) / 100;
+    },
   },
 });
 
@@ -73,5 +78,6 @@ export const {
   incrementCount,
   decrementCount,
   setTotalCount,
+  setTotalPrice,
 } = cartPageModel.actions;
 export const reducer = cartPageModel.reducer;
