@@ -14,7 +14,7 @@ const Footer = () => {
 
   const supportTestArr = [
     { title: 'Help & Support', category: '' },
-    { title: 'Tearms & Conditions', category: '' },
+    { title: 'Terms & Conditions', category: '' },
     { title: 'Privacy Policy', category: '' },
     { title: 'Help', category: '' },
   ];

@@ -31,7 +31,7 @@ const FooterList: React.FC<FooterListProps> = ({ header, categoryNames, setCurre
       <h4 className={styles.header}>{header}</h4>
       <ul className={styles.list}>
         {categoryNames.map((obj, index) => (
-          <li key={index} onClick={() => handlerClickCategory(obj)}>
+          <li key={index} className={styles.items} onClick={() => handlerClickCategory(obj)}>
             <Link to={baseRoutes.SHOP}>{<ListItem title={obj.title} />}</Link>
           </li>
         ))}

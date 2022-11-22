@@ -4,6 +4,10 @@
   }
 
   .list {
+    .items {
+      @apply flex;
+    }
+
     li:not(:last-child) {
       @apply mb-3;
     }
