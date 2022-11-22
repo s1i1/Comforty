@@ -30,6 +30,9 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
   const { setCartProducts, removeCartProduct } = cartPageModel;
   const { addFavorites, removeFavorite } = favoritesPageModel;
 
+  const findCartItem = cartProducts.find((obj: CartProductsItems) => obj.id === id);
+  const findFavoriteItem = favoritesItems.find((obj: CartProductsItems) => obj.id === id);
+
   const tagCheck = (newest?: boolean, prevPrice?: number) => {
     return (prevPrice && 'sales') || (newest && 'new');
   };
@@ -43,9 +46,7 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
   };
 
   const addToCart = () => {
-    const findDuplicate = cartProducts.find((obj: CartProductsItems) => obj.id === id);
-
-    if (findDuplicate) {
+    if (findCartItem) {
       dispatch(removeCartProduct(id));
     } else {
       dispatch(setCartProducts({ id, image, price, title, count: 1 }));
@@ -53,9 +54,7 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
   };
 
   const addToFavorites = () => {
-    const findDuplicate = favoritesItems.find((obj: CartProductsItems) => obj.id === id);
-
-    if (findDuplicate) {
+    if (findFavoriteItem) {
       dispatch(removeFavorite(id));
     } else {
       dispatch(addFavorites({ id, image, price, title, count: 1 }));
@@ -75,16 +74,9 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
       </Link>
 
       <div
-        className={cn(
-          styles.favorite,
-          favoritesItems.find((obj: CartProductsItems) => obj.id === id)
-            ? 'opacity-100'
-            : 'opacity-0',
-        )}
+        className={cn(styles.favorite, findFavoriteItem ? 'opacity-100' : 'opacity-0')}
         onClick={addToFavorites}>
-        <FavoriteButton
-          isActive={favoritesItems.find((obj: CartProductsItems) => obj.id === id && true)}
-        />
+        <FavoriteButton isActive={findFavoriteItem && true} />
       </div>
 
       <div className={styles.bottom}>
@@ -98,9 +90,7 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
         </div>
 
         <div className={styles.add__to_cart} onClick={addToCart}>
-          <AddCartButton
-            isActive={cartProducts.find((obj: CartProductsItems) => obj.id === id && true)}
-          />
+          <AddCartButton isActive={findCartItem && true} />
         </div>
       </div>
     </div>
