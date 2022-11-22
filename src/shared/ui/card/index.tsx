@@ -74,8 +74,15 @@ const Card: React.FC<CardProps> = ({ id, image, title, price, prevPrice, newest,
         </div>
       </Link>
 
-      <div className={styles.favorite} onClick={addToFavorites}>
-        <FavoriteButton />
+      <div
+        className={cn(
+          styles.favorite,
+          favoritesItems.find((obj: CartProductsItems) => obj.id === id)
+            ? 'opacity-100'
+            : 'opacity-0',
+        )}
+        onClick={addToFavorites}>
+        <FavoriteButton id={id} />
       </div>
 
       <div className={styles.bottom}>
