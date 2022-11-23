@@ -92,7 +92,7 @@ const CartBlock: React.FC<CartBlockProps> = ({ products }) => {
         <Link to={baseRoutes.SHOP} className={styles.to__shop}>
           <BackToButton title="Back To Shop" />
         </Link>
-        <div className={styles.purchase__button}>
+        <div className={styles.purchase__button} onClick={() => dispatch(removeAllProducts())}>
           <Button title="checkout" isTitleCenter />
         </div>
       </div>
