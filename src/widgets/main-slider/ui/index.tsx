@@ -6,12 +6,16 @@ import { ArrowButton, Button } from 'shared/ui/buttons';
 import { useGetDiscountItemsQuery } from 'shared/api';
 import { baseRoutes } from 'shared/lib';
 import styles from './styles.module.scss';
+import ContentLoader from 'react-content-loader';
 
 const MainSlider = () => {
   const [pageNumber, setPageNumber] = React.useState(1);
   const totalPages = ['1', '2', '3'];
 
-  const { data: discountItems } = useGetDiscountItemsQuery({ limit: 1, pageNumber: pageNumber });
+  const { data: discountItems, isFetching } = useGetDiscountItemsQuery({
+    limit: 1,
+    pageNumber: pageNumber,
+  });
 
   const onClickIncrementPageNum = () => {
     if (pageNumber < 3) {
@@ -47,11 +51,23 @@ const MainSlider = () => {
           </div>
         </div>
         <div className={styles.product}>
-          {discountItems?.map((discountObj, index) => (
-            <div key={index}>
-              <DiscountCard {...discountObj} />
-            </div>
-          ))}
+          {isFetching ? (
+            <ContentLoader
+              speed={1}
+              width={475}
+              height={649}
+              viewBox="0 0 475 649"
+              backgroundColor="#f3f3f3"
+              foregroundColor="#ecebeb">
+              <rect x="0" y="0" rx="20" ry="20" width="475" height="649" />
+            </ContentLoader>
+          ) : (
+            discountItems?.map((discountObj, index) => (
+              <div key={index}>
+                <DiscountCard {...discountObj} />
+              </div>
+            ))
+          )}
         </div>
 
         <div className={styles.product__pagination}>
