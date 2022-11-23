@@ -2,7 +2,7 @@
   @apply mt-[3.25rem] #{!important};
 
   .list {
-    @apply flex flex-wrap justify-between max-[1331px]:justify-center max-[415px]:-mt-10 max-[356px]:-mt-16 max-[320px]:-mt-28;
+    @apply flex flex-wrap justify-between max-[1331px]:justify-center max-[415px]:-mt-10 max-[356px]:-mt-10 max-[320px]:-mt-0;
 
     li {
       @apply w-[26.5rem] h-[26.5rem] max-[1315px]:mb-4;
