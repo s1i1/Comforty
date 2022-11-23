@@ -5,7 +5,7 @@ import { baseRoutes, useAppDispatch, useAppSelector } from 'shared/lib';
 import { Logo } from 'shared/ui';
 import { SearchProduct } from 'features/search-product';
 import { ToCart } from 'features/to-cart';
-import { FavoriteButton, ProfileButton } from 'shared/ui/buttons';
+import { FavoriteButton } from 'shared/ui/buttons';
 import { CartProductsItems } from 'pages/cart/model';
 import { cartPageModel } from 'pages/cart';
 import styles from './styles.module.scss';
@@ -45,9 +45,6 @@ const Middle = () => {
             <Link to={baseRoutes.FAVORITES}>
               <FavoriteButton inHeader />
             </Link>
-          </li>
-          <li>
-            <ProfileButton />
           </li>
         </ul>
       </div>
