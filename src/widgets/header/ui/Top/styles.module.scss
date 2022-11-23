@@ -5,10 +5,10 @@
     @apply flex justify-between py-3.5 max-[558px]:justify-center;
 
     .shipping {
-      @apply max-[558px]:hidden opacity-70;
+      @apply opacity-70; //max-[558px]:hidden
     }
 
-    ul {
+    /* ul {
       @apply flex;
 
       .language {
@@ -26,6 +26,6 @@
       .faq {
         @apply mx-6 font-normal text-[0.8125rem] text-white opacity-70;
       }
-    }
+    } */
   }
 }

@@ -1,35 +1,35 @@
 import React from 'react';
 import cn from 'classnames';
 import { Shipping } from 'entities/shipping';
-import { Language, LanguageModal } from 'features/language';
-import { Help } from 'entities/help';
+// import { Language, LanguageModal } from 'features/language';
+// import { Help } from 'entities/help';
 import styles from './styles.module.scss';
 
 const Top = () => {
-  const [showModal, setShowModal] = React.useState(false);
-  const [currentLanguage, setCurrentLanguage] = React.useState('Eng');
+  // const [showModal, setShowModal] = React.useState(false);
+  // const [currentLanguage, setCurrentLanguage] = React.useState('Eng');
 
-  const refLanguage = React.useRef<HTMLLIElement>(null);
+  // const refLanguage = React.useRef<HTMLLIElement>(null);
 
-  React.useEffect(() => {
-    const closePopup = (e: MouseEvent) => {
-      if (e.target instanceof Element) {
-        const target = e.target.parentElement?.parentElement;
+  // React.useEffect(() => {
+  //   const closePopup = (e: MouseEvent) => {
+  //     if (e.target instanceof Element) {
+  //       const target = e.target.parentElement?.parentElement;
 
-        const refCurrent = refLanguage.current;
+  //       const refCurrent = refLanguage.current;
 
-        if (refCurrent && target !== refCurrent) {
-          setShowModal(false);
-        }
-      }
-    };
+  //       if (refCurrent && target !== refCurrent) {
+  //         setShowModal(false);
+  //       }
+  //     }
+  //   };
 
-    document.body.addEventListener('click', closePopup);
+  //   document.body.addEventListener('click', closePopup);
 
-    return () => {
-      document.body.removeEventListener('click', closePopup);
-    };
-  }, []);
+  //   return () => {
+  //     document.body.removeEventListener('click', closePopup);
+  //   };
+  // }, []);
 
   return (
     <div className={styles.header__top}>
@@ -37,7 +37,7 @@ const Top = () => {
         <div className={styles.shipping}>
           <Shipping />
         </div>
-        <ul>
+        {/* <ul>
           <li
             ref={refLanguage}
             className={styles.language}
@@ -57,7 +57,7 @@ const Top = () => {
           <li>
             <Help />
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
