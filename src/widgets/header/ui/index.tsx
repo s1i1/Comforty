@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import { useAppDispatch, useAppSelector } from 'shared/lib';
 import { headerModel } from 'widgets/header';
-import Top from './top';
-import Middle from './middle';
-import Bottom from './bottom';
+import Top from './for-fix-top';
+import Middle from './for-fix-middle';
+import Bottom from './for-fix-bottom';
 import styles from './styles.module.scss';
 
 const Header = () => {
