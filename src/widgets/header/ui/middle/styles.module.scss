@@ -1,0 +1,23 @@
+.header__middle {
+  @apply bg-offWhiteF;
+
+  .container {
+    @apply py-5 flex justify-between items-center;
+
+    @media (max-width: 866px) {
+      @apply flex-col pt-[0.30rem] items-center justify-center;
+    }
+
+    .logo {
+      @apply mr-3 max-[866px]:mb-4;
+    }
+
+    ul {
+      @apply flex items-center justify-center max-[866px]:mt-4;
+
+      li {
+        @apply ml-3;
+      }
+    }
+  }
+}

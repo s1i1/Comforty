@@ -1,0 +1,31 @@
+.header__top {
+  @apply bg-black;
+
+  .container {
+    @apply flex justify-between py-3.5 max-[558px]:justify-center;
+
+    .shipping {
+      @apply opacity-70; //max-[558px]:hidden
+    }
+
+    /* ul {
+      @apply flex;
+
+      .language {
+        @apply relative;
+
+        .modal {
+          @apply absolute z-[1] top-[20px] left-0;
+        }
+      }
+
+      li {
+        @apply cursor-pointer;
+      }
+
+      .faq {
+        @apply mx-6 font-normal text-[0.8125rem] text-white opacity-70;
+      }
+    } */
+  }
+}
