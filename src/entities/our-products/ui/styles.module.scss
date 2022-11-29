@@ -49,10 +49,12 @@
   }
 
   .products__list {
-    @apply grid grid-cols-4 auto-rows-auto gap-y-10 gap-x-6 max-[1192px]:grid-cols-3 max-[911px]:grid-cols-2 max-[911px]:gap-x-3 max-[649px]:grid-cols-1 max-[649px]:w-[312px] max-[649px]:inline-block;
+    @apply grid grid-cols-4 auto-rows-auto gap-y-10 gap-x-6 max-[1192px]:grid-cols-3 max-[911px]:grid-cols-2 max-[911px]:gap-x-3 max-[649px]:grid-cols-1 max-[649px]:w-[312px] max-[649px]:inline-block max-[342px]:w-full max-[911px]:place-items-center;
+
+    text-align: -webkit-center;
 
     li {
-      @apply max-[649px]:mb-10 max-[439px]:max-w-[290px];
+      @apply max-[911px]:w-[300px] max-[649px]:mb-10 max-[342px]:w-[290px] max-[342px]:h-[290px];
     }
   }
 
