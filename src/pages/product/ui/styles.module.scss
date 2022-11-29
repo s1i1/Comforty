@@ -7,9 +7,11 @@
   }
 
   .list {
-    @apply grid grid-cols-3 auto-rows-auto gap-7 max-[1165px]:grid-cols-2 max-[751px]:grid-cols-1;
+    @apply grid grid-cols-3 auto-rows-auto gap-7 max-[1311px]:grid-cols-2 max-[911px]:grid-cols-1 max-[455px]:place-items-center;
 
     .list__item {
+      @apply max-[455px]:w-[350px] max-[455px]:h-[350px] max-[371px]:w-[300px] max-[371px]:h-[300px];
+
       @media (max-width: 751px) {
         text-align: -webkit-center;
       }
